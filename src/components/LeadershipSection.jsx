@@ -1,5 +1,5 @@
 
-import leaders from '../Data/leaders'; // Adjust the path as needed
+import leaders from '../Data/leaders'; 
 
 const LeadershipSection = () => {
   return (

@@ -1,5 +1,5 @@
 
-import { team } from '../Data/team'; // Adjust the path as needed
+import { team } from '../Data/team'; 
 
 const Team = () => {
   return (

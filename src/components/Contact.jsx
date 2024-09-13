@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
-// src/components/Contact.jsx
+
 
 import { useState } from "react";
 
@@ -30,9 +30,9 @@ const Contact = () => {
     e.preventDefault();
     setFormStatus({ ...formStatus, loading: true });
 
-    // Simulate form submission
+    
     try {
-      // Replace with actual form submission logic
+     
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setFormStatus({
         loading: false,

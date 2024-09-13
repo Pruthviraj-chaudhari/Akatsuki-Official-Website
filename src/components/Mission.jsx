@@ -1,6 +1,6 @@
 /* eslint-disable react/no-unescaped-entities */
 
-import missionData from '../Data/missionData'; // Adjust the path as needed
+import missionData from '../Data/missionData'; 
 
 const Mission = () => {
   return (

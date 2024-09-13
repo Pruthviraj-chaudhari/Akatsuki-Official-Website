@@ -1,13 +1,12 @@
-// src/components/Hero.jsx
-//import React from 'react';
+
 
 const Hero = () => {
   return (
     <section className="relative w-full h-screen bg-cover bg-center">
-      {/* Overlay with reduced opacity */}
+     
       <div
         className="absolute inset-0 bg-black bg-opacity-50"
-        style={{ zIndex: 1 }} // Ensure this is above the background image
+        style={{ zIndex: 1 }} 
       ></div>
 
       {/* Background Image */}
@@ -15,9 +14,9 @@ const Hero = () => {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: `url("https://res.cloudinary.com/dwiujlec2/image/upload/v1696529276/Akatsuki/img/teamAkatsuki6_cmfaas.jpg")`,
-          backgroundSize: 'cover', // Ensures the image covers the entire section
-          backgroundPosition: 'center top', // Positions the image at the top center
-          zIndex: 0, // Ensure this is below the overlay
+          backgroundSize: 'cover', 
+          backgroundPosition: 'center top', 
+          zIndex: 0, 
         }}
       ></div>
 

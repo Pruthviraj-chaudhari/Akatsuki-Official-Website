@@ -1,7 +1,6 @@
-// src/components/Header.jsx
-import  { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom'; // If using React Router for navigation
 
+import  { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
 
@@ -29,9 +28,9 @@ const Header = () => {
               src="https://res.cloudinary.com/dwiujlec2/image/upload/v1696529247/Akatsuki/img/fav_amzyeb.png" 
               alt="Akatsuki Logo"
               className="mr-2"
-              style={{ maxHeight: '50px' }} // Logo size
+              style={{ maxHeight: '50px' }} 
             />
-            <span className="text-white text-4xl font-bold">AKATSUKI</span> {/* Larger text */}
+            <span className="text-white text-4xl font-bold">AKATSUKI</span> 
           </Link>
         </div>
         <nav className="hidden md:flex">
