@@ -18,8 +18,6 @@ function App() {
         </a>
       </div>
       <h1>Akatsuki Coding Club</h1>
-      <h2>The RCPIT</h2>
-      <h2>Shirpur</h2>
 
       <Hero />
 
