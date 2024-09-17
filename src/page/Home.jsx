@@ -15,23 +15,22 @@ const Home = () => {
   return (
     <div>
       <div>
-            <Header />
+        <Header />
       </div>
-      
+
       <Hero />
-      <About/>
+      <About />
       <div className=''>
-        <Mission/>
-          <Alumni/>
-          <LeadershipSection/>
-          <TeamSection/>
-          <Team/>
-          <Contact/>
-          <Footer/>
-         
+        <Mission />
+        <Alumni />
+        <LeadershipSection />
+        <TeamSection />
+        <Team />
+        <Contact />
+        <Footer />
       </div>
-         
-       
+
+
     </div>
   )
 }

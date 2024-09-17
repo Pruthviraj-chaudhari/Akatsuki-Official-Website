@@ -19,8 +19,8 @@ const Footer = () => {
                   <p className="text-lg text-center text-black">
                     Near Nimzari Naka, Shahada Road, Shirpur Dist. Dhule (M.S.) Maharashtra, <br />
                     India - 425405<br /><br />
-                    <strong>Phone:</strong> (02563) 259600, 801, 802<br />
-                    <strong>Email:</strong> www.rcpit.ac.in<br />
+                    <strong>Phone:</strong> +91 8080511069<br />
+                    <strong>Email:</strong> akatsuki@rcpit.ac.in<br />
                   </p>
                   <div className="flex justify-center space-x-4 mt-8">
                     <a href="#" className="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-600">
@@ -89,7 +89,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="container mx-auto px-4 mt-12 text-center">
-          <p className="text-lg text-light-gray">Designed by <a href="https://www.instagram.com/akatsuki_codingclub/" className="text-white hover:text-red-500">Akatsuki Development Team</a></p>
+          <p className="text-lg text-light-gray">Developed by <a href="https://www.instagram.com/akatsuki_codingclub/" className="text-white hover:text-red-500">Akatsuki Development Team</a></p>
         </div>
       </footer>
     );

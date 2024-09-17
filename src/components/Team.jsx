@@ -3,10 +3,18 @@ import { team } from '../Data/team';
 
 const Team = () => {
   return (
-    <div className="w-full py-12 bg-gray-50">
+    <div className="w-full py-12 md:py-28 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold">Meet our New Team</h1>
+          <h1 className="text-5xl font-bold"></h1>
+        </div>
+        <div className="text-center mb-12">
+          <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
+          Meet our  <span className="text-red-500">New Team</span>
+          </h2>
+          <p className="text-lg text-gray-600 mt-4">
+           "Excellent team"
+          </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {team.map((member, index) => (

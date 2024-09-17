@@ -30,9 +30,9 @@ const Contact = () => {
     e.preventDefault();
     setFormStatus({ ...formStatus, loading: true });
 
-    
+
     try {
-     
+
       await new Promise((resolve) => setTimeout(resolve, 2000));
       setFormStatus({
         loading: false,
@@ -58,7 +58,12 @@ const Contact = () => {
     <section id="contact" className="bg-gray-100 py-12">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">Contact</h2>
+          <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
+            Get in touch with <span className="text-red-500">Akatsuki</span>
+          </h2>
+          <p className="text-lg text-gray-600 mt-4">
+            "Contact us for any queries, help or guidance from expert, we always ready for you!"
+          </p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -84,7 +89,7 @@ const Contact = () => {
               >
                 <i className="bx bx-envelope text-4xl mb-4"></i>
                 <h3 className="text-xl font-semibold mb-2">Email Us</h3>
-                <p className="text-gray-600">akatsuki.rcpit@gmail.com</p>
+                <p className="text-gray-600">akatsuki@rcpit.ac.in</p>
               </a>
             </div>
           </div>
@@ -93,7 +98,7 @@ const Contact = () => {
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <i className="bx bx-phone-call text-4xl text-red-600 mb-4"></i>
               <h3 className="text-xl font-semibold mb-2">Call Us</h3>
-              <p className="text-gray-600">+91 8805227960</p>
+              <p className="text-gray-600">+91 8080511069</p>
             </div>
           </div>
 

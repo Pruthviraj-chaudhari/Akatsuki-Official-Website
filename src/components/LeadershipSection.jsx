@@ -1,25 +1,30 @@
 
-import leaders from '../Data/leaders'; 
+import leaders from '../Data/leaders';
 
 const LeadershipSection = () => {
   return (
     <div className="w-full py-12 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12 m-5">
-          <h1 className="text-5xl font-bold mb-2 p-8">Meet the New President and Vice President</h1>
-          <p className="text-2xl text-gray-600 p-3">Leadership unveiled</p>
+        <div className="text-center mb-12">
+          <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
+            Meet the  
+            <span className="text-red-500">{" "}President{" "}</span> 
+            and 
+            <span className="text-red-500">{" "}Vice President</span>
+          </h2>
+          <p className="text-lg text-gray-600 mt-4">Leadership unveiled</p>
         </div>
         <div className="flex flex-wrap justify-center gap-6">
           {leaders.map((leader, index) => (
-            <div 
-              key={index} 
+            <div
+              key={index}
               className="w-full max-w-md p-8 rounded-lg shadow-md hover:shadow-lg hover:bg-gray-300 transition duration-300 transform hover:scale-105 flex flex-col items-center text-center"
             >
               <div className="w-full mb-6 flex justify-center">
-                <img 
-                  src={leader.image} 
-                  alt={`${leader.name} profile`} 
-                  className="w-48 h-48 object-cover rounded-full" 
+                <img
+                  src={leader.image}
+                  alt={`${leader.name} profile`}
+                  className="w-48 h-48 object-cover rounded-full"
                 />
               </div>
               <div className="text-center">
@@ -27,10 +32,10 @@ const LeadershipSection = () => {
                 <h4 className="text-xl text-gray-600 mb-4">{leader.role}</h4>
                 <div className="flex space-x-6 justify-center">
                   {leader.linkedin && (
-                    <a 
-                      href={leader.linkedin} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={leader.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-500 hover:text-gray-700"
                       aria-label={`${leader.name} LinkedIn`}
                     >
@@ -38,10 +43,10 @@ const LeadershipSection = () => {
                     </a>
                   )}
                   {leader.github && (
-                    <a 
-                      href={leader.github} 
-                      target="_blank" 
-                      rel="noopener noreferrer" 
+                    <a
+                      href={leader.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-gray-500 hover:text-gray-700"
                       aria-label={`${leader.name} GitHub`}
                     >

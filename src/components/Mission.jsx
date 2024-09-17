@@ -7,7 +7,9 @@ const Mission = () => {
     <section id="services" className="py-12 bg-gray-100">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold">MISSION & VISION</h2>
+        <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
+            Vision &  <span className="text-red-500">Mission</span>
+          </h2>
           <p className="text-lg text-gray-600 mt-4">"Of the Students For the Student and By the Students"</p>
         </div>
 
