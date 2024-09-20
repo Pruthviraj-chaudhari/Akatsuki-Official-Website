@@ -24,8 +24,8 @@ export function HeroScrollDemo() {
           className="mx-auto rounded-2xl object-cover h-full object-left-top"
           draggable={false}
         />
-          <NavLink>
-        <button className="absolute text-white top-50 left-[700px] w-[200px] flex justify-center  font-semibold py-3 px-6 rounded-md text-sm ">
+          <NavLink to={'https://akatsuki-connect.vercel.app/'} >
+        <button className="absolute text-white bg-red-700 top-65 left-[400px] w-[200px] flex justify-center  font-semibold py-3 px-6 rounded-md text-sm ">
         Join Now
         </button>   
       </NavLink>
