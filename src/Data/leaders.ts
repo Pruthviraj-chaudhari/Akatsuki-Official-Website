@@ -12,7 +12,7 @@ interface Leader {
     {
       name: 'Pruthviraj Chaudhari',
       role: 'President',
-      image: '../images/members/pruthviraj.png',
+      image: '../images/members/Pruthviraj.png',
       linkedin: 'https://www.linkedin.com/in/mangesh-bide/',
       github: 'https://github.com/1Mangesh1'
     },
