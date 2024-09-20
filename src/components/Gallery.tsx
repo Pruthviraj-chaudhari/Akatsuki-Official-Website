@@ -75,10 +75,10 @@ export default function GallerySection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {currentPhotos.map((photo, index) => (
           <div key={index} className="relative aspect-[4/3]">
-            <img
+            <img 
               src={photo}
               alt={`Event photo ${index + 1}`}
-              className="object-cover rounded-lg cursor-pointer"
+              className=" rounded-lg cursor-pointer h-auto"
               onClick={() => openModal(photo, index)}
             />
           </div>
