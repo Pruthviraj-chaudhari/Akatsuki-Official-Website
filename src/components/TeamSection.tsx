@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import teamMembers from '../Data/teamMembers';
 
 // Define the TeamMember interface
@@ -11,6 +11,16 @@ interface TeamMember {
 }
 
 const TeamSection: React.FC = () => {
+  const [visibleCount, setVisibleCount] = useState(8); // Initially show 8 members
+
+  const handleLoadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 8); // Show 8 more members
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount(8); // Reset to show only the initial 8 members
+  };
+
   return (
     <div className="w-full py-12 bg-gray-50">
       <div className="container mx-auto px-4">
@@ -23,7 +33,7 @@ const TeamSection: React.FC = () => {
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {teamMembers.map((member: TeamMember, index: number) => (
+          {teamMembers.slice(0, visibleCount).map((member: TeamMember, index: number) => (
             <div
               key={index}
               className="bg-white p-8 rounded-lg shadow-md hover:bg-gray-100 transition duration-300"
@@ -64,6 +74,25 @@ const TeamSection: React.FC = () => {
             </div>
           ))}
         </div>
+        {visibleCount < teamMembers.length ? (
+          <div className="text-center mt-6">
+            <button
+              onClick={handleLoadMore}
+              className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+            >
+              Load More
+            </button>
+          </div>
+        ) : (
+          <div className="text-center mt-6">
+            <button
+              onClick={handleShowLess}
+              className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+            >
+              Show Less
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

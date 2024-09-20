@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import team from '../Data/team'; // Updated import
 
 // Define the TeamMember interface
@@ -11,12 +11,19 @@ interface TeamMember {
 }
 
 const Team: React.FC = () => {
+  const [visibleCount, setVisibleCount] = useState(8); // Initially show 8 members
+
+  const handleLoadMore = () => {
+    setVisibleCount((prevCount) => prevCount + 8); // Show 8 more members on click
+  };
+
+  const handleShowLess = () => {
+    setVisibleCount(8); // Reset to show only the initial 8 members
+  };
+
   return (
     <div className="w-full py-12 md:py-28 bg-gray-50">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h1 className="text-5xl font-bold"></h1>
-        </div>
         <div className="text-center mb-12">
           <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
             Meet our <span className="text-red-500">New Team</span>
@@ -24,7 +31,7 @@ const Team: React.FC = () => {
           <p className="text-lg text-gray-600 mt-4">"Excellent team"</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {team.map((member: TeamMember, index: number) => (
+          {team.slice(0, visibleCount).map((member: TeamMember, index: number) => (
             <div
               key={index}
               className="bg-white p-8 rounded-lg shadow-md hover:bg-gray-100 transition duration-300"
@@ -65,6 +72,25 @@ const Team: React.FC = () => {
             </div>
           ))}
         </div>
+        {visibleCount < team.length ? (
+          <div className="text-center mt-6">
+            <button
+              onClick={handleLoadMore}
+              className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+            >
+              Load More
+            </button>
+          </div>
+        ) : (
+          <div className="text-center mt-6">
+            <button
+              onClick={handleShowLess}
+              className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+            >
+              Show Less
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
