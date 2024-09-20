@@ -85,7 +85,7 @@ export default function GallerySection() {
             <ChevronLeft className="h-4 w-4" />
           </Button>
           <div className="overflow-hidden flex justify-center">
-            <TabsList className="flex justify-start overflow-x-hidden no-scrollbar h-[60px] bg-black text-white ">
+            <TabsList className="flex justify-start overflow-x-hidden no-scrollbar h-[60px] w-[700px] bg-black text-white ">
               {displayedEvents.slice(activeIndex, activeIndex + 5).map((event, index) => (
                 <TabsTrigger
                   key={event.name}
