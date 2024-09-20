@@ -1,35 +1,69 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, XCircle } from 'lucide-react';
 import { Button } from "@/components/ui/button";
-
-const events = [
-  { name: 'Hackathon 2023', photos: Array(6).fill('../images/Alumni/shivang.jpg') },
-  { name: 'Code Workshop', photos: Array(4).fill('../images/Alumni/ravi.jpg') },
-  { name: 'Tech Talk', photos: Array(3).fill('../images/Alumni/vinay.jpg') },
-  { name: 'AI Symposium', photos: Array(5).fill('../images/Alumni/shreya.jpg') },
-  { name: 'Web Dev Meetup', photos: Array(7).fill('../images/Alumni/shubham.jpg') },
-  { name: 'Data Science Day', photos: Array(4).fill('../images/Alumni/rohan.jpg') },
-  { name: 'Mobile App Jam', photos: Array(6).fill('../images/Alumni/mangesh.jpg') },
-  { name: 'Cybersecurity Panel', photos: Array(3).fill('../images/Alumni/sakshi.jpg') },
-  { name: 'Game Dev Workshop', photos: Array(5).fill('../images/Alumni/vinay.jpg') },
-  { name: 'Cloud Computing Seminar', photos: Array(4).fill('../images/Alumni/vinay.jpg') },
-];
+import { eventImages } from '../Data/eventImages ';
 
 export default function GallerySection() {
   const [currentPage, setCurrentPage] = useState(1);
-  const [activeEvent, setActiveEvent] = useState(events[0].name);
+  const [activeEvent, setActiveEvent] = useState(eventImages[0].name);
   const [activeIndex, setActiveIndex] = useState(0);
+  const [showModal, setShowModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
+  const tabsRef = useRef<HTMLDivElement>(null);
+  const [showLeftArrow, setShowLeftArrow] = useState(false);
+  const [showRightArrow, setShowRightArrow] = useState(true);
   const photosPerPage = 6;
 
-  const totalEvents = events.length;
-  const displayedEvents = [...events, ...events, ...events]; // Repeat events for wrapping
+  useEffect(() => {
+    updateArrowVisibility();
+  }, [activeIndex]);
+
+  const updateArrowVisibility = () => {
+    setShowLeftArrow(activeIndex > 0);
+    setShowRightArrow(activeIndex < eventImages.length - 1);
+  };
 
   const scrollTabs = (direction: 'left' | 'right') => {
-    const newIndex = (activeIndex + (direction === 'left' ? -1 : 1) + totalEvents) % totalEvents;
-    setActiveIndex(newIndex);
-    setActiveEvent(events[newIndex].name);
-    setCurrentPage(1);
+    const tabsElement = tabsRef.current;
+    if (tabsElement) {
+      const newIndex = direction === 'left' ? activeIndex - 1 : activeIndex + 1;
+      if (newIndex >= 0 && newIndex < eventImages.length) {
+        setActiveIndex(newIndex);
+        setActiveEvent(eventImages[newIndex].name);
+        setCurrentPage(1);
+        const tabElement = tabsElement.children[newIndex] as HTMLElement;
+        tabElement.scrollIntoView({ block: 'nearest' });
+      }
+    }
+  };
+
+  const openModal = (photo: string, index: number) => {
+    setSelectedImage(photo);
+    setCurrentImageIndex(index);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedImage(null);
+  };
+
+  const nextImage = () => {
+    if (currentImageIndex !== null && currentImageIndex < eventImages[activeIndex].photos.length - 1) {
+      const nextIndex = currentImageIndex + 1;
+      setSelectedImage(eventImages[activeIndex].photos[nextIndex]);
+      setCurrentImageIndex(nextIndex);
+    }
+  };
+
+  const prevImage = () => {
+    if (currentImageIndex !== null && currentImageIndex > 0) {
+      const prevIndex = currentImageIndex - 1;
+      setSelectedImage(eventImages[activeIndex].photos[prevIndex]);
+      setCurrentImageIndex(prevIndex);
+    }
   };
 
   const renderPhotos = (photos: string[]) => {
@@ -41,7 +75,12 @@ export default function GallerySection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {currentPhotos.map((photo, index) => (
           <div key={index} className="relative aspect-[4/3]">
-            <img src={photo} alt={`Event photo ${index + 1}`} className="object-cover rounded-lg" />
+            <img
+              src={photo}
+              alt={`Event photo ${index + 1}`}
+              className="object-cover rounded-lg cursor-pointer"
+              onClick={() => openModal(photo, index)}
+            />
           </div>
         ))}
       </div>
@@ -74,27 +113,28 @@ export default function GallerySection() {
         </h2>
         <p className="text-lg text-gray-600 mt-4">"Some of Our Works Dedicated To Club"</p>
       </div>
+
       <Tabs value={activeEvent} onValueChange={setActiveEvent} className="w-full">
         <div className="flex justify-center items-center mb-20">
-          <Button
-            variant="outline"
-            size="icon"
-            className="mx-2 bg-red-500 text-white hover:bg-black hover:text-red-500 transition-transform duration-300 ease-in-out"
-            onClick={() => scrollTabs('left')}
-          >
-            <ChevronLeft className="h-4 w-4" />
-          </Button>
+          {showLeftArrow && (
+            <Button
+              variant="outline"
+              size="icon"
+              className="mx-2 bg-red-500 text-white hover:bg-black hover:text-red-500"
+              onClick={() => scrollTabs('left')}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+          )}
           <div className="overflow-hidden flex justify-center">
-            <TabsList className="flex justify-start overflow-x-hidden no-scrollbar h-[60px] w-[700px] bg-black text-white ">
-              {displayedEvents.slice(activeIndex, activeIndex + 5).map((event, index) => (
+            <TabsList ref={tabsRef} className="flex justify-start overflow-x-hidden no-scrollbar h-[60px] w-[700px] bg-black text-white">
+              {eventImages.map((event, index) => (
                 <TabsTrigger
                   key={event.name}
                   value={event.name}
-                  className={`px-4 py-2 whitespace-nowrap transition-colors duration-300 rounded-3xl hover:text-red-500 ${
-                    index === 0 ? 'bg-light-black text-red-500' : ' text-white rounded-xl  '
-                  }`}
+                  className={`px-4 py-2 whitespace-nowrap transition-colors duration-300 rounded-3xl hover:text-red-500 ${activeIndex === index ? 'bg-light-black text-red-500' : 'text-white'}`}
                   onClick={() => {
-                    setActiveIndex((activeIndex + index) % totalEvents);
+                    setActiveIndex(index);
                     setCurrentPage(1);
                   }}
                 >
@@ -103,22 +143,56 @@ export default function GallerySection() {
               ))}
             </TabsList>
           </div>
-          <Button
-            variant="outline"
-            size="icon"
-            className="mx-2 bg-red-500 text-white hover:bg-black hover:text-red-500 transition-transform duration-300 ease-in-out"
-            onClick={() => scrollTabs('right')}
-          >
-            <ChevronRight className="h-4 w-4" />
-          </Button>
+          {showRightArrow && (
+            <Button
+              variant="outline"
+              size="icon"
+              className="mx-2 bg-red-500 text-white hover:bg-black hover:text-red-500"
+              onClick={() => scrollTabs('right')}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          )}
         </div>
-        {events.map(event => (
+
+        {eventImages.map((event) => (
           <TabsContent key={event.name} value={event.name}>
             {renderPhotos(event.photos)}
             {renderPagination(event.photos.length)}
           </TabsContent>
         ))}
       </Tabs>
+
+      {showModal && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
+          <div className="relative max-w-6xl w-full mx-auto p-4">
+            <img src={selectedImage!} alt="Zoomed Image" className="object-contain max-h-[95vh] mx-auto rounded-lg" />
+            <button onClick={closeModal} className="absolute top-4 right-4 text-white">
+              <XCircle className="h-8 w-8" />
+            </button>
+
+            {currentImageIndex !== null && currentImageIndex > 0 && (
+              <Button
+                onClick={prevImage}
+                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/50 text-black"
+                style={{ transform: 'translate(-50%, -50%)' }}
+              >
+                <ChevronLeft className="h-6 w-6" />
+              </Button>
+            )}
+
+            {currentImageIndex !== null && currentImageIndex < eventImages[activeIndex].photos.length - 1 && (
+              <Button
+                onClick={nextImage}
+                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 text-black"
+                style={{ transform: 'translate(50%, -50%)' }}
+              >
+                <ChevronRight className="h-6 w-6" />
+              </Button>
+            )}
+          </div>
+        </div>
+      )}
     </section>
   );
 }
