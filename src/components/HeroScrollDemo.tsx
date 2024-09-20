@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { ContainerScroll } from "./ui/container-scroll-animation";
 
 export function HeroScrollDemo() {
@@ -23,7 +24,13 @@ export function HeroScrollDemo() {
           className="mx-auto rounded-2xl object-cover h-full object-left-top"
           draggable={false}
         />
+          <NavLink>
+        <button className="absolute text-white top-50 left-[700px] w-[200px] flex justify-center  font-semibold py-3 px-6 rounded-md text-sm ">
+        Join Now
+        </button>   
+      </NavLink>
       </ContainerScroll>
+    
     </div>
   );
 }
