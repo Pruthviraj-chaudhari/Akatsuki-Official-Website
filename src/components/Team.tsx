@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import team from '../Data/team'; // Updated import
+import team from '../Data/team'; 
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 // Define the TeamMember interface
 interface TeamMember {
@@ -30,21 +31,24 @@ const Team: React.FC = () => {
           </h2>
           <p className="text-lg text-gray-600 mt-4">"Excellent team"</p>
         </div>
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
           {team.slice(0, visibleCount).map((member: TeamMember, index: number) => (
             <div
               key={index}
-              className="bg-white p-8 rounded-lg shadow-md hover:bg-gray-100 transition duration-300"
+              className=" p-2 pb-5 rounded-lg  transition duration-300"
+              style={{ width: '100%', height: '100%' }} 
             >
               <div className="flex flex-col items-center">
-                <img
-                  src={member.image}
-                  alt={member.name}
-                  className="w-48 h-48 rounded-full object-cover mb-6"
-                />
-                <h3 className="text-2xl font-semibold text-gray-800 mb-2">{member.name}</h3>
-                <h4 className="text-lg text-gray-600 mb-4">{member.role}</h4>
-                <div className="flex space-x-6 mt-4">
+                <div className="w-28 h-28 md:w-36 md:h-36 mb-6 rounded-full bg-gray-200 overflow-hidden">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-md md:text-2xl font-semibold text-gray-800 mb-2">{member.name}</h3>
+                <h4 className="text-xs md:text-lg text-gray-600 mb-4">{member.role}</h4>
+                <div className="flex space-x-6">
                   {member.linkedin && (
                     <a
                       href={member.linkedin}
@@ -53,7 +57,7 @@ const Team: React.FC = () => {
                       className="text-gray-500 hover:text-gray-700"
                       aria-label={`${member.name} LinkedIn`}
                     >
-                      <i className="fab fa-linkedin fa-2x"></i>
+                      <FaLinkedin size={20} className="sm:size-30" /> 
                     </a>
                   )}
                   {member.github && (
@@ -64,7 +68,7 @@ const Team: React.FC = () => {
                       className="text-gray-500 hover:text-gray-700"
                       aria-label={`${member.name} GitHub`}
                     >
-                      <i className="fab fa-github fa-2x"></i>
+                      <FaGithub size={20} className="sm:size-30" />
                     </a>
                   )}
                 </div>
@@ -72,25 +76,14 @@ const Team: React.FC = () => {
             </div>
           ))}
         </div>
-        {visibleCount < team.length ? (
-          <div className="text-center mt-6">
-            <button
-              onClick={handleLoadMore}
-              className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
-            >
-              Load More
-            </button>
-          </div>
-        ) : (
-          <div className="text-center mt-6">
-            <button
-              onClick={handleShowLess}
-              className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
-            >
-              Show Less
-            </button>
-          </div>
-        )}
+        <div className="text-center mt-6">
+          <button
+            onClick={visibleCount < team.length ? handleLoadMore : handleShowLess}
+            className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
+          >
+            {visibleCount < team.length ? 'Load More' : 'Show Less'}
+          </button>
+        </div>
       </div>
     </div>
   );
