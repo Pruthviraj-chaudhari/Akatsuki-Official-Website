@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import { ContainerScroll } from "./ui/container-scroll-animation";
 
 export function HeroScrollDemo() {
@@ -7,30 +6,30 @@ export function HeroScrollDemo() {
       <ContainerScroll
         titleComponent={
           <>
-            <h1 className="text-4xl font-semibold text-black dark:text-white">
-              Connect with Us <br />
+            <h1 className="text-4xl font-semibold text-black dark:text-white md:pb-8">
+              <span className="text-2xl md:text-4xl font-bold">Connect with Us</span><br />
               <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
-                Akatsuki Connect
+                Akatsuki <span className="text-red-500">Connect</span>
               </span>
             </h1>
           </>
         }
       >
-        <img
-          src={`/connect1.png`}
-          alt="hero"
-          height={720}
-          width={1400}
-          className="mx-auto rounded-2xl object-cover h-full object-left-top"
-          draggable={false}
-        />
-          <NavLink to={'https://akatsuki-connect.vercel.app/'} >
-        <button className="absolute text-white bg-red-700 top-65 left-[400px] w-[200px] flex justify-center  font-semibold py-3 px-6 rounded-md text-sm ">
-        Join Now
-        </button>   
-      </NavLink>
+        <picture>
+          <source
+            media="(min-width: 900px)"
+            srcSet="/connect1.png"
+          />
+          <img
+            src="ipad.png"
+            alt="hero"
+            height={720}
+            width={1400}
+            className="mx-auto rounded-2xl object-cover h-full object-left-top"
+            draggable={false}
+          />
+        </picture>
       </ContainerScroll>
-    
     </div>
   );
 }

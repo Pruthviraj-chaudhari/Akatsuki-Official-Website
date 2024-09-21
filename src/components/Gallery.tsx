@@ -33,11 +33,18 @@ export default function GallerySection() {
         setActiveIndex(newIndex);
         setActiveEvent(eventImages[newIndex].name);
         setCurrentPage(1);
+
+        // Scroll the new active tab into view and center it
         const tabElement = tabsElement.children[newIndex] as HTMLElement;
-        tabElement.scrollIntoView({ block: 'nearest' });
+        tabElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center', // Ensure it centers in the view horizontally
+        });
       }
     }
   };
+
 
   const openModal = (photo: string, index: number) => {
     setSelectedImage(photo);
@@ -75,7 +82,7 @@ export default function GallerySection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {currentPhotos.map((photo, index) => (
           <div key={index} className="relative aspect-[4/3]">
-            <img 
+            <img
               src={photo}
               alt={`Event photo ${index + 1}`}
               className=" rounded-lg cursor-pointer h-auto"
@@ -116,18 +123,17 @@ export default function GallerySection() {
 
       <Tabs value={activeEvent} onValueChange={setActiveEvent} className="w-full">
         <div className="flex justify-center items-center mb-20">
-          {showLeftArrow && (
             <Button
               variant="outline"
               size="icon"
-              className="mx-2 bg-red-500 text-white hover:bg-black hover:text-red-500"
+              className="mx-2 bg-red-500 text-white hover:bg-red-600 hover:text-white h-14"
               onClick={() => scrollTabs('left')}
+              disabled={!showLeftArrow}
             >
-              <ChevronLeft className="h-4 w-4" />
+              <ChevronLeft className="h-6 w-6" />
             </Button>
-          )}
           <div className="overflow-hidden flex justify-center">
-            <TabsList ref={tabsRef} className="flex justify-start overflow-x-hidden no-scrollbar h-[60px] w-[700px] bg-black text-white">
+            <TabsList ref={tabsRef} className="flex justify-start overflow-x-hidden scroll-smooth pl-4 no-scrollbar no-scrollbar h-14 w-[700px] bg-black text-white px-3">
               {eventImages.map((event, index) => (
                 <TabsTrigger
                   key={event.name}
@@ -136,23 +142,31 @@ export default function GallerySection() {
                   onClick={() => {
                     setActiveIndex(index);
                     setCurrentPage(1);
+
+                    // Scroll the clicked tab into view and center it
+                    const tabElement = tabsRef.current?.children[index] as HTMLElement;
+                    tabElement?.scrollIntoView({
+                      behavior: 'smooth',
+                      block: 'nearest',
+                      inline: 'center',
+                    });
                   }}
                 >
                   {event.name}
                 </TabsTrigger>
+
               ))}
             </TabsList>
           </div>
-          {showRightArrow && (
             <Button
               variant="outline"
               size="icon"
-              className="mx-2 bg-red-500 text-white hover:bg-black hover:text-red-500"
+              className="mx-2 bg-red-500 text-white hover:bg-red-600 hover:text-white h-14"
               onClick={() => scrollTabs('right')}
+              disabled={!showRightArrow}
             >
-              <ChevronRight className="h-4 w-4" />
+              <ChevronRight className="h-6 w-6" />
             </Button>
-          )}
         </div>
 
         {eventImages.map((event) => (

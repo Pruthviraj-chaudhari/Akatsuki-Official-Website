@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
+import { NavLink } from "react-router-dom";
 
 export const ContainerScroll = ({
   titleComponent,
@@ -34,22 +35,32 @@ export const ContainerScroll = ({
   const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
 
   return (
-    <div
-      className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
-      ref={containerRef}
-    >
+    <>
       <div
-        className="py-10 md:py-40 w-full relative"
-        style={{
-          perspective: "1000px",
-        }}
+        className="h-[60rem] md:h-[80rem] flex items-center justify-center relative p-2 md:p-20"
+        ref={containerRef}
       >
-        <Header translate={translate} titleComponent={titleComponent} />
-        <Card rotate={rotate} translate={translate} scale={scale}>
-          {children}
-        </Card>
+        <div
+          className="py-10 md:py-40 w-full relative items-center flex flex-col justify-center"
+          style={{
+            perspective: "1000px",
+          }}
+        >
+          <Header translate={translate} titleComponent={titleComponent} />
+          <Card rotate={rotate} translate={translate} scale={scale}>
+            {children}
+          </Card>
+          <div className=" w-full flex items-center justify-center mt-20">
+            <NavLink to={'https://akatsuki-connect.vercel.app/'} >
+              <button className="text-white bg-red-700 w-[200px] flex justify-center  font-semibold py-3 px-6 rounded-md text-sm ">
+                Join Now
+              </button>
+            </NavLink>
+          </div>
+
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
