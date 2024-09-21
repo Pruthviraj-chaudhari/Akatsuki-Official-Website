@@ -4,7 +4,7 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="relative py-20 bg-cover bg-center text-gray-800"
+      className="relative mt:pb-16 bg-cover bg-center text-gray-800"
       data-aos="fade-up"
       data-aos-duration="1000"
     >
