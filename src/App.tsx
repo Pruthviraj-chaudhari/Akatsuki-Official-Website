@@ -1,13 +1,13 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './page/Home';
+import UnderMaintenance from './components/UnderMaintenance';
 // import Footer from './components/Footer';
 
 const App: React.FC = () => {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<UnderMaintenance />} />
       </Routes>
     </div>
   );
