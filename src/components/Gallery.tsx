@@ -40,7 +40,7 @@ export default function GallerySection() {
       setActiveEvent(eventImages[newIndex].name);
       setCurrentPage(1);
   
-      // Scroll the new active tab into view and center it
+    
       const tabElement = tabsElement.children[newIndex] as HTMLElement;
       tabElement.scrollIntoView({
         behavior: 'smooth',
