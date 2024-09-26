@@ -10,7 +10,7 @@ const About: React.FC = () => {
     >
       <div className="absolute inset-0 bg-gray-100 bg-opacity-20 z-10"></div>
       <div className="relative z-20 container mx-auto px-4 py-20">
-        <div className="text-center">
+        <div className=" flex flex-col items-center justify-center">
           <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
             About <span className="text-red-500">Us</span>
           </h2>

@@ -30,20 +30,12 @@ const routeList: RouteProps[] = [
     label: "About Us",
   },
   {
-    href: "/alumni",
-    label: "Alumnis",
+    href: "/products",
+    label: "Products",
   },
   {
-    href: "/events",
-    label: "Events",
-  },
-  {
-    href: "/details",
-    label: "Details",
-  },
-  {
-    href: "/gallery",
-    label: "Gallery",
+    href: "/sustainability",
+    label: "Sustainability",
   },
   {
     href: "/contact",
@@ -53,7 +45,6 @@ const routeList: RouteProps[] = [
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
-
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   const handleScroll = () => {
@@ -73,12 +64,12 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-40 w-full transition-all duration-500 ease-in-out text-white  ${
-        scrolled ? "bg-black/70" : "bg-black"
+      className={`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out text-white ${
+        scrolled ? "bg-black/70" : "bg-none"
       }`}
     >
       <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-16 px-4 w-screen flex justify-between ">
+        <NavigationMenuList className="container h-16 px-4 w-screen flex justify-between">
           <NavigationMenuItem className="font-bold flex">
             <Link to="/" className="flex items-center">
               <img
@@ -87,13 +78,12 @@ export const Navbar = () => {
                 className="mr-2"
                 style={{ maxHeight: "40px" }}
               />
-              <span className="text-white text-3xl font-bold">AKATSUKI</span>
+              <span className="text-white text-3xl font-bold">Akatsuki</span>
             </Link>
           </NavigationMenuItem>
 
           {/* mobile */}
           <span className="flex lg:hidden">
-            {/* <ModeToggle /> */}
             <Button variant="ghost" size="icon" className="ghost">
               <Phone className="h-[1.1rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
             </Button>
@@ -136,16 +126,6 @@ export const Navbar = () => {
                       {label}
                     </a>
                   ))}
-                  {/* <a
-                    rel="noreferrer noopener"
-                    href="#"
-                    target="_blank"
-                    className={`w-[110px] border ${buttonVariants({
-                      variant: "secondary",
-                    })}`}
-                  >
-                    Contact Us
-                  </a> */}
                 </nav>
               </SheetContent>
             </Sheet>
@@ -168,15 +148,9 @@ export const Navbar = () => {
               </a>
             ))}
           </nav>
-
-          <div className="hidden lg:flex gap-2">
-            {/* <ModeToggle /> */}
-            <Button variant="ghost" size="icon" className="ghost">
-              <Phone className="h-[1.1rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            </Button>
-          </div>
         </NavigationMenuList>
       </NavigationMenu>
     </header>
   );
 };
+
