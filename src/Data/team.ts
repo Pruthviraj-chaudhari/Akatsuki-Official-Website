@@ -10,6 +10,34 @@ interface TeamMember {
 
 const team: TeamMember[] = [
     {
+        name: "Hitesh Wadile",
+        role: "MERN Stack Developer",
+        image: '../images/members/hitesh.jpg',
+        linkedin: "https://www.linkedin.com/in/hitesh-wadile-7005b4221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/hitesh-wadile"
+    },
+    {
+        name: "Pruthviraj Chaudhari",
+        role: "MERN Stack Developer",
+        image: '../images/members/Pruthviraj.png',
+        linkedin: "https://www.linkedin.com/in/pruthviraj-chaudhari-8386ab230",
+        github: "https://github.com/Pruthviraj-chaudhari"
+    },
+    {
+        name: "Abhishek Pawar",
+        role: "MERN Stack Developer",
+        image: '../images/members/abhi.jpg',
+        linkedin: "https://www.linkedin.com/in/abhishek-pawar-837064241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/Abhishekpawar259"
+    },
+    {
+        name: "Saurav Patil",
+        role: "React Developer",
+        image: '../images/members/saurav.jpg',
+        linkedin: "https://www.linkedin.com/in/saurav-patil-199505247/",
+        github: "https://github.com/Scammerpatil"
+    },
+    {
         name: 'Tanmay Mahale',
         role: 'MERN Stack Developer',
         image: '../images/members/tanmay.jpg',

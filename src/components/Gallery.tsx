@@ -28,24 +28,28 @@ export default function GallerySection() {
   const scrollTabs = (direction: 'left' | 'right') => {
     const tabsElement = tabsRef.current;
     if (tabsElement) {
-      const newIndex = direction === 'left' ? activeIndex - 1 : activeIndex + 1;
-      if (newIndex >= 0 && newIndex < eventImages.length) {
-        setActiveIndex(newIndex);
-        setActiveEvent(eventImages[newIndex].name);
-        setCurrentPage(1);
-
-        // Scroll the new active tab into view and center it
-        const tabElement = tabsElement.children[newIndex] as HTMLElement;
-        tabElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center', // Ensure it centers in the view horizontally
-        });
+      let newIndex;
+  
+      if (direction === 'left') {
+        newIndex = activeIndex === 0 ? eventImages.length - 1 : activeIndex - 1;
+      } else {
+        newIndex = activeIndex === eventImages.length - 1 ? 0 : activeIndex + 1;
       }
+  
+      setActiveIndex(newIndex);
+      setActiveEvent(eventImages[newIndex].name);
+      setCurrentPage(1);
+  
+      // Scroll the new active tab into view and center it
+      const tabElement = tabsElement.children[newIndex] as HTMLElement;
+      tabElement.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center',
+      });
     }
   };
-
-
+  
   const openModal = (photo: string, index: number) => {
     setSelectedImage(photo);
     setCurrentImageIndex(index);
@@ -121,18 +125,20 @@ export default function GallerySection() {
         <p className="text-lg text-gray-600 mt-4">"Some of Our Works Dedicated To Club"</p>
       </div>
 
-      <Tabs value={activeEvent} onValueChange={setActiveEvent} className="w-full">
+      <img className='mx-auto h-56 -mb-11 z-50' src="/yahiko-bg.webp" alt="" />
+     
+      <Tabs value={activeEvent} onValueChange={setActiveEvent} className="w-full -z-50">
         <div className="flex justify-center items-center mb-20">
-            <Button
-              variant="outline"
-              size="icon"
-              className="mx-2 bg-red-500 text-white hover:bg-red-600 hover:text-white h-14"
-              onClick={() => scrollTabs('left')}
-              disabled={!showLeftArrow}
-            >
-              <ChevronLeft className="h-6 w-6" />
-            </Button>
-          <div className="overflow-hidden flex justify-center">
+          <Button
+            variant="outline"
+            size="icon"
+            className="mx-2 bg-red-500 text-white hover:bg-red-600 hover:text-white h-14"
+            onClick={() => scrollTabs('left')}
+            disabled={!showLeftArrow}
+          >
+            <ChevronLeft className="h-6 w-6" />
+          </Button>
+          <div className="overflow-hidden flex justify-center -z-50">
             <TabsList ref={tabsRef} className="flex justify-start overflow-x-hidden scroll-smooth pl-4 no-scrollbar no-scrollbar h-14 w-[700px] bg-black text-white px-3">
               {eventImages.map((event, index) => (
                 <TabsTrigger
@@ -158,15 +164,15 @@ export default function GallerySection() {
               ))}
             </TabsList>
           </div>
-            <Button
-              variant="outline"
-              size="icon"
-              className="mx-2 bg-red-500 text-white hover:bg-red-600 hover:text-white h-14"
-              onClick={() => scrollTabs('right')}
-              disabled={!showRightArrow}
-            >
-              <ChevronRight className="h-6 w-6" />
-            </Button>
+          <Button
+            variant="outline"
+            size="icon"
+            className="mx-2 bg-red-500 text-white hover:bg-red-600 hover:text-white h-14"
+            onClick={() => scrollTabs('right')}
+            disabled={!showRightArrow}
+          >
+            <ChevronRight className="h-6 w-6" />
+          </Button>
         </div>
 
         {eventImages.map((event) => (
