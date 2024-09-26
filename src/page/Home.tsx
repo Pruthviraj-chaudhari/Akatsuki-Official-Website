@@ -10,6 +10,8 @@ import LeadershipSection from '../components/LeadershipSection';
 import GallerySection from '@/components/Gallery';
 import { Navbar } from '@/components/Navbar';
 import { HeroScrollDemo } from '@/components/HeroScrollDemo';
+import AlumniBatch from '@/components/AlumniBatch';
+
 // import Testimonials from '../components/Testimonials';
 
 const Home = () => {
@@ -21,12 +23,14 @@ const Home = () => {
       <div className='content'>
         <Mission />
         <HeroScrollDemo />
-        <Alumni />
+        <AlumniBatch />
+        {/* <Alumni /> */}
         <LeadershipSection />
         <TeamSection />
         <Team />
         <GallerySection />
         <Contact />
+        
       </div>
       <Footer />
     </div>

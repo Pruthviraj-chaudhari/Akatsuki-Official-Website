@@ -5,7 +5,11 @@ export const eventImages = [
       "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.52.31 PM.jpeg",
       "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.53.34 PM.jpeg",
       "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.55.05 PM.jpeg",
+      "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.52.31 PM.jpeg",
     ],
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    ]
   },
   {
     name: "Internal SIH 2024",
@@ -16,6 +20,9 @@ export const eventImages = [
       "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.06 PM.jpeg",
       "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.08 PM.jpeg",
     ],
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    ]
   },
   // {
   //   name: "ML Workshop",
@@ -28,6 +35,9 @@ export const eventImages = [
       "./images/hcl_Event/WhatsApp Image 2024-09-20 at 1.20.59 PM.jpeg",
       "../images/hcl_Event/WhatsApp Image 2024-09-20 at 1.21.03 PM.jpeg",
     ],
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    ]
   },
   {
     name: "Nodevember S1",
@@ -39,6 +49,9 @@ export const eventImages = [
       "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.57 PM.jpeg",
       "../images/nodemember/WhatsApp Image 2024-09-20 at 1.21.05 PM (1).jpeg",
     ],
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    ]
   },
   {
     name: "Converges 2023",
@@ -55,6 +68,9 @@ export const eventImages = [
       "../images/ditective/detect-10_h9vgdl.jpg",
       "../images/ditective/detect-11_mhy9g6.png",
     ],
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    ]
   },
   {
     name: "Internal SIH 2023",
@@ -65,6 +81,9 @@ export const eventImages = [
       "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.06 PM.jpeg",
       "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.08 PM.jpeg",
     ],
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    ]
   },
   {
     name: "Tech hunt 2022",
@@ -78,6 +97,9 @@ export const eventImages = [
       "../images/tech-hunt/tech-6_v7mmmm.jpg",
       "../images/tech-hunt/tech-7_vkour8.jpg",
     ],
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    ]
   },
   /* {
     name: "Hacky Holi 2022",
@@ -100,6 +122,9 @@ export const eventImages = [
       "../images/portfolio/portfolio-10_x3f8eq.jpg",
       "../images/portfolio/portfolio-11_rzu74s.jpg",
     ],
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    ]
   },
   // Add more events and photos as needed
 ];
