@@ -5,7 +5,7 @@ import { ImagesSlider } from "./ui/images-slider";
 
 const Hero: React.FC = () => {
   return (
-    <section className="relative w-full h-screen bg-cover bg-center">
+    <section className="relative w-full h-screen bg-cover bg-center -mt-16">
       <ImagesSliderDemo />
     </section>
   );
@@ -20,7 +20,7 @@ export function ImagesSliderDemo() {
     "./images/tech-hunt/tech-1_ve9ht0.jpg",
   ];
   return (
-    <ImagesSlider className="h-screen" images={images}>
+    <ImagesSlider className="h-screen top-0" images={images}>
       <motion.div
         initial={{
           opacity: 0,
@@ -53,5 +53,6 @@ export function ImagesSliderDemo() {
     </ImagesSlider>
   );
 }
+
 
 
