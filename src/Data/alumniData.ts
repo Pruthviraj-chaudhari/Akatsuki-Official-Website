@@ -79,14 +79,14 @@ export const alumni2024: AlumniMember[] = [
   {
     name: 'Mangesh Bide',
     role: 'Ex-President',
-    company: ['Netwin'],
+    company: ['Netwin - 4.5 LPA'],
     image: '../images/Alumni/mangeshbide.jpg',
     batch: 2024
   },
   {
     name: 'Sakshi Kukreja',
     role: 'Ex-Vice President',
-    company: ['Netwin'],
+    company: [''],
     image: '../images/Alumni/sakshi.jpg',
     batch: 2024
   },
@@ -99,7 +99,7 @@ export const alumni2025: AlumniMember[] = [
     name: 'Pruthviraj Chaudhari',
       role: 'President',
       image: '../images/members/Pruthviraj.png', 
-      company: ['TSS'],
+      company: ['TSS - 4.6 LPA'],
       batch: 2025
   },
   

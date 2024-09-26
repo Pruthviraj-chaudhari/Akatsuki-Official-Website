@@ -4,11 +4,18 @@ export const eventImages = [
     photos: [
       "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.52.31 PM.jpeg",
       "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.53.34 PM.jpeg",
-      "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.55.05 PM.jpeg",
-      "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.52.31 PM.jpeg",
+      
+      "../images/Converges2024/WhatsApp Image 2024-09-26 at 23.59.52_76b462c0.jpg",
+      "../images/Converges2024/WhatsApp Image 2024-09-27 at 00.00.23_bd003a6f.jpg",
+      "../images/Converges2024/WhatsApp Image 2024-09-27 at 00.03.55_8de28504.jpg",
+      "../images/Converges2024/WhatsApp Image 2024-09-27 at 00.04.56_c98d65bf.jpg",
+     
+      
     ],
+    
     text:[
       "Join the Journey: Uniting Minds, Inspiring Change!"
+    
     ]
   },
   {
@@ -17,8 +24,11 @@ export const eventImages = [
       "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.05 PM (1).jpeg",
       "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.06 PM.jpeg",
       "images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.07 PM (1).jpeg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.06 PM.jpeg",
+      
       "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.08 PM.jpeg",
+      "../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.21.48_8372e16d.jpg",
+      "../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.23.15_854c34b2.jpg",
+      "../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.24.17_25e1f050.jpg",
     ],
     text:[
       "Join the Journey: Uniting Minds, Inspiring Change!"
@@ -43,11 +53,12 @@ export const eventImages = [
     name: "Nodevember S1",
     photos: [
       "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.53 PM (1).jpeg",
-      "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.53 PM.jpeg",
+      // "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.53 PM.jpeg",
       "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.54 PM (2).jpeg",
       "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.55 PM (1).jpeg",
       "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.57 PM.jpeg",
       "../images/nodemember/WhatsApp Image 2024-09-20 at 1.21.05 PM (1).jpeg",
+      "../images/nodemember/WhatsApp Image 2024-09-27 at 00.30.03_76f5de81.jpg",
     ],
     text:[
       "Join the Journey: Uniting Minds, Inspiring Change!"
@@ -75,11 +86,12 @@ export const eventImages = [
   {
     name: "Internal SIH 2023",
     photos: [
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.05 PM (1).jpeg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.05 PM.jpeg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.06 PM (1).jpeg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.06 PM.jpeg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.08 PM.jpeg",
+    "../images/SIH-2023/20230923_15303PMByGPSMapCamera.jpg",
+    "../images/SIH-2023/20230923_22732PMByGPSMapCamera.jpg",
+    "../images/SIH-2023/20230923_24408PMByGPSMapCamera.jpg",
+    "../images/SIH-2023/20230923_25939PMByGPSMapCamera.jpg",
+    "../images/SIH-2023/20230923_32101PMByGPSMapCamera.jpg",
+    "../images/SIH-2023/20230923_115459AMByGPSMapCamera.jpg",
     ],
     text:[
       "Join the Journey: Uniting Minds, Inspiring Change!"
