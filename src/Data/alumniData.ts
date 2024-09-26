@@ -166,13 +166,7 @@ export const alumni2024: AlumniMember[] = [
     image: "../images/Alumni/prajakta.jpg",
     batch: 2024,
   },
-  {
-    name: "Prajakta Patil",
-    role: "Frontend Developer",
-    company: ["QualityKiosk - 2.5 To 5.5 LPA","Persistent-5.01 LPA"],
-    image: "../images/Alumni/prajakta.jpg",
-    batch: 2024,
-  },
+ 
   {
     name: "Gitanjali Patil",
     role: "Frontend Developer",
