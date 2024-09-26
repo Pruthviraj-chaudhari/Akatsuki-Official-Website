@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import { ImagesSlider } from "./ui/images-slider";
 
+
 const Hero: React.FC = () => {
   return (
     <section className="relative w-full h-screen bg-cover bg-center -mt-16">
@@ -37,7 +38,7 @@ export function ImagesSliderDemo() {
       >
         <motion.p className="font-bold text-xl md:text-6xl text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 py-4 -mt-44">
           <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold uppercase mb-2">
-            Welcome to Akatsuki
+           Welcome to Akatsuki
           </h1>
           <h2 className="text-xl md:text-xl lg:text-xl font-bold uppercase mb-12">
             The Coding Club of R.C.Patel Institute of Technology

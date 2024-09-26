@@ -1,5 +1,9 @@
 import TeamSection from '../components/TeamSection';
 import Team from '../components/Team';
+<<<<<<< HEAD
+=======
+
+>>>>>>> 73c38c0290ce0e57dd47786793132d3881162166
 import Contact from '../components/Contact';
 import Mission from '../components/Mission';
 import Hero from '../components/Hero';
@@ -23,6 +27,10 @@ const Home = () => {
         <Mission />
         <HeroScrollDemo />
         <AlumniBatch />
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 73c38c0290ce0e57dd47786793132d3881162166
         <LeadershipSection />
         <TeamSection />
         <Team />
