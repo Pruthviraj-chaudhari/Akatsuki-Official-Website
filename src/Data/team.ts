@@ -47,11 +47,11 @@ const team: TeamMember[] = [
         github: 'https://github.com/Paresh-95'
     },
     {
-        name: 'Yugandhar Borase',
-        role: 'UI/UX Designer',
-        image: '../images/members/yugandar.jpg',
-        linkedin: 'https://www.linkedin.com/in/yugandhar-borase-7806b822a',
-        github: 'https://github.com/YugandharBorase'
+        name: 'Vedant Deshmukh',
+        role: 'Team Management',
+        image: '../images/members/vedant.jpg',
+        linkedin: 'https://www.linkedin.com/in/vedant-deshmukh-b793a7244',
+        github: 'https://github.com/vedantdeshmukh24'
     },
     {
         name: 'Tejas Patil',
@@ -89,11 +89,11 @@ const team: TeamMember[] = [
         github: 'https://github.com/punam2003'
     },
     {
-        name: 'Vedant Deshmukh',
-        role: 'Team Management',
-        image: '../images/members/vedant.jpg',
-        linkedin: 'https://www.linkedin.com/in/vedant-deshmukh-b793a7244',
-        github: 'https://github.com/vedantdeshmukh24'
+        name: 'Yugandhar Borase',
+        role: 'UI/UX Designer',
+        image: '../images/members/yugandar.jpg',
+        linkedin: 'https://www.linkedin.com/in/yugandhar-borase-7806b822a',
+        github: 'https://github.com/YugandharBorase'
     },
     {
         name: 'Dinesh Deore',
@@ -123,13 +123,7 @@ const team: TeamMember[] = [
         linkedin: 'https://www.linkedin.com/in/gautampatil5',
         github: 'https://github.com/GautamPatil05'
     },
-    {
-        name: 'Sanika Joshi',
-        role: 'Frontend Developer',
-        image: '../images/members/sanika.jpg',
-        linkedin: 'https://www.linkedin.com/in/sanika-joshi-b341b226a',
-        github: 'https://github.com/Sanika-2105'
-    },
+
     {
         name: 'Sandip Kankhare',
         role: 'Android Developer',

@@ -112,7 +112,7 @@ interface AlumniCardProps {
 
 const AlumniCard: React.FC<AlumniCardProps> = ({ alumni }) => {
   return (
-    <div className="bg-black text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-black text-center p-6 space-y-4 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
       
       <div className="flex justify-center mb-4">
         <img
@@ -126,7 +126,7 @@ const AlumniCard: React.FC<AlumniCardProps> = ({ alumni }) => {
       <h3 className="text-xl font-bold text-white">{alumni.name}</h3>
 
     
-      <p className="text-red-600 font-bold">{alumni.role}</p>
+      <p className="text-red-600 font-medium">{alumni.role}</p>
 
    
       <div className="mt-2 text-md text-white space-y-1">
