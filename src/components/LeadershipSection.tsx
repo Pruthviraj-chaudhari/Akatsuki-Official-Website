@@ -28,7 +28,7 @@ const LeadershipSection: React.FC = () => {
           leaders.map((leader: Leader, index: number) => (
             <div
               key={index}
-              className="w-full bg-gray-100 max-w-md p-8 rounded-lg shadow-md hover:shadow-lg hover:bg-gray-300 transition duration-300 transform hover:scale-105 flex flex-col items-center text-center"
+              className="w-full border  shadow-gray-800 bg-gray-100 max-w-md p-8 rounded-lg shadow-md hover:shadow-lg hover:bg-gray-300 transition duration-300 transform hover:scale-105 flex flex-col items-center text-center"
             >
               <div className="w-full mb-6 flex justify-center">
                 <img

@@ -112,7 +112,7 @@ interface AlumniCardProps {
 
 const AlumniCard: React.FC<AlumniCardProps> = ({ alumni }) => {
   return (
-    <div className="bg-black text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+    <div className="bg-black text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 sm: mx-5">
       
       <div className="flex justify-center mb-4">
         <img
