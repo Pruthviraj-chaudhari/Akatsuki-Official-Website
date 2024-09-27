@@ -23,13 +23,10 @@ const Home = () => {
         <Mission />
         <HeroScrollDemo />
         <AlumniBatch />
-
         <LeadershipSection />
-      
         <Team />
         <GallerySection />
         <Contact />
-        
       </div>
       <Footer />
     </div>
