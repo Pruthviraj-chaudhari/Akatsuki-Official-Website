@@ -35,11 +35,12 @@ const AlumniBatch: React.FC = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-        {alumniData[selectedBatch]?.map((alumni) => (
-          <AlumniCard key={alumni.name} alumni={alumni} />
-        ))}
-      </div>
+      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+  {alumniData[selectedBatch]?.map((alumni) => (
+    <AlumniCard key={alumni.name} alumni={alumni} className="flex justify-center items-center" />
+  ))}
+</div>
+
     </div>
     </section>
   );
