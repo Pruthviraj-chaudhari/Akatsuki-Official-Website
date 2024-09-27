@@ -16,7 +16,7 @@ const AlumniCard: React.FC<AlumniCardProps> = ({ alumni }) => {
   return (
     <div className="relative text-center p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
       <div
-        className="absolute inset-0 bg-black " // Adjusted opacity for lighter overlay
+        className="absolute inset-0 bg-black" // Adjusted opacity for lighter overlay
         style={{
           backgroundImage: 'url("./download (7).jpeg")', // Replace with your image path
           backgroundSize: 'cover',

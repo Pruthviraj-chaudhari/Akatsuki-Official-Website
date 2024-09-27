@@ -1,9 +1,10 @@
 import { eventImages } from "@/Data/eventImages ";
 import { Timeline } from "@/components/ui/timeline";
+import { cn } from "@/lib/utils";
 
-export function TimelineDemo() {
+export const TimelineDemo = ({ className }: { className?: string }) => {
   return (
-    <div className="w-full">
+    <div className={cn("w-full",className)}>
       <Timeline
         data={eventImages.map(({ name, photos,text }) => ({
           title: name,

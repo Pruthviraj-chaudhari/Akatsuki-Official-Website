@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/sheet";
 import { Button, buttonVariants } from "./ui/button";
 import { Menu, Phone } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 interface RouteProps {
   href: string;
@@ -26,11 +27,11 @@ const routeList: RouteProps[] = [
     label: "Home",
   },
   {
-    href: "/about",
+    href: "#about",
     label: "About Us",
   },
   {
-    href: "/team",
+    href: "#team",
     label: "Team",
   },
   {
@@ -38,12 +39,13 @@ const routeList: RouteProps[] = [
     label: "Events",
   },
   {
-    href: "/contact",
+    href: "#contact",
     label: "Contact Us",
   },
 ];
 
-export const Navbar = () => {
+export const Navbar = ({ className }: { className?: string }) => {
+
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -64,9 +66,8 @@ export const Navbar = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out text-white ${
-        scrolled ? "bg-black/70" : "bg-none"
-      }`}
+      className={cn(`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out text-white ${scrolled ? "bg-black/70" : "bg-none"
+        }`, className)}
     >
       <NavigationMenu className="mx-auto">
         <NavigationMenuList className="container h-16 px-4 w-screen flex justify-between">
