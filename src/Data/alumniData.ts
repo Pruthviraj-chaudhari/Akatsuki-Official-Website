@@ -182,7 +182,14 @@ export const alumni2025: AlumniMember[] = [
     name: "Pruthviraj Chaudhari",
     role: "President",
     image: "../images/members/Pruthviraj.png",
-    company: ["TSS"],
+    company: ["TSS - 4.6 LPA"],
     batch: 2025,
   },
+  {
+    name: 'Jayesh Sonavane',
+    role: 'MERN Stack Developer',
+    image: '../images/members/jayesh.jpg',
+    company: ["TSS - 4.6 LPA"],
+    batch: 2025,
+},
 ];

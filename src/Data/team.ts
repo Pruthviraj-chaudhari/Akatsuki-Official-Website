@@ -16,13 +16,8 @@ const team: TeamMember[] = [
         linkedin: "https://www.linkedin.com/in/hitesh-wadile-7005b4221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         github: "https://github.com/hitesh-wadile"
     },
-    {
-        name: "Pruthviraj Chaudhari",
-        role: "MERN Stack Developer",
-        image: '../images/members/Pruthviraj.png',
-        linkedin: "https://www.linkedin.com/in/pruthviraj-chaudhari-8386ab230",
-        github: "https://github.com/Pruthviraj-chaudhari"
-    },
+    
+
     {
         name: "Abhishek Pawar",
         role: "MERN Stack Developer",

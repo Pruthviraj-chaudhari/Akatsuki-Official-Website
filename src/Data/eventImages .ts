@@ -76,8 +76,7 @@ export const eventImages = [
       "../images/ditective/detect-7_py3wsh.jpg",
       "../images/ditective/detect-8_suisan.jpg",
       "../images/ditective/detect-9_teiruk.jpg",
-      "../images/ditective/detect-10_h9vgdl.jpg",
-      "../images/ditective/detect-11_mhy9g6.png",
+      
     ],
     text:[
       "Join the Journey: Uniting Minds, Inspiring Change!"

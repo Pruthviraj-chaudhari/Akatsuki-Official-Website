@@ -27,7 +27,7 @@ const TeamSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
-            Meet our <span className="text-red-500">Core Team</span>
+            Meet our <span className="text-red-500">Team</span>
           </h2>
           <p className="text-lg text-gray-600 mt-4">
             "The core team behind Akatsuki"

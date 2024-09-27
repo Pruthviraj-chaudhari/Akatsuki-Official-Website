@@ -40,7 +40,6 @@ export default function GallerySection() {
       setActiveEvent(eventImages[newIndex].name);
       setCurrentPage(1);
   
-    
       const tabElement = tabsElement.children[newIndex] as HTMLElement;
       tabElement.scrollIntoView({
         behavior: 'smooth',
@@ -85,11 +84,11 @@ export default function GallerySection() {
     return (
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {currentPhotos.map((photo, index) => (
-          <div key={index} className="relative aspect-[4/3]">
+          <div key={index} className="relative aspect-w-4 aspect-h-3">
             <img
               src={photo}
               alt={`Event photo ${index + 1}`}
-              className=" rounded-lg cursor-pointer h-auto"
+              className="rounded-lg cursor-pointer w-full h-full object-cover"
               onClick={() => openModal(photo, index)}
             />
           </div>

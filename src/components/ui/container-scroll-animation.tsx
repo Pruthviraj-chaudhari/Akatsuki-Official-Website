@@ -53,7 +53,7 @@ export const ContainerScroll = ({
           <div className=" w-full flex flex-col items-center justify-center mt-20">
           <img className=' mx-auto h-40' src="https://akatsuki.vercel.app/_next/image?url=%2Fimg%2Fmembers_sm%2Fitachi_profile.png&w=640&q=100" alt="" />
             <NavLink to={'https://akatsuki-connect.vercel.app/'} >
-              <button className="text-white bg-red-700 w-[200px] flex justify-center  font-semibold py-3 px-6 rounded-md text-sm ">
+              <button className="text-white bg-red-500 w-[200px] flex justify-center  font-semibold py-3 px-6 rounded-md text-sm ">
                 Join Now
               </button>
             </NavLink>

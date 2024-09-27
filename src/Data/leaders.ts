@@ -13,14 +13,14 @@ interface Leader {
       name: 'Pruthviraj Chaudhari',
       role: 'President',
       image: '../images/members/Pruthviraj.png',
-      linkedin: 'https://www.linkedin.com/in/mangesh-bide/',
-      github: 'https://github.com/1Mangesh1'
+      linkedin: '',
+      github: ''
     },
     {
       name: 'Sanika Joshi',
       role: 'Vice President',
       image: '../images/members/sanika.jpg',
-      linkedin: 'https://www.linkedin.com/in/sakshi-kukreja-b67952217/',
+      linkedin: '',
       github: ''
     }
   ];

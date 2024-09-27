@@ -1,4 +1,4 @@
-import TeamSection from '../components/TeamSection';
+// import TeamSection from '../components/TeamSection';
 import Team from '../components/Team';
 import Contact from '../components/Contact';
 import Mission from '../components/Mission';
@@ -25,7 +25,7 @@ const Home = () => {
         <AlumniBatch />
 
         <LeadershipSection />
-        <TeamSection />
+      
         <Team />
         <GallerySection />
         <Contact />
