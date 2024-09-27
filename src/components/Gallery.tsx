@@ -124,7 +124,7 @@ export default function GallerySection() {
         <p className="text-lg text-gray-600 mt-4">"Some of Our Works Dedicated To Club"</p>
       </div>
 
-      {/* <img className='mx-auto h-56 -mb-11 z-50' src="/yahiko-bg.webp" alt="" /> */}
+      <img className='mx-auto h-56 -mb-11 z-50' src="/yahiko-bg.webp" alt="" />
      
       <Tabs value={activeEvent} onValueChange={setActiveEvent} className="w-full -z-50">
         <div className="flex justify-center items-center mb-20">
