@@ -28,7 +28,7 @@ const AlumniCard: React.FC<AlumniCardProps> = ({ alumni }) => {
           <img
             src={alumni.image}
             alt={alumni.name}
-            className="w-32 h-32 object-cover rounded-full border-2 border-gray-200 transition duration-300 ease-in-out hover:border-transparent hover:shadow-[0_0_15px_rgba(255,255,255,0.6)]"
+            className="w-32 h-32  object-cover rounded-full border-2 border-gray-200 transition duration-300 ease-in-out hover:border-transparent hover:shadow-[0_0_15px_rgba(255,255,255,0.6)]"
           />
         </div>
 
