@@ -1,6 +1,6 @@
 
 import React from "react";
-
+import { FaTwitter,FaInstagram,FaLinkedin   } from "react-icons/fa";
 const Footer: React.FC = () => {
   return (
     <footer id="footer" className="bg-black bg-opacity-70 text-white py-16">
@@ -23,13 +23,13 @@ const Footer: React.FC = () => {
                 </p>
                 <div className="flex justify-center space-x-4 mt-8">
                   <a href="#" className="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-600">
-                    <i className="bx bxl-twitter text-2xl"></i>
+                    <i className="bx bxl-twitter text-2xl"><FaTwitter /></i>
                   </a>
                   <a href="https://www.instagram.com/akatsuki_codingclub/" className="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-400">
-                    <i className="bx bxl-instagram text-2xl"></i>
+                    <i className="bx bxl-instagram text-2xl"><FaInstagram /></i>
                   </a>
                   <a href="https://www.linkedin.com/company/akatsuki-coding-club/" className="bg-blue-900 text-white p-3 rounded-full hover:bg-blue-800">
-                    <i className="bx bxl-linkedin text-2xl"></i>
+                    <i className="bx bxl-linkedin text-2xl"><FaLinkedin /></i>
                   </a>
                 </div>
               </div>

@@ -1,6 +1,8 @@
 
 import React, { useState } from "react";
-
+import { MdEmail } from "react-icons/md";
+import { IoCall } from "react-icons/io5";
+import { FaInstagram } from "react-icons/fa"; 
 interface FormData {
   name: string;
   email: string;
@@ -93,7 +95,7 @@ const Contact: React.FC = () => {
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <a href="mailto:akatsuki.rcpit@gmail.com" className="text-red-600">
                 <i className="bx bx-envelope text-4xl mb-4"></i>
-                <h3 className="text-xl font-semibold mb-2">Email Us</h3>
+                <h3 className="text-xl font-semibold mb-2 "><span className="w-full flex justify-center"><MdEmail  size={35} /></span>Email Us</h3>
                 <p className="text-gray-600">akatsuki@rcpit.ac.in</p>
               </a>
             </div>
@@ -102,7 +104,7 @@ const Contact: React.FC = () => {
           <div className="lg:col-span-1">
             <div className="bg-white p-6 rounded-lg shadow-lg text-center">
               <i className="bx bx-phone-call text-4xl text-red-600 mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">Call Us</h3>
+              <h3 className="text-xl font-semibold mb-2"><span className="w-full flex justify-center"><IoCall   size={35} /></span>Call Us</h3>
               <p className="text-gray-600">+91 8080511069</p>
             </div>
           </div>
@@ -114,7 +116,7 @@ const Contact: React.FC = () => {
                 className="text-red-600"
               >
                 <i className="iconify text-4xl mb-4" data-icon="mdi:instagram"></i>
-                <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
+                <h3 className="text-xl font-semibold mb-2"><span className="w-full flex justify-center"><FaInstagram    size={35} /></span>Follow Us</h3>
                 <p className="text-gray-600">@akatsuki_codingclub</p>
               </a>
             </div>
