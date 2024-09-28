@@ -16,7 +16,7 @@ export default Hero;
 
 export function ImagesSliderDemo() {
   const images = [
-    "/brandnew.png",
+    "./1e05902e-5762-4b46-9acd-b658abdec30f.jpg",
     "./images/tech-hunt/teamAkatsuki6_cmfaas.jpg",
     "./images/tech-hunt/tech-1_ve9ht0.jpg",
   ];

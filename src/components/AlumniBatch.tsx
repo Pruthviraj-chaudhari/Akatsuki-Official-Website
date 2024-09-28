@@ -16,7 +16,7 @@ const AlumniBatch: React.FC = () => {
   };
 
   return (
-    <section id="team" className="bg-gray-100 py-12">
+    <section id="team" className="bg-gray-100 py-12 mx-5">
       <div className="container mx-auto py-8 ">
         <div className="text-center mb-6">
           <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
