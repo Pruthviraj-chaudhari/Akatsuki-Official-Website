@@ -13,7 +13,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Button, buttonVariants } from "./ui/button";
-import { Menu, Phone } from "lucide-react";
+import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface RouteProps {
@@ -85,10 +85,6 @@ export const Navbar = ({ className }: { className?: string }) => {
 
           {/* mobile */}
           <span className="flex lg:hidden">
-            <Button variant="ghost" size="icon" className="ghost">
-              <Phone className="h-[1.1rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
-            </Button>
-
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger className="px-2">
                 <Menu

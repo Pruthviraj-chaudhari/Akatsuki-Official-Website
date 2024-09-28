@@ -29,7 +29,7 @@ const AlumniBatch: React.FC = () => {
                 onClick={() => handleBatchChange(batch)}
                 className={`px-4 py-2 rounded-lg ${selectedBatch === batch ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-800'}`}
               >
-                Batch {batch}
+               <span className='hidden md:inline'>Batch</span>  {batch}
               </button>
             ))}
           </div>
