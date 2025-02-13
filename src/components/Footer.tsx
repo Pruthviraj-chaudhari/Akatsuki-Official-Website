@@ -1,96 +1,90 @@
-
 import React from "react";
-import { FaTwitter,FaInstagram,FaLinkedin   } from "react-icons/fa";
+import { Twitter, Instagram, Linkedin } from "lucide-react";
+
 const Footer: React.FC = () => {
   return (
-    <footer id="footer" className="bg-black bg-opacity-70 text-white py-16">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-wrap justify-center">
+    <footer className="bg-gradient-to-t from-black to-black/80 text-gray-300">
+      <div className="max-w-7xl mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* About Section */}
+          <div className="space-y-6">
+            <h3 className="text-3xl font-bold text-white bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
+              Akatsuki
+            </h3>
+            <p className="text-gray-400 text-lg leading-relaxed">
+              Empowering students through coding excellence and innovation at R. C. Patel Institute of Technology, Shirpur.
+            </p>
+            <div className="flex space-x-4">
+              <a
+                href="#"
+                className="bg-gray-800/50 p-3 rounded-full hover:bg-blue-600/90 transition-all duration-300 hover:scale-110"
+                aria-label="Twitter"
+              >
+                <Twitter className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/akatsuki_codingclub/"
+                className="bg-gray-800/50 p-3 rounded-full hover:bg-pink-600/90 transition-all duration-300 hover:scale-110"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/akatsuki-coding-club/"
+                className="bg-gray-800/50 p-3 rounded-full hover:bg-blue-800/90 transition-all duration-300 hover:scale-110"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
 
-          <div className="w-full lg:w-1/3 mb-8 lg:mb-0 flex justify-center">
-            <div className="bg-white text-gray-800 p-8 rounded-lg shadow-md relative">
-              <div className="absolute top-0 left-0 w-full h-2 bg-red-600 rounded-t-lg"></div>
-              <div className="pt-10">
-                <h3 className="text-4xl font-bold mb-8 text-center text-black">Akatsuki</h3>
-                <p className="mb-8 text-lg italic text-center text-black">
-                  Shirpur Education Society's R. C. Patel Institute of Technology, Shirpur
-                </p>
-                <p className="text-lg text-center text-black">
-                  Near Nimzari Naka, Shahada Road, Shirpur Dist. Dhule (M.S.) Maharashtra, <br />
-                  India - 425405<br /><br />
-                  <strong>Phone:</strong> +91 8080511069<br />
-                  <strong>Email:</strong> akatsuki@rcpit.ac.in<br />
-                </p>
-                <div className="flex justify-center space-x-4 mt-8">
-                  <a href="#" className="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-600">
-                    <i className="bx bxl-twitter text-2xl"><FaTwitter /></i>
+          {/* Quick Links */}
+          <div className="md:pl-12">
+            <h4 className="text-xl font-semibold text-white mb-6 relative inline-block">
+              Quick Links
+              <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-red-500"></span>
+            </h4>
+            <ul className="grid grid-cols-2 gap-4">
+              {[
+                'Home',
+                'About us',
+                'Services',
+                'Terms of service',
+                'Privacy policy',
+                'Contact us'
+              ].map((item) => (
+                <li key={item}>
+                  <a
+                    href="#"
+                    className="hover:text-red-500 transition-colors duration-300 flex items-center group"
+                  >
+                    <span className="mr-2 text-red-500 transform group-hover:translate-x-1 transition-transform">›</span>
+                    {item}
                   </a>
-                  <a href="https://www.instagram.com/akatsuki_codingclub/" className="bg-pink-500 text-white p-3 rounded-full hover:bg-pink-400">
-                    <i className="bx bxl-instagram text-2xl"><FaInstagram /></i>
-                  </a>
-                  <a href="https://www.linkedin.com/company/akatsuki-coding-club/" className="bg-blue-900 text-white p-3 rounded-full hover:bg-blue-800">
-                    <i className="bx bxl-linkedin text-2xl"><FaLinkedin /></i>
-                  </a>
-                </div>
-              </div>
-            </div>
+                </li>
+              ))}
+            </ul>
           </div>
-
-          {/* Useful Links */}
-          <div className="w-full lg:w-1/6 mb-8 lg:mb-0 flex justify-center">
-            <div>
-              <h4 className="text-2xl font-semibold mb-8 text-center">Useful Links</h4>
-              <ul>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Home</a></li>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">About us</a></li>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Services</a></li>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Terms of service</a></li>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Privacy policy</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Our Services */}
-          <div className="w-full lg:w-1/6 mb-8 lg:mb-0 flex justify-center">
-            <div>
-              <h4 className="text-2xl font-semibold mb-8 text-center">Our Services</h4>
-              <ul>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Alumni Seminars</a></li>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Web Development</a></li>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Counselling</a></li>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Club Exclusive Events</a></li>
-                <li className="mb-4"><a href="#" className="hover:text-red-500 text-xl">Coding Competitions</a></li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Newsletter */}
-          <div className="w-full lg:w-1/3 flex justify-center">
-            <div>
-              <h4 className="text-2xl font-semibold mb-8 text-center">Get Updated</h4>
-              <p className="mb-8 text-lg text-center">Provide your E-mail address to get frequent updates about events and about the club.</p>
-              <form action="" method="post" className="flex flex-col lg:flex-row items-center">
-                <input
-                  type="email"
-                  name="email"
-                  className="p-4 border border-gray-300 rounded-lg w-full lg:w-auto lg:mr-2 text-lg"
-                  placeholder="Enter your email"
-                />
-                <input
-                  type="submit"
-                  value="Subscribe"
-                  className="bg-red-600 text-white p-4 rounded-lg cursor-pointer hover:bg-red-700 text-lg mt-2 lg:mt-0"
-                />
-              </form>
-            </div>
-          </div>
-
         </div>
-      </div>
-      <div className="container mx-auto px-4 mt-12 text-center">
-        <p className="text-lg text-light-gray">
-          Developed by <a href="https://www.instagram.com/akatsuki_codingclub/" className="text-white hover:text-red-500">Akatsuki Development Team</a>
-        </p>
+
+        <div className="border-t border-gray-800/50 mt-12 pt-8">
+          <div className="text-center space-y-4">
+            <p className="text-gray-400">
+              © {new Date().getFullYear()} Akatsuki Coding Club. All rights reserved.
+            </p>
+            <p className="text-gray-500">
+              Developed with{" "}
+              <span className="text-red-500 animate-pulse">❤️</span>{" "}by{" "}
+              <a
+                href="https://www.instagram.com/akatsuki_codingclub/"
+                className="text-red-500 hover:text-red-400 font-medium transition-colors"
+              >
+                Akatsuki Development Team
+              </a>
+            </p>
+          </div>
+        </div>
       </div>
     </footer>
   );

@@ -1,63 +1,64 @@
 import { useState, useRef, useEffect } from 'react';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ChevronLeft, ChevronRight, XCircle } from 'lucide-react';
-import { Button } from "@/components/ui/button";
+import { motion, AnimatePresence } from 'framer-motion';
+import { ChevronLeft, ChevronRight, XCircle, Image as ImageIcon } from 'lucide-react';
 import { eventImages } from '../Data/eventImages ';
 
 export default function GallerySection() {
-  const [currentPage, setCurrentPage] = useState(1);
   const [activeEvent, setActiveEvent] = useState(eventImages[0].name);
   const [activeIndex, setActiveIndex] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState<number | null>(null);
   const tabsRef = useRef<HTMLDivElement>(null);
-  const [showLeftArrow, setShowLeftArrow] = useState(false);
-  const [showRightArrow, setShowRightArrow] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(false);
   const photosPerPage = 6;
 
   useEffect(() => {
-    updateArrowVisibility();
-  }, [activeIndex]);
+    const checkScroll = () => {
+      if (tabsRef.current) {
+        const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current;
+        setCanScrollLeft(scrollLeft > 0);
+        setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+      }
+    };
 
-  const updateArrowVisibility = () => {
-    setShowLeftArrow(activeIndex > 0);
-    setShowRightArrow(activeIndex < eventImages.length - 1);
-  };
+    checkScroll();
+    window.addEventListener('resize', checkScroll);
+    return () => window.removeEventListener('resize', checkScroll);
+  }, []);
 
   const scrollTabs = (direction: 'left' | 'right') => {
-    const tabsElement = tabsRef.current;
-    if (tabsElement) {
-      let newIndex;
-  
-      if (direction === 'left') {
-        newIndex = activeIndex === 0 ? eventImages.length - 1 : activeIndex - 1;
-      } else {
-        newIndex = activeIndex === eventImages.length - 1 ? 0 : activeIndex + 1;
-      }
-  
-      setActiveIndex(newIndex);
-      setActiveEvent(eventImages[newIndex].name);
-      setCurrentPage(1);
-  
-      const tabElement = tabsElement.children[newIndex] as HTMLElement;
-      tabElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center',
+    if (tabsRef.current) {
+      const scrollAmount = 200;
+      const newScrollLeft = tabsRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      tabsRef.current.scrollTo({
+        left: newScrollLeft,
+        behavior: 'smooth'
       });
+
+      setTimeout(() => {
+        if (tabsRef.current) {
+          const { scrollLeft, scrollWidth, clientWidth } = tabsRef.current;
+          setCanScrollLeft(scrollLeft > 0);
+          setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 1);
+        }
+      }, 300);
     }
   };
-  
+
   const openModal = (photo: string, index: number) => {
     setSelectedImage(photo);
     setCurrentImageIndex(index);
     setShowModal(true);
+    document.body.style.overflow = 'hidden';
   };
 
   const closeModal = () => {
     setShowModal(false);
     setSelectedImage(null);
+    document.body.style.overflow = 'unset';
   };
 
   const nextImage = () => {
@@ -76,142 +77,236 @@ export default function GallerySection() {
     }
   };
 
+  const handleKeyPress = (e: KeyboardEvent) => {
+    if (showModal) {
+      if (e.key === 'ArrowRight') nextImage();
+      if (e.key === 'ArrowLeft') prevImage();
+      if (e.key === 'Escape') closeModal();
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+    return () => window.removeEventListener('keydown', handleKeyPress);
+  }, [showModal, currentImageIndex]);
+
   const renderPhotos = (photos: string[]) => {
     const indexOfLastPhoto = currentPage * photosPerPage;
     const indexOfFirstPhoto = indexOfLastPhoto - photosPerPage;
     const currentPhotos = photos.slice(indexOfFirstPhoto, indexOfLastPhoto);
 
     return (
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <motion.div 
+        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        transition={{ duration: 0.3 }}
+      >
         {currentPhotos.map((photo, index) => (
-          <div key={index} className="relative aspect-w-4 aspect-h-3">
+          <motion.div
+            key={index}
+            className="group relative aspect-[4/3] overflow-hidden rounded-xl bg-gray-100 cursor-pointer"
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.2 }}
+            onClick={() => openModal(photo, index + indexOfFirstPhoto)}
+          >
             <img
               src={photo}
               alt={`Event photo ${index + 1}`}
-              className="rounded-lg cursor-pointer w-full h-full object-cover"
-              onClick={() => openModal(photo, index)}
+              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
-          </div>
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <ImageIcon className="w-8 h-8 text-white" />
+            </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     );
   };
 
   const renderPagination = (totalPhotos: number) => {
-    const pageNumbers = Array.from({ length: Math.ceil(totalPhotos / photosPerPage) }, (_, i) => i + 1);
+    const pageCount = Math.ceil(totalPhotos / photosPerPage);
+    if (pageCount <= 1) return null;
 
     return (
-      <div className="flex justify-center mt-4 space-x-2">
-        {pageNumbers.map(number => (
-          <button
-            key={number}
-            onClick={() => setCurrentPage(number)}
-            className={`px-3 py-1 rounded ${currentPage === number ? 'bg-primary text-primary-foreground' : 'bg-secondary text-secondary-foreground'}`}
-          >
-            {number}
-          </button>
-        ))}
+      <div className="flex justify-center items-center gap-2 mt-8">
+        <button
+          onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+          disabled={currentPage === 1}
+          className="p-2 rounded-lg bg-red-500 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-red-600 transition-colors"
+        >
+          <ChevronLeft className="w-5 h-5" />
+        </button>
+        
+        <div className="flex gap-2">
+          {Array.from({ length: pageCount }, (_, i) => i + 1).map(number => (
+            <button
+              key={number}
+              onClick={() => setCurrentPage(number)}
+              className={`w-10 h-10 rounded-lg transition-colors ${
+                currentPage === number 
+                  ? 'bg-red-500 text-white' 
+                  : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+              }`}
+            >
+              {number}
+            </button>
+          ))}
+        </div>
+
+        <button
+          onClick={() => setCurrentPage(prev => Math.min(prev + 1, pageCount))}
+          disabled={currentPage === pageCount}
+          className="p-2 rounded-lg bg-red-500 text-white disabled:opacity-50 disabled:cursor-not-allowed hover:bg-red-600 transition-colors"
+        >
+          <ChevronRight className="w-5 h-5" />
+        </button>
       </div>
     );
   };
 
   return (
-    <section className="container mx-auto px-4 py-12">
-      <div className="text-center mb-12">
-        <h2 className="max-w-7xl mx-auto text-xl md:text-5xl font-bold text-black font-sans">
-          Our <span className="text-red-500">Events</span> & <span className="text-red-500">Workshops</span>
-        </h2>
-        <p className="text-lg text-gray-600 mt-4">"Some of Our Works Dedicated To Club"</p>
-      </div>
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl md:text-5xl font-bold">
+            Our <span className="text-red-500">Gallery</span>
+          </h2>
+          <p className="text-lg text-gray-600 mt-4">Capturing moments of learning, growth, and achievement</p>
+        </motion.div>
 
-      <img className='mx-auto h-56 -mb-11 z-50' src="/yahiko-bg.webp" alt="" />
-     
-      <Tabs value={activeEvent} onValueChange={setActiveEvent} className="w-full -z-50">
-        <div className="flex justify-center items-center mb-20">
-          <Button
-            variant="outline"
-            size="icon"
-            className="mx-2 bg-red-500 text-white hover:bg-red-600 hover:text-white h-14"
-            onClick={() => scrollTabs('left')}
-            disabled={!showLeftArrow}
-          >
-            <ChevronLeft className="h-6 w-6" />
-          </Button>
-          <div className="overflow-hidden flex justify-center -z-50">
-            <TabsList ref={tabsRef} className="flex justify-start overflow-x-hidden scroll-smooth pl-4 no-scrollbar no-scrollbar h-14 w-[700px] bg-black text-white px-3">
-              {eventImages.map((event, index) => (
-                <TabsTrigger
-                  key={event.name}
-                  value={event.name}
-                  className={`px-4 py-2 whitespace-nowrap transition-colors duration-300 rounded-3xl hover:text-red-500 ${activeIndex === index ? 'bg-light-black text-red-500' : 'text-white'}`}
-                  onClick={() => {
-                    setActiveIndex(index);
-                    setCurrentPage(1);
+        <div className="mb-12">
+          <div className="relative max-w-4xl mx-auto">
+            <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
+              <button
+                onClick={() => scrollTabs('left')}
+                className={`p-2 rounded-full bg-red-500 text-white transform transition-opacity duration-200 ${
+                  canScrollLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                } hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2`}
+              >
+                <ChevronLeft className="w-5 h-5" />
+              </button>
+            </div>
 
-                    // Scroll the clicked tab into view and center it
-                    const tabElement = tabsRef.current?.children[index] as HTMLElement;
-                    tabElement?.scrollIntoView({
-                      behavior: 'smooth',
-                      block: 'nearest',
-                      inline: 'center',
-                    });
-                  }}
+            <div className="relative overflow-hidden mx-12">
+              <div
+                ref={tabsRef}
+                className="flex gap-2 overflow-x-auto scrollbar-hide scroll-smooth py-2"
+                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+              >
+                {eventImages.map((event, index) => (
+                  <button
+                    key={event.name}
+                    onClick={() => {
+                      setActiveEvent(event.name);
+                      setActiveIndex(index);
+                      setCurrentPage(1);
+                    }}
+                    className={`px-6 py-3 rounded-full whitespace-nowrap transition-all duration-300 flex-shrink-0 ${
+                      activeEvent === event.name
+                        ? 'bg-red-500 text-white shadow-lg transform scale-105'
+                        : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
+                    }`}
+                  >
+                    {event.name}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
+              <button
+                onClick={() => scrollTabs('right')}
+                className={`p-2 rounded-full bg-red-500 text-white transform transition-opacity duration-200 ${
+                  canScrollRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                } hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2`}
+              >
+                <ChevronRight className="w-5 h-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <AnimatePresence mode="wait">
+          {eventImages.map((event) => (
+            event.name === activeEvent && (
+              <motion.div
+                key={event.name}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+              >
+                {renderPhotos(event.photos)}
+                {renderPagination(event.photos.length)}
+              </motion.div>
+            )
+          ))}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {showModal && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 bg-black/95 backdrop-blur-sm flex items-center justify-center p-4"
+              onClick={closeModal}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="relative max-w-7xl w-full mx-auto"
+                onClick={e => e.stopPropagation()}
+              >
+                <img 
+                  src={selectedImage!} 
+                  alt="Zoomed Image" 
+                  className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
+                />
+                
+                <button 
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
                 >
-                  {event.name}
-                </TabsTrigger>
+                  <XCircle className="w-8 h-8" />
+                </button>
 
-              ))}
-            </TabsList>
-          </div>
-          <Button
-            variant="outline"
-            size="icon"
-            className="mx-2 bg-red-500 text-white hover:bg-red-600 hover:text-white h-14"
-            onClick={() => scrollTabs('right')}
-            disabled={!showRightArrow}
-          >
-            <ChevronRight className="h-6 w-6" />
-          </Button>
-        </div>
+                {currentImageIndex !== null && currentImageIndex > 0 && (
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                )}
 
-        {eventImages.map((event) => (
-          <TabsContent key={event.name} value={event.name}>
-            {renderPhotos(event.photos)}
-            {renderPagination(event.photos.length)}
-          </TabsContent>
-        ))}
-      </Tabs>
+                {currentImageIndex !== null && currentImageIndex < eventImages[activeIndex].photos.length - 1 && (
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                )}
 
-      {showModal && (
-        <div className="fixed inset-0 z-50 bg-black bg-opacity-75 flex items-center justify-center">
-          <div className="relative max-w-6xl w-full mx-auto p-4">
-            <img src={selectedImage!} alt="Zoomed Image" className="object-contain max-h-[95vh] mx-auto rounded-lg" />
-            <button onClick={closeModal} className="absolute top-4 right-4 text-white">
-              <XCircle className="h-8 w-8" />
-            </button>
-
-            {currentImageIndex !== null && currentImageIndex > 0 && (
-              <Button
-                onClick={prevImage}
-                className="absolute left-4 top-1/2 -translate-y-1/2 bg-white/50 text-black"
-                style={{ transform: 'translate(-50%, -50%)' }}
-              >
-                <ChevronLeft className="h-6 w-6" />
-              </Button>
-            )}
-
-            {currentImageIndex !== null && currentImageIndex < eventImages[activeIndex].photos.length - 1 && (
-              <Button
-                onClick={nextImage}
-                className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/50 text-black"
-                style={{ transform: 'translate(50%, -50%)' }}
-              >
-                <ChevronRight className="h-6 w-6" />
-              </Button>
-            )}
-          </div>
-        </div>
-      )}
+                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80">
+                  {currentImageIndex !== null && (
+                    <span>{currentImageIndex + 1} / {eventImages[activeIndex].photos.length}</span>
+                  )}
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </div>
     </section>
   );
 }

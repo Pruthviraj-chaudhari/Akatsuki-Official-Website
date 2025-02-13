@@ -13,7 +13,7 @@ const About: React.FC = () => {
         <div className=" flex flex-col items-center justify-center">
           <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
             About <span className="text-red-500">Us</span>
-          </h2>
+          </h2> 
         </div>
         <div className="flex items-center gap-4 justify-center py-10">
           <a href="/">

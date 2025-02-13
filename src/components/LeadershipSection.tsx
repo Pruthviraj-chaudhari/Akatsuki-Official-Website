@@ -17,18 +17,17 @@ const LeadershipSection: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
             Meet the  
-            <span className="text-red-500">{" "}President{" "}</span> 
-            and 
-            <span className="text-red-500">{" "}Vice President</span>
+            <span className="text-red-500">{" "}Leads{" "}</span> 
+
           </h2>
-          <p className="text-lg text-gray-600 mt-4">Leadership unveiled</p>
+          <p className="text-lg text-gray-600 mt-4 italic">Leadership unveiled</p>
         </div>
         <div className="flex flex-wrap justify-center gap-6">
           {
           leaders.map((leader: Leader, index: number) => (
             <div
               key={index}
-              className="w-full max-w-md p-8 rounded-lg shadow-md  transition duration-300 transform hover:scale-105 flex flex-col items-center text-center border-2 border-gray-200 hover:border-transparent hover:shadow-[0_0_15px_rgba(255,255,255,0.6)]"
+              className="w-full max-w-md p-8 rounded-lg shadow-md  transition duration-300 transform flex flex-col items-center text-center border-2 border-gray-200 "
               style={{
                 backgroundImage: 'url("./abstract-red-light-lines-pipe-speed-zoom-black-background-technology_1142-8936_upscaled.png")', // Add your image path here
                 backgroundSize: 'cover',
@@ -39,7 +38,7 @@ const LeadershipSection: React.FC = () => {
                 <img
                   src={leader.image}
                   alt={`${leader.name} profile`}
-                  className="w-48 h-48 object-cover rounded-full border-2 border-gray-300 transition duration-300 ease-in-out hover:border-transparent hover:shadow-[0_0_15px_rgba(255,255,255,0.8)]"
+                  className="w-48 h-48 object-cover rounded-full border-2 border-gray-300 transition duration-300 ease-in-out"
                 />
               </div>
               <div className="text-center">

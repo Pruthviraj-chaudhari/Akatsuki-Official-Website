@@ -11,19 +11,10 @@ interface TeamMember {
 const team: TeamMember[] = [
     {
         name: "Hitesh Wadile",
-        role: "MERN Stack Developer",
+        role: "Software Developer",
         image: '../images/members/hitesh.jpg',
         linkedin: "https://www.linkedin.com/in/hitesh-wadile-7005b4221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
         github: "https://github.com/hitesh-wadile"
-    },
-    
-
-    {
-        name: "Abhishek Pawar",
-        role: "MERN Stack Developer",
-        image: '../images/members/abhi.jpg',
-        linkedin: "https://www.linkedin.com/in/abhishek-pawar-837064241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
-        github: "https://github.com/Abhishekpawar259"
     },
     {
         name: "Saurav Patil",
@@ -34,21 +25,21 @@ const team: TeamMember[] = [
     },
     {
         name: 'Tanmay Mahale',
-        role: 'MERN Stack Developer',
+        role: 'Super Coder',
         image: '../images/members/tanmay.jpg',
         linkedin: 'https://www.linkedin.com/in/tanmay22/',
         github: 'https://github.com/tnem22'
     },
     {
         name: 'Paresh Bhamare',
-        role: 'MERN Stack Developer',
+        role: 'Software Developer',
         image: '../images/members/paresh.jpg',
         linkedin: 'https://www.linkedin.com/in/paresh-bhamare-a312b0167/',
         github: 'https://github.com/Paresh-95'
     },
     {
         name: 'Vedant Deshmukh',
-        role: 'Team Management',
+        role: 'Management Lead',
         image: '../images/members/vedant.jpg',
         linkedin: 'https://www.linkedin.com/in/vedant-deshmukh-b793a7244',
         github: 'https://github.com/vedantdeshmukh24'
@@ -61,15 +52,22 @@ const team: TeamMember[] = [
         github: 'https://github.com/tejpatil064'
     },
     {
+        name: 'Harsh Jain',
+        role: 'Software Developer',
+        image: '../images/members/harsh.jpg',
+        linkedin: 'https://www.linkedin.com/in/harsh-d-jain',
+        github: 'https://github.com/Harsh76200'
+    },
+    {
         name: 'Jayesh Sonavane',
-        role: 'MERN Stack Developer',
+        role: 'Software Developer',
         image: '../images/members/jayesh.jpg',
         linkedin: 'https://www.linkedin.com/in/jayeshsonawanercpit/',
         github: 'https://github.com/jayeshsonavane2025'
     },
     {
         name: 'Vivek Patil',
-        role: 'MERN Stack Developer',
+        role: 'Software Developer',
         image: '../images/members/vivek.jpg',
         linkedin: 'https://www.linkedin.com/in/vivek-patil-76a563260/',
         github: 'https://github.com/vivekPatil45'
@@ -87,6 +85,20 @@ const team: TeamMember[] = [
         image: '../images/members/punam.jpg',
         linkedin: 'https://www.linkedin.com/in/punam-deore-4a413b256',
         github: 'https://github.com/punam2003'
+    },
+    {
+        name: 'Sandip Kankhare',
+        role: 'Android Developer',
+        image: '../images/members/sandip.jpg',
+        linkedin: '',
+        github: 'https://github.com/sandip142'
+    },
+    {
+        name: "Abhishek Pawar",
+        role: "Software Developer",
+        image: '../images/members/abhi.jpg',
+        linkedin: "https://www.linkedin.com/in/abhishek-pawar-837064241?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+        github: "https://github.com/Abhishekpawar259"
     },
     {
         name: 'Yugandhar Borase',
@@ -122,21 +134,6 @@ const team: TeamMember[] = [
         image: '../images/members/gautam.jpg',
         linkedin: 'https://www.linkedin.com/in/gautampatil5',
         github: 'https://github.com/GautamPatil05'
-    },
-
-    {
-        name: 'Sandip Kankhare',
-        role: 'Android Developer',
-        image: '../images/members/sandip.jpg',
-        linkedin: '',
-        github: 'https://github.com/sandip142'
-    },
-    {
-        name: 'Harsh Jain',
-        role: 'MERN Stack Developer',
-        image: '../images/members/harsh.jpg',
-        linkedin: 'https://www.linkedin.com/in/harsh-d-jain',
-        github: 'https://github.com/Harsh76200'
     },
     {
         name: 'Chaitali Patil',

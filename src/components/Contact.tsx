@@ -1,8 +1,6 @@
-
 import React, { useState } from "react";
-import { MdEmail } from "react-icons/md";
-import { IoCall } from "react-icons/io5";
-import { FaInstagram } from "react-icons/fa"; 
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+
 interface FormData {
   name: string;
   email: string;
@@ -64,67 +62,79 @@ const Contact: React.FC = () => {
     }
   };
 
+  const contactCards = [
+    {
+      icon: <MapPin className="w-8 h-8" />,
+      title: "Our Address",
+      content: "R. C. Patel Institute of Technology, Near Nimzari Naka, Shahada Road, Shirpur, Maharashtra - 425405",
+      link: null,
+    },
+    {
+      icon: <Mail className="w-8 h-8" />,
+      title: "Email Us",
+      content: "akatsuki@rcpit.ac.in",
+      link: "mailto:akatsuki@rcpit.ac.in",
+    },
+    {
+      icon: <Phone className="w-8 h-8" />,
+      title: "Call Us",
+      content: "+91 8080511069",
+      link: "tel:+918080511069",
+    },
+    {
+      icon: <Instagram className="w-8 h-8" />,
+      title: "Follow Us",
+      content: "@akatsuki_codingclub",
+      link: "https://instagram.com/akatsuki_codingclub",
+    },
+  ];
+
   return (
-    <section id="contact" className="bg-gray-100 py-12">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
-            Get in touch with <span className="text-red-500">Akatsuki</span>
+    <section id="contact" className="py-16 bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
+            Get in touch with <span className="text-red-600">Akatsuki</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4">
-            "Contact us for any queries, help or guidance from expert, we always ready for you!"
+          <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
+            Contact us for any queries, help or guidance from experts. We're always ready to assist you!
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
-          <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-              <i className="bx bx-map text-4xl text-red-600 mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2">Our Address</h3>
-              <p className="text-gray-600">
-                Shirpur Education Society's R. C. Patel Institute of Technology,
-                Shirpur
-                <br />
-                Near Nimzari Naka, Shahada Road, Shirpur Dist. Dhule (M.S.)
-                Maharashtra, India - 425405
-              </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {contactCards.map((card, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden"
+            >
+              <div className="p-6">
+                {card.link ? (
+                  <a
+                    href={card.link}
+                    className="flex flex-col items-center text-center space-y-4 hover:text-red-600 transition-colors"
+                  >
+                    <div className="text-red-600 transform group-hover:scale-110 transition-transform duration-300">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold">{card.title}</h3>
+                    <p className="text-gray-600">{card.content}</p>
+                  </a>
+                ) : (
+                  <div className="flex flex-col items-center text-center space-y-4">
+                    <div className="text-red-600 transform group-hover:scale-110 transition-transform duration-300">
+                      {card.icon}
+                    </div>
+                    <h3 className="text-xl font-semibold">{card.title}</h3>
+                    <p className="text-gray-600">{card.content}</p>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-
-          <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-              <a href="mailto:akatsuki.rcpit@gmail.com" className="text-red-600">
-                <i className="bx bx-envelope text-4xl mb-4"></i>
-                <h3 className="text-xl font-semibold mb-2 "><span className="w-full flex justify-center"><MdEmail  size={35} /></span>Email Us</h3>
-                <p className="text-gray-600">akatsuki@rcpit.ac.in</p>
-              </a>
-            </div>
-          </div>
-
-          <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-              <i className="bx bx-phone-call text-4xl text-red-600 mb-4"></i>
-              <h3 className="text-xl font-semibold mb-2"><span className="w-full flex justify-center"><IoCall   size={35} /></span>Call Us</h3>
-              <p className="text-gray-600">+91 8080511069</p>
-            </div>
-          </div>
-
-          <div className="lg:col-span-1">
-            <div className="bg-white p-6 rounded-lg shadow-lg text-center">
-              <a
-                href="https://instagram.com/akatsuki_codingclub?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D"
-                className="text-red-600"
-              >
-                <i className="iconify text-4xl mb-4" data-icon="mdi:instagram"></i>
-                <h3 className="text-xl font-semibold mb-2"><span className="w-full flex justify-center"><FaInstagram    size={35} /></span>Follow Us</h3>
-                <p className="text-gray-600">@akatsuki_codingclub</p>
-              </a>
-            </div>
-          </div>
+          ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-          <div className="lg:col-span-1">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="rounded-xl overflow-hidden shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3715.7130973147446!2d74.87659731488918!3d21.36180898581892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bdf3203969b41c7%3A0xb4050432d04ef5b8!2sR.%20C.%20Patel%20Institute%20of%20Technology!5e0!3m2!1sen!2sin!4v1641411494541!5m2!1sen!2sin"
               width="100%"
@@ -135,71 +145,75 @@ const Contact: React.FC = () => {
             ></iframe>
           </div>
 
-          <div className="lg:col-span-1">
-            <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-lg">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                <div className="form-group">
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <h3 className="text-2xl font-semibold mb-6 text-center">Send us a Message</h3>
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
                   <input
                     type="text"
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="form-control w-full p-3 border border-gray-300 rounded"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
                     placeholder="Your Name"
                     required
                   />
                 </div>
-                <div className="form-group">
+                <div>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="form-control w-full p-3 border border-gray-300 rounded"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
                     placeholder="Your Email"
                     required
                   />
                 </div>
               </div>
-              <div className="form-group mb-4">
+              <div>
                 <input
                   type="text"
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  className="form-control w-full p-3 border border-gray-300 rounded"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300"
                   placeholder="Subject"
                   required
                 />
               </div>
-              <div className="form-group mb-4">
+              <div>
                 <textarea
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
                   rows={5}
-                  className="form-control w-full p-3 border border-gray-300 rounded"
-                  placeholder="Message"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-red-500 focus:border-transparent transition-all duration-300 resize-none"
+                  placeholder="Your Message"
                   required
                 ></textarea>
               </div>
               {formStatus.loading && (
-                <div className="text-center text-gray-600">Loading...</div>
+                <div className="text-center text-gray-600">
+                  <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-red-600 mx-auto"></div>
+                </div>
               )}
               {formStatus.error && (
-                <div className="bg-red-600 text-white p-3 mb-4 rounded">
+                <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
                   {formStatus.error}
                 </div>
               )}
               {formStatus.success && (
-                <div className="bg-green-600 text-white p-3 mb-4 rounded">
+                <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative">
                   {formStatus.success}
                 </div>
               )}
               <div className="text-center">
                 <button
                   type="submit"
-                  className="bg-red-600 text-white py-2 px-6 rounded hover:bg-red-700 transition duration-300"
+                  disabled={formStatus.loading}
+                  className="bg-red-600 text-white px-8 py-3 rounded-lg hover:bg-red-700 transform hover:-translate-y-1 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Send Message
                 </button>

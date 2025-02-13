@@ -27,9 +27,9 @@ const Team: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
-            Meet our <span className="text-red-500">New Team</span>
+            Meet our <span className="text-red-500">Amazing Team</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4">"Excellent team"</p>
+          <p className="text-lg text-gray-600 mt-4 italic">Excellent team</p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
           {team.slice(0, visibleCount).map((member: TeamMember, index: number) => (

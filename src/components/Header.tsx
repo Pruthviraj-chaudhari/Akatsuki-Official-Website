@@ -36,16 +36,16 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex">
           <ul className="flex space-x-8">
             <li>
-              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="#hero">Home</a>
+              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="/#hero">Home</a>
             </li>
             <li>
-              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="#about">About Us</a>
+              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="/#about">About Us</a>
             </li>
             <li>
-              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="#services">Mission & Vision</a>
+              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="/#services">Mission & Vision</a>
             </li>
             <li className="relative">
-              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="#">
+              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="/events">
                 Events <i className="bi bi-chevron-down"></i>
               </a>
               <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg opacity-0 invisible transition-opacity duration-300 ease-in-out group-hover:opacity-100 group-hover:visible">
@@ -54,10 +54,10 @@ const Header: React.FC = () => {
               </ul>
             </li>
             <li>
-              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="#portfolio">Gallery</a>
+              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="/#portfolio">Gallery</a>
             </li>
             <li>
-              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="#contact">Contact Us</a>
+              <a className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300" href="/#contact">Contact Us</a>
             </li>
           </ul>
         </nav>

@@ -1,18 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import {
-  NavigationMenu,
-  NavigationMenuItem,
-  NavigationMenuList,
-} from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { buttonVariants } from "./ui/button";
 import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -27,11 +14,11 @@ const routeList: RouteProps[] = [
     label: "Home",
   },
   {
-    href: "#about",
+    href: "/#about",
     label: "About Us",
   },
   {
-    href: "#team",
+    href: "/#team",
     label: "Team",
   },
   {
@@ -39,7 +26,7 @@ const routeList: RouteProps[] = [
     label: "Events",
   },
   {
-    href: "#contact",
+    href: "/#contact",
     label: "Contact Us",
   },
 ];
@@ -66,88 +53,67 @@ export const Navbar = ({ className }: { className?: string }) => {
 
   return (
     <header
-      className={cn(`sticky top-0 z-50 w-full transition-all duration-500 ease-in-out text-white ${scrolled ? "bg-black/70" : "bg-none"
+    className={cn(`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${scrolled
+          ? "bg-black/70 backdrop-blur-sm"
+          : "bg-transparent"
         }`, className)}
     >
-      <NavigationMenu className="mx-auto">
-        <NavigationMenuList className="container h-16 px-4 w-screen flex justify-between">
-          <NavigationMenuItem className="font-bold flex">
-            <Link to="/" className="flex items-center">
-              <img
-                src="../images/akatsukilogo.png"
-                alt="Akatsuki Logo"
-                className="mr-2"
-                style={{ maxHeight: "40px" }}
-              />
-              <span className="text-white text-3xl font-bold">Akatsuki</span>
-            </Link>
-          </NavigationMenuItem>
+      <div className="container mx-auto">
+        <div className="h-16 px-4 flex items-center justify-between">
+          <Link to="/" className="flex items-center">
+            <img
+              src="../images/akatsukilogo.png"
+              alt="Akatsuki Logo"
+              className="mr-4 max-h-8"
+            />
+            <span className="text-white text-3xl font-bold">Akatsuki</span>
+          </Link>
 
-          {/* mobile */}
-          <span className="flex lg:hidden">
-            <Sheet open={isOpen} onOpenChange={setIsOpen}>
-              <SheetTrigger className="px-2">
-                <Menu
-                  className="flex lg:hidden h-5 w-5"
-                  onClick={() => setIsOpen(true)}
-                >
-                  <span className="sr-only">Menu Icon</span>
-                </Menu>
-              </SheetTrigger>
+          {/* Mobile Menu */}
+          <div className="lg:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+            >
+              <Menu className="h-6 w-6" />
+            </button>
+          </div>
 
-              <SheetContent side={"left"}>
-                <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
-                    <a
-                      rel="noreferrer noopener"
-                      href="/"
-                      className="font-bold text-xl flex justify-center"
-                    >
-                      <img
-                        src="./logo2.jpg"
-                        alt="Artha Commodities"
-                        className="h-14"
-                      />
-                    </a>
-                  </SheetTitle>
-                </SheetHeader>
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
-                  {routeList.map(({ href, label }: RouteProps) => (
-                    <a
-                      rel="noreferrer noopener"
-                      key={label}
-                      href={href}
-                      onClick={() => setIsOpen(false)}
-                      className={buttonVariants({ variant: "ghost" })}
-                    >
-                      {label}
-                    </a>
-                  ))}
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </span>
+          {/* Mobile Menu Content */}
+          <div
+            className={`lg:hidden fixed inset-y-0 right-0 transform ${isOpen ? "translate-x-0" : "translate-x-full"
+              } w-64 bg-black/95 backdrop-blur-lg transition-transform duration-300 ease-in-out z-50`}
+          >
+            <div className="p-6">
+              <nav className="space-y-4">
+                {routeList.map((route) => (
+                  <a
+                    key={route.label}
+                    href={route.href}
+                    className="block text-white hover:text-red-500 transition-colors py-2"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {route.label}
+                  </a>
+                ))}
+              </nav>
+            </div>
+          </div>
 
-          {/* desktop */}
-          <nav className="hidden lg:flex gap-2">
-            {routeList.map((route: RouteProps, i) => (
+          {/* Desktop Menu */}
+          <nav className="hidden lg:flex items-center space-x-1">
+            {routeList.map((route) => (
               <a
-                rel="noreferrer noopener"
+                key={route.label}
                 href={route.href}
-                key={i}
-                className={`text-[17px] hover:text-red-500 hover:bg-red-500/10 ${buttonVariants(
-                  {
-                    variant: "ghost",
-                  }
-                )}`}
+                className="text-white px-4 py-2 rounded-lg text-[17px] hover:text-red-500 hover:bg-white/10 transition-colors"
               >
                 {route.label}
               </a>
             ))}
           </nav>
-        </NavigationMenuList>
-      </NavigationMenu>
+        </div>
+      </div>
     </header>
   );
 };
-

@@ -17,7 +17,7 @@ const Mission: React.FC = () => {
           <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
             Vision & <span className="text-red-500">Mission</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4">"Of the Students For the Student and By the Students"</p>
+          <p className="text-lg text-gray-600 mt-4 italic">"Of the Students For the Student and By the Students"</p>
         </div>
 
         <div className="flex flex-wrap -mx-4">

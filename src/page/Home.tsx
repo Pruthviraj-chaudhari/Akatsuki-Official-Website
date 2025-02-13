@@ -3,7 +3,7 @@ import Team from '../components/Team';
 import Contact from '../components/Contact';
 import Mission from '../components/Mission';
 import Hero from '../components/Hero';
-import About from '../components/About';
+// import About from '../components/About';
 import Footer from '../components/Footer';
 import LeadershipSection from '../components/LeadershipSection';
 import GallerySection from '@/components/Gallery';
@@ -18,7 +18,7 @@ const Home = () => {
     <div className=' bg-transparent'>
       <Navbar />
       <Hero />
-      <About />
+      {/* <About /> */}
       <div className='content'>
         <Mission />
         <HeroScrollDemo />
