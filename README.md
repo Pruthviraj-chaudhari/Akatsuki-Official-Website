@@ -22,16 +22,15 @@ With support from faculty and juniors, the club helps students enhance their tec
 ✅ Coding Challenges & Blogs  
 ✅ Open Source Contribution Friendly  
 
-## 📸 Screenshots
-Coming soon... 🚧
+
 
 ## 👨‍💻 Developed By
 This website is built and maintained by **Akatsuki's Technical Team**.
 
-## 🏆 Contributors
+<!-- ## 🏆 Contributors
 
 <!-- Dynamic Contributors Section -->
-[![Contributors](https://contrib.rocks/image?repo=Pruthviraj-chaudhari/Akatsuki-Official-Website)](https://github.com/Pruthviraj-chaudhari/Akatsuki-Official-Website/graphs/contributors)
+<!-- [![Contributors](https://contrib.rocks/image?repo=Pruthviraj-chaudhari/Akatsuki-Official-Website)](https://github.com/Pruthviraj-chaudhari/Akatsuki-Official-Website/graphs/contributors) --> -->
 
 ## 🎯 Contributing
 We welcome contributions! If you want to contribute:
