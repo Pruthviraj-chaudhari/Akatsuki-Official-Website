@@ -1,5 +1,77 @@
 export const eventImages = [
   {
+    name:"React Cohort",
+
+    photos:[
+      "../images/ReactCohort/image10.jpg",
+      "../images/ReactCohort/image9.jpg",
+      "../images/ReactCohort/image3.jpg",
+      "../images/ReactCohort/image1.jpg",
+      "../images/ReactCohort/image4.jpg",
+      "../images/ReactCohort/image5.jpg",
+      "../images/ReactCohort/image16.jpg",
+      "../images/ReactCohort/image6.jpg",
+      "../images/ReactCohort/image14.jpg",
+      "../images/ReactCohort/image13.jpg",
+      "../images/ReactCohort/image15.jpg",
+      "../images/ReactCohort/image12.jpg",
+      "../images/ReactCohort/image2.jpg",
+      "../images/ReactCohort/image11.jpg",
+      "../images/ReactCohort/image7.jpg",
+    ],
+
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    
+    ]
+  },
+  {
+    name: "The AnimeVerse",
+    photos: [
+      "../images/AnimeVerse/image2.jpg",
+      "../images/AnimeVerse/image3.jpg",
+      "../images/AnimeVerse/image1.jpg",
+      "../images/AnimeVerse/image4.jpg",
+      "../images/AnimeVerse/image5.jpg",
+      "../images/AnimeVerse/image6.jpg",
+      "../images/AnimeVerse/image8.jpg",
+      "../images/AnimeVerse/image9.jpg",
+      "../images/AnimeVerse/image7.jpg",
+    ],
+  },
+  {
+    name: "Nodevember 2.0",
+    photos: [
+      "../images/nodevember2.0/image4.jpg",
+      "../images/nodevember2.0/image2.jpg",
+      "../images/nodevember2.0/image5.jpg",
+      "../images/nodevember2.0/image1.jpg",
+      "../images/nodevember2.0/image3.jpg",
+      "../images/nodevember2.0/image6.jpg",
+    ],
+
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    
+    ]
+  },
+  {
+    name: "Fresher Guidance",
+    photos: [
+      "../images/FresherGuidance/image5.jpg",
+      "../images/FresherGuidance/image6.jpg",
+      "../images/FresherGuidance/image1.jpg",
+      "../images/FresherGuidance/image2.jpg",
+      "../images/FresherGuidance/image3.jpg",
+      "../images/FresherGuidance/image4.jpg",
+    ],
+
+    text:[
+      "Join the Journey: Uniting Minds, Inspiring Change!"
+    
+    ]
+  },
+  {
     name: "Converges 2024",
     photos: [
       "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.52.31 PM.jpeg",
