@@ -39,6 +39,7 @@ export const eventImages = [
       "../images/AnimeVerse/image7.jpg",
     ],
   },
+  //commit
   {
     name: "Nodevember 2.0",
     photos: [
