@@ -19,7 +19,7 @@ const team: TeamMember[] = [
     {
         name: 'Chandrakant Patil',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Chandrakant.jpg',
+        image: '../images/newmembers/chandrakant.jpg',
         linkedin: 'https://www.linkedin.com/in/chandrakant-patil-5b615b28b',
         github: 'https://github.com/chandrakantpatil101'
     },
@@ -33,7 +33,7 @@ const team: TeamMember[] = [
     {
         name: 'Bhavesh Desale',
         role: 'Android Developer',
-        image: '../images/newmembers/BhaveshD.jpeg',
+        image: '../images/newmembers/bhavesh.jpg',
         linkedin: 'https://www.linkedin.com/in/bhavesh-desale-5823b7257',
         github: 'https://github.com/bhaveshdesale/new.git'
     },
@@ -54,182 +54,182 @@ const team: TeamMember[] = [
     {
         name: 'Darshan Varade',
         role: 'MERN Stack Developer',
-        image: '../images/newmembers/Darshan.jpg',
+        image: '../images/newmembers/darshan.jpg',
         linkedin: 'https://www.linkedin.com/in/darshan-varade',
         github: 'https://github.com/DarshanVarade'
     },
     {
         name: 'Pranali Dhangar',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Pranali.jpg',
+        image: '../images/newmembers/pranali.jpg',
         linkedin: 'https://linkedin.com/in/pranali-dhangar',
         github: 'https://github.com/xdpranali'
     },
     {
         name: 'Atharv Wagh',
         role: 'Backend Developer',
-        image: '../images/newmembers/Atharv.jpg',
+        image: '../images/newmembers/atharv.jpg',
         linkedin: 'https://in.linkedin.com/in/atharv-wagh-664505258',
         github: 'https://github.com/waghatharv'
     },
     {
         name: 'Bhavesh Rajput',
         role: 'Full Stack Developer',
-        image: '../images/newmembers/BhaveshR.jpg',
+        image: '../images/newmembers/bhavesrajput.jpg',
         linkedin: 'https://www.linkedin.com/in/bhavesh-rajput-885856257?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/bhavesh11230'
     },
     {
         name: 'Ketankumar Borse ',
         role: 'Backend Developer',
-        image: '../images/newmembers/Ketan.jpg',
+        image: '../images/newmembers/ketan.jpg',
         linkedin: 'https://www.linkedin.com/in/ketankumar-borse/',
         github: 'https://github.com/Ketank205'
     },
     {
         name: 'Ganesh Patil ',
         role: 'Team Management',
-        image: '../images/newmembers/ganeshup.jpg',
+        image: '../images/newmembers/ganesh.jpg',
         linkedin: 'https://www.linkedin.com/in/ganesh-rajput-a22099274?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/GaneshRajput16'
     },
     {
         name: 'Dipti Bhavsar ',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Dipti.jpg',
+        image: '../images/newmembers/dipti.jpg',
         linkedin: 'https://www.linkedin.com/in/dipti-bhavsar-0a3ab4295',
         github: 'https://github.com/Dipti112/'
     },
     {
         name:'Vedshree Dhaybar',
         role:'Frontend Developer',
-        image:'../images/newmembers/vedshreed.jpg',
+        image:'../images/newmembers/vedshree.jpg',
         linkedin:'https://www.linkedin.com/in/vedshree-dhaybar-995403322',
         github:'https://github.com/Vedshree-Dhaybar',
     },
     {
         name: 'Pushkar Deore',
         role: 'Full Stack Developer',
-        image: '../images/newmembers/pushkard.jpg',
+        image: '../images/newmembers/pushkar.jpg',
         linkedin: 'https://www.linkedin.com/in/pushkar-deore-a58506237',
         github: 'www.github.com/dpushkar26'
     },
     {
         name: 'Mahesh Patil',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Mahesh.jpg',
+        image: '../images/newmembers/mahesh.jpg',
         linkedin: 'www.linkedin.com/in/mahesh-patil-20r',
         github: 'https://github.com/patilmahesh12'
     },
     {
         name: 'Gaurav Chaudhari',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Gaurav.jpg',
+        image: '../images/newmembers/gauravchaudhari.jpg',
         linkedin: 'https://www.linkedin.com/in/gaurav-chaudhari-b20176227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/chaudhariGaurav07'
     },
     {
         name: 'Bhupesh Patil',
         role: 'MERN Stack Developer',
-        image: '../images/newmembers/Bhupesh.jpeg',
+        image: '../images/newmembers/bhupesh.jpg',
         linkedin: 'https://www.linkedin.com/in/bhupesh-patil-0799ab293/',
         github: 'https://github.com/BhupeshPatil5130'
     },
     {
         name: 'Yash Chaudhari',
         role: 'Frontend Developer',
-        image: '../images/newmembers/yashc.jpg',
+        image: '../images/newmembers/yashchaudhari.jpg',
         linkedin: 'https://www.linkedin.com/in/yash-chaudhari-a94701242',
         github: 'https://github.com/yashchaudhari11'
     },
     {
         name: 'Jagruti Patil',
         role: 'Frontend Developer',
-        image: '../images/newmembers/JagrutiP.jpg',
+        image: '../images/newmembers/jagrutipatil.jpg',
         linkedin: 'https://www.linkedin.com/in/jagruti-patil-ba3ba12aa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/Jagruti345/'
     },
     {
         name: 'Lokesh Chaudhari',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Lokeshc.jpg',
+        image: '../images/newmembers/lokeshchaudhari.jpg',
         linkedin: 'https://www.linkedin.com/in/lokesh-chaudhari-917778280',
         github: 'https://github.com/Lokesh-Squazzo'
     },
     {
         name: 'Rohan Jadhav',
         role: 'UI/UX Developer',
-        image: '../images/newmembers/Rohan.jpg',
+        image: '../images/newmembers/rohan.jpg',
         linkedin: 'https://www.linkedin.com/in/rohan-jadhav-a39b55286?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/rohannn3215'
     },
     {
         name: 'Jagruti Dhole',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Jagruti.jpg',
+        image: '../images/newmembers/jagrutidhole.jpg',
         linkedin: 'https://www.linkedin.com/in/jagruti-dhole-667159299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/Jagruti-dhole18'
     },
     {
         name: 'Harshit Shinde',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Harshit.jpg',
+        image: '../images/newmembers/harshit.jpg',
         linkedin: 'www.linkedin.com/in/ harshitshinde96',
         github: 'https://github.com/Harshitshinde96'
     },
     {
         name: 'Tanushri Patil',
         role: 'Communication',
-        image: '../images/newmembers/Tanushri.jpg',
+        image: '../images/newmembers/tanushri.jpg',
         linkedin: 'https://www.linkedin.com/in/tanushri-patil-795284274',
         github: 'github.com/Delta-Student27'
     },
     {
         name: 'Hemal Parikh',
         role: 'App Developer',
-        image: '../images/newmembers/Hemal.jpg',
+        image: '../images/newmembers/hemal.jpg',
         linkedin: 'https://www.linkedin.com/in/hemal-parikh-b86331244',
         github: 'https://github.com/hemalparikh/'
     },
     {
         name: 'Khushi Agrawal',
         role: 'Frontend Developer',
-        image: '../images/newmembers/KhushiA.jpg',
+        image: '../images/newmembers/khushi.jpg',
         linkedin: 'https://www.linkedin.com/in/khushi-agrawal-660996290?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/Khushi-Agrawal04'
     },
     {
         name: 'Prajakta Mahajan',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Prajakta.jpg',
+        image: '../images/newmembers/prajakta.jpg',
         linkedin: 'https://www.linkedin.com/in/prajakta-m25/',
         github: 'https://github.com/Prajakta-rcpit'
     },
     {
         name: 'Janhavi Patil',
         role: 'Frontend Developer',
-        image: '../images/newmembers/Janhavip.jpg',
+        image: '../images/newmembers/janvi.jpg',
         linkedin: 'https://www.linkedin.com/in/janhavi-patil-1348a22bb',
         github: 'https://github.com/patilj735'
     },
     {
         name: 'Gaurav Salunkhe',
         role: 'Team Management',
-        image: '../images/newmembers/GauravS.jpg',
+        image: '../images/newmembers/gaurav.jpg',
         linkedin: 'https://www.linkedin.com/in/gaurav-salunke-bab23b294?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
         github: 'https://github.com/salunke-gaurav007'
     },
     {
         name: "Harsha Dahivadkar",
         role:"Department Representative",
-        image:"../images/newmembers/Harsha.jpg",
+        image:"../images/newmembers/harsha.jpg",
         linkedin:"https://www.linkedin.com/in/harsha-dahivadkar-9519442b4",
         github:"https://github.com/harshadahivadkar22"
     },
     {
         name: "Umakant Patil",
         role:"Department Representative",
-        image:"../images/newmembers/umakantp.jpg",
+        image:"../images/newmembers/umakant.jpg",
         linkedin:"https://www.linkedin.com/in/umakant-patil-a41a49289",
         github:""
     }
