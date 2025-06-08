@@ -5,15 +5,15 @@ import React, { useEffect, useRef, useState } from 'react';
 
 const images = [
   {
-    src: './1e05902e-5762-4b46-9acd-b658abdec30f.jpg',
+    src: './assets/background1.jpg',
     alt: 'Akatsuki Image 1',
   },
   {
-    src: './images/tech-hunt/teamAkatsuki6_cmfaas.jpg',
+    src: './assets/background2.jpg',
     alt: 'Akatsuki Image 2',
   },
   {
-    src: './images/tech-hunt/tech-1_ve9ht0.jpg',
+    src: './assets/background3.jpg',
     alt: 'Akatsuki Image 3',
   },
 ];
@@ -144,14 +144,14 @@ const Hero: React.FC = () => {
               <div className="flex  items-center gap-4 justify-center">
                 <a href="/">
                   <img
-                    src="../images/rcpitlogo2.jpg"
+                    src="../assets/rcpitlogo.jpg"
                     alt="About Us Logo"
                     className="max-w-lg max-h-60 h-24 md:h-32"
                   />
                 </a>
                 <a href="/">
                   <img
-                    src="/logo2.jpg"
+                    src="../assets/akatsukilogo.jpg"
                     alt="About Us Logo"
                     className="max-w-lg max-h-60 h-32 md:h-40"
                   />
@@ -164,7 +164,7 @@ const Hero: React.FC = () => {
 
             <div className="flex flex-wrap items-center justify-center gap-8">
               <img
-                src="/group.jpg"
+                src="../assets/group.jpg"
                 alt="Team collaboration"
                 className="w-full md:w-1/3 rounded-lg shadow-xl"
               />

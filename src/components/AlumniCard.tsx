@@ -18,7 +18,7 @@ const AlumniCard: React.FC<AlumniCardProps> = ({ alumni }) => {
       <div
         className="absolute inset-0 bg-black" // Adjusted opacity for lighter overlay
         style={{
-          backgroundImage: 'url("./download (7).jpeg")', // Replace with your image path
+          backgroundImage: 'url("../assets/alumni-bg.jpeg")', // Replace with your image path
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

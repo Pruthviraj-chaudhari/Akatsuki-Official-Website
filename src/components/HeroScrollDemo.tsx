@@ -7,9 +7,9 @@ export function HeroScrollDemo() {
         titleComponent={
           <div>
             <h1 className="text-4xl font-semibold text-black dark:text-white md:pb-8">
-              <span className="text-2xl md:text-4xl font-bold">Connect with Us</span>
+              <span className="text-xl md:text-2xl font-bold">Connect with Us</span>
               <br />
-              <span className="text-4xl md:text-[6rem] font-bold mt-1 leading-none">
+              <span className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
                 Akatsuki <span className="text-red-500">Connect</span>
               </span>
             </h1>
@@ -17,9 +17,9 @@ export function HeroScrollDemo() {
         }
       >
         <picture>
-          <source media="(min-width: 900px)" srcSet="/connect1.png" />
+          <source media="(min-width: 900px)" srcSet="../assets/akatsukiconnect.png" />
           <img
-            src="ipad.png"
+            src="../assets/akatsukiconnect-ipad.png"
             alt="hero"
             height={720}
             width={1400}

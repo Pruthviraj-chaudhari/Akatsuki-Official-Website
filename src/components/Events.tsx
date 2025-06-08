@@ -1,4 +1,4 @@
-import { eventImages } from '@/Data/eventImages ';
+import { eventImages } from '@/data/eventsData';
 import { Timeline } from '@/components/ui/timeline';
 import { cn } from '@/lib/utils';
 

@@ -27,7 +27,7 @@ const Header: React.FC = () => {
         <div className="logo flex items-center space-x-4">
           <Link to="/" className="flex items-center">
             <img
-              src="../images/akatsukilogo.png"
+              src="../assets/akatsukilogo.png"
               alt="Akatsuki Logo"
               className="mr-2"
               style={{ maxHeight: '40px' }}

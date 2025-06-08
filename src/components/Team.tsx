@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import team from '../Data/team';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import teamMembers from '@/data/teamBatch2026';
 
 // Define the TeamMember interface
 interface TeamMember {
@@ -29,10 +29,12 @@ const Team: React.FC = () => {
           <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
             Meet our <span className="text-red-500">Amazing Team</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4 italic">Excellent team</p>
+          <p className="text-lg text-gray-600 mt-2 md:mt-4 italic">
+            Innovators. Builders. Leaders. Together, we are Akatsuki.
+          </p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
-          {team.slice(0, visibleCount).map((member: TeamMember, index: number) => (
+          {teamMembers.slice(0, visibleCount).map((member: TeamMember, index: number) => (
             <div
               key={index}
               className=" p-2 pb-5 rounded-lg  transition duration-300"
@@ -80,10 +82,10 @@ const Team: React.FC = () => {
         </div>
         <div className="text-center mt-6">
           <button
-            onClick={visibleCount < team.length ? handleLoadMore : handleShowLess}
+            onClick={visibleCount < teamMembers.length ? handleLoadMore : handleShowLess}
             className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
           >
-            {visibleCount < team.length ? 'Load More' : 'Show Less'}
+            {visibleCount < teamMembers.length ? 'Load More' : 'Show Less'}
           </button>
         </div>
       </div>

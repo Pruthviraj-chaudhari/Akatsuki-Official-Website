@@ -73,14 +73,14 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="w-8 h-8" />,
       title: 'Email Us',
-      content: 'akatsuki@rcpit.ac.in',
-      link: 'mailto:akatsuki@rcpit.ac.in',
+      content: 'akatsuki@rcpit.ac.in \nakatsuki.rcpit@gmail.com',
+      link: 'mailto:akatsuki.rcpit@gmail.com',
     },
     {
       icon: <Phone className="w-8 h-8" />,
       title: 'Call Us',
-      content: '+91 8080511069',
-      link: 'tel:+918080511069',
+      content: '+91 8855960658',
+      link: 'tel:+918855960658',
     },
     {
       icon: <Instagram className="w-8 h-8" />,

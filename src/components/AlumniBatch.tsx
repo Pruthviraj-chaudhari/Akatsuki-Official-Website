@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import AlumniCard from './AlumniCard';
-import { alumni2023, alumni2024, alumni2025, AlumniMember } from '../Data/alumniData'; // Import other batches when available
+import { alumni2023, alumni2024, alumni2025 } from '../data/alumniData'; // Import other batches when available
+import { IAlumni } from '@/types';
 
 const AlumniBatch: React.FC = () => {
-  const [selectedBatch, setSelectedBatch] = useState(2023);
 
-  const alumniData: { [key: number]: AlumniMember[] } = {
-    2023: alumni2023,
-    2024: alumni2024,
+  const [selectedBatch, setSelectedBatch] = useState(2025);
+
+  const alumniData: { [key: number]: IAlumni[] } = {
     2025: alumni2025,
+    2024: alumni2024,
+    2023: alumni2023,
   };
 
   const handleBatchChange = (batch: number) => {
@@ -22,16 +24,25 @@ const AlumniBatch: React.FC = () => {
           <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
             Alumni <span className="text-red-500">Success</span>
           </h2>
+          <p className="text-lg text-gray-600 mt-4 italic">
+            Once Akatsuki, always Akatsuki — From campus to career.
+          </p>
+
           <div className="flex justify-center space-x-4 mt-7">
-            {[2023, 2024, 2025].map(batch => (
-              <button
-                key={batch}
-                onClick={() => handleBatchChange(batch)}
-                className={`px-4 py-2 rounded-lg ${selectedBatch === batch ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-800'}`}
-              >
-                <span className="hidden md:inline">Batch</span> {batch}
-              </button>
-            ))}
+            {Object.keys(alumniData)
+              .sort((a, b) => Number(b) - Number(a)) // optional: sort by descending year
+              .map((batchStr) => {
+                const batch = Number(batchStr); // convert key string to number
+                return (
+                  <button
+                    key={batch}
+                    onClick={() => handleBatchChange(batch)}
+                    className={`px-4 py-2 rounded-lg ${selectedBatch === batch ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-800'}`}
+                  >
+                    <span className="hidden md:inline">Batch</span> {batch}
+                  </button>
+                );
+              })}
           </div>
         </div>
 

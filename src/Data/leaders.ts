@@ -1,25 +1,17 @@
-// Define the Leader interface
-interface Leader {
-  name: string;
-  role: string;
-  image: string;
-  linkedin: string;
-  github: string;
-}
+import { ITeamMember } from "@/types";
 
-// Create the leaders array with typed data
-const leaders: Leader[] = [
+const leaders: ITeamMember[] = [
   {
     name: 'Pruthviraj Chaudhari',
     role: 'President',
-    image: '../images/members/Pruthviraj.png',
+    image: '../images/alumni/batch2025/Pruthviraj.png',
     linkedin: '',
     github: '',
   },
   {
     name: 'Sanika Joshi',
     role: 'Vice President',
-    image: '../images/members/sanika.jpg',
+    image: '../images/alumni/batch2025/sanika.jpg',
     linkedin: '',
     github: '',
   },

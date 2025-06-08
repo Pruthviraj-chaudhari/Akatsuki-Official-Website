@@ -1,14 +1,6 @@
-// src/data/teamMembers.ts
+import { ITeamMember } from "@/types";
 
-interface TeamMember {
-  name: string;
-  role: string;
-  image: string;
-  linkedin: string;
-  github: string;
-}
-
-const teamMembers: TeamMember[] = [
+const teamMembers: ITeamMember[] = [
   {
     name: 'Mangesh Bide',
     role: 'Ex. President',

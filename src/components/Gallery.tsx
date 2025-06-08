@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, XCircle, Image as ImageIcon } from 'lucide-react';
-import { eventImages } from '../Data/eventImages ';
+import { eventImages } from '../data/eventsData';
 
 export default function GallerySection() {
   const [activeEvent, setActiveEvent] = useState(eventImages[0].name);
@@ -148,11 +148,10 @@ export default function GallerySection() {
             <button
               key={number}
               onClick={() => setCurrentPage(number)}
-              className={`w-10 h-10 rounded-lg transition-colors ${
-                currentPage === number
+              className={`w-10 h-10 rounded-lg transition-colors ${currentPage === number
                   ? 'bg-red-500 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-              }`}
+                }`}
             >
               {number}
             </button>
@@ -182,8 +181,8 @@ export default function GallerySection() {
           <h2 className="text-4xl md:text-5xl font-bold">
             Our <span className="text-red-500">Gallery</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4">
-            Capturing moments of learning, growth, and achievement
+          <p className="text-lg text-gray-600 mt-2 md:mt-4 italic">
+            Capturing moments of learning, growth, and achievements
           </p>
         </motion.div>
 
@@ -192,9 +191,8 @@ export default function GallerySection() {
             <div className="absolute left-0 top-1/2 -translate-y-1/2 z-10">
               <button
                 onClick={() => scrollTabs('left')}
-                className={`p-2 rounded-full bg-red-500 text-white transform transition-opacity duration-200 ${
-                  canScrollLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                } hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2`}
+                className={`p-2 rounded-full bg-red-500 text-white transform transition-opacity duration-200 ${canScrollLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  } hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2`}
               >
                 <ChevronLeft className="w-5 h-5" />
               </button>
@@ -214,11 +212,10 @@ export default function GallerySection() {
                       setActiveIndex(index);
                       setCurrentPage(1);
                     }}
-                    className={`px-6 py-3 rounded-full whitespace-nowrap transition-all duration-300 flex-shrink-0 ${
-                      activeEvent === event.name
+                    className={`px-6 py-3 rounded-full whitespace-nowrap transition-all duration-300 flex-shrink-0 ${activeEvent === event.name
                         ? 'bg-red-500 text-white shadow-lg transform scale-105'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
+                      }`}
                   >
                     {event.name}
                   </button>
@@ -229,9 +226,8 @@ export default function GallerySection() {
             <div className="absolute right-0 top-1/2 -translate-y-1/2 z-10">
               <button
                 onClick={() => scrollTabs('right')}
-                className={`p-2 rounded-full bg-red-500 text-white transform transition-opacity duration-200 ${
-                  canScrollRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
-                } hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2`}
+                className={`p-2 rounded-full bg-red-500 text-white transform transition-opacity duration-200 ${canScrollRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
+                  } hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2`}
               >
                 <ChevronRight className="w-5 h-5" />
               </button>

@@ -1,5 +1,5 @@
 import React from 'react';
-import leaders from '../Data/leaders';
+import leaders from '../data/leaders';
 
 // Define the Leader type
 interface Leader {
@@ -19,16 +19,18 @@ const LeadershipSection: React.FC = () => {
             Meet the
             <span className="text-red-500"> Leads </span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4 italic">Leadership unveiled</p>
+          <p className="text-lg text-gray-600 mt-2 md:mt-4 italic">
+            Guiding with vision, leading with purpose.
+          </p>
         </div>
         <div className="flex flex-wrap justify-center gap-6">
           {leaders.map((leader: Leader, index: number) => (
             <div
               key={index}
-              className="w-full max-w-md p-8 rounded-lg shadow-md  transition duration-300 transform flex flex-col items-center text-center border-2 border-gray-200 "
+              className="w-full max-w-md p-8 rounded-lg shadow-md transition duration-300 transform flex flex-col items-center text-center bg-black border-2 border-gray-200 "
               style={{
                 backgroundImage:
-                  'url("./abstract-red-light-lines-pipe-speed-zoom-black-background-technology_1142-8936_upscaled.png")', // Add your image path here
+                  'url("../assets/president-bg.jpg")',
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}

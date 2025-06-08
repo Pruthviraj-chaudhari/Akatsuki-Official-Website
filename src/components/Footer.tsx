@@ -8,9 +8,12 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {/* About Section */}
           <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-white bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
-              Akatsuki
-            </h3>
+            <div className='flex'>
+              <img src="../assets/akatsukilogo.png" alt="Akatsuki Logo" className="mr-4 max-h-8" />
+              <h3 className="text-3xl font-bold text-white bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
+                Akatsuki
+              </h3>
+            </div>
             <p className="text-gray-400 text-lg leading-relaxed">
               Empowering students through coding excellence and innovation at R. C. Patel Institute
               of Technology, Shirpur.
@@ -77,12 +80,12 @@ const Footer: React.FC = () => {
               © {new Date().getFullYear()} Akatsuki Coding Club. All rights reserved.
             </p>
             <p className="text-gray-500">
-              Developed with <span className="text-red-500 animate-pulse">❤️</span> by{' '}
+              Developed with <span className="text-red-800">❤️</span> by{' '}
               <a
                 href="https://www.instagram.com/akatsuki_codingclub/"
                 className="text-red-500 hover:text-red-400 font-medium transition-colors"
               >
-                Akatsuki Development Team
+                Akatsuki
               </a>
             </p>
           </div>

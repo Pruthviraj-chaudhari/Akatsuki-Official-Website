@@ -1,14 +1,20 @@
-// src/data/team.ts
+import { ITeamMember } from "@/types";
 
-interface TeamMember {
-  name: string;
-  role: string;
-  image: string;
-  linkedin: string;
-  github: string;
-}
-
-const team: TeamMember[] = [
+const teamMembers: ITeamMember[] = [
+  {
+    name: 'Pruthviraj Chaudhari',
+    role: 'President',
+    image: '../images/members/Pruthviraj.png',
+    linkedin: '',
+    github: '',
+  },
+  {
+    name: 'Sanika Joshi',
+    role: 'Vice President',
+    image: '../images/members/sanika.jpg',
+    linkedin: '',
+    github: '',
+  },
   {
     name: 'Hitesh Wadile',
     role: 'Software Developer',
@@ -187,4 +193,4 @@ const team: TeamMember[] = [
   },
 ];
 
-export default team;
+export default teamMembers;

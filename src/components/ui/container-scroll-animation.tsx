@@ -1,6 +1,54 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
 import { NavLink } from 'react-router-dom';
+
+
+
+interface DeviceBreakpoints {
+  isMobile: boolean;
+  isTablet: boolean;
+  isDesktop: boolean;
+}
+
+const useDeviceDetection = (): DeviceBreakpoints => {
+  const [breakpoints, setBreakpoints] = useState<DeviceBreakpoints>({
+    isMobile: false,
+    isTablet: false,
+    isDesktop: true,
+  });
+
+  useEffect(() => {
+    const updateBreakpoints = () => {
+      const width = window.innerWidth;
+      setBreakpoints({
+        isMobile: width < 768,
+        isTablet: width >= 768 && width < 1024,
+        isDesktop: width >= 1024,
+      });
+    };
+
+    updateBreakpoints();
+    const debouncedUpdate = debounce(updateBreakpoints, 100);
+    window.addEventListener('resize', debouncedUpdate);
+    
+    return () => window.removeEventListener('resize', debouncedUpdate);
+  }, []);
+
+  return breakpoints;
+};
+
+const debounce = (func: Function, wait: number) => {
+  let timeout: NodeJS.Timeout;
+  return function executedFunction(...args: any[]) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+};
+
 
 export const ContainerScroll = ({
   titleComponent,
@@ -9,30 +57,35 @@ export const ContainerScroll = ({
   titleComponent: string | React.ReactNode;
   children: React.ReactNode;
 }) => {
-  const containerRef = useRef<any>(null);
+ const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
+    offset: ["start end", "end start"]
   });
-  const [isMobile, setIsMobile] = React.useState(false);
+  
+  const { isMobile, isTablet } = useDeviceDetection();
 
-  React.useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => {
-      window.removeEventListener('resize', checkMobile);
-    };
-  }, []);
-
-  const scaleDimensions = () => {
-    return isMobile ? [0.7, 0.9] : [1.05, 1];
+  const getScaleDimensions = (): [number, number] => {
+    if (isMobile) return [0.6, 0.95];
+    if (isTablet) return [0.8, 0.98];
+    return [1.05, 1];
   };
 
-  const rotate = useTransform(scrollYProgress, [0, 1], [20, 0]);
-  const scale = useTransform(scrollYProgress, [0, 1], scaleDimensions());
-  const translate = useTransform(scrollYProgress, [0, 1], [0, -100]);
+  const getRotateRange = (): [number, number] => {
+    if (isMobile) return [25, 0];
+    if (isTablet) return [22, 0];
+    return [20, 0];
+  };
+
+  const getTranslateRange = (): [number, number] => {
+    if (isMobile) return [0, -60];
+    if (isTablet) return [0, -80];
+    return [0, -100];
+  };
+
+  const rotate = useTransform(scrollYProgress, [0, 1], getRotateRange());
+  const scale = useTransform(scrollYProgress, [0, 1], getScaleDimensions());
+  const translate = useTransform(scrollYProgress, [0, 1], getTranslateRange());
 
   return (
     <>
