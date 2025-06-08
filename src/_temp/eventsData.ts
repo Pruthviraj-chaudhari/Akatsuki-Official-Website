@@ -1,4 +1,6 @@
-export const eventImages = [
+import { IEvent } from "@/types";
+
+export const eventImages: IEvent[] = [
   {
     name: 'React Cohort',
     photos: [
@@ -18,7 +20,7 @@ export const eventImages = [
       '../images/events/ReactCohort2025/image11.jpg',
       '../images/events/ReactCohort2025/image7.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'The AnimeVerse',
@@ -33,6 +35,7 @@ export const eventImages = [
       '../images/events/Converges2025 (The AnimeVerse)/image9.jpg',
       '../images/events/Converges2025 (The AnimeVerse)/image7.jpg',
     ],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Nodevember 2.0',
@@ -44,8 +47,7 @@ export const eventImages = [
       '../images/events/Nodevember2024/image3.jpg',
       '../images/events/Nodevember2024/image6.jpg',
     ],
-
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Fresher Guidance',
@@ -58,7 +60,7 @@ export const eventImages = [
       '../images/events/FresherGuidance2025/image4.jpg',
     ],
 
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Converges 2024',
@@ -72,7 +74,7 @@ export const eventImages = [
       '../images/events/Converges2024 (Detective Returns)/WhatsApp Image 2024-09-27 at 00.03.55_8de28504.jpg',
       '../images/events/Converges2024 (Detective Returns)/WhatsApp Image 2024-09-27 at 00.09.42_96415963.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Internal SIH 2024',
@@ -85,7 +87,7 @@ export const eventImages = [
       '../images/events/SIH2024/WhatsApp Image 2024-09-27 at 00.23.15_854c34b2.jpg',
       '../images/events/SIH2024/WhatsApp Image 2024-09-27 at 00.24.17_25e1f050.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   // {
   //   name: "ML Workshop",
@@ -97,7 +99,7 @@ export const eventImages = [
       '../images/events/HCLFounderMeet/WhatsApp Image 2024-09-20 at 1.20.59 PM.jpeg',
       '../images/events/HCLFounderMeet/WhatsApp Image 2024-09-20 at 1.21.03 PM.jpeg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Nodevember',
@@ -109,7 +111,7 @@ export const eventImages = [
       '../images/events/Nodevember2023/WhatsApp Image 2024-09-20 at 1.21.05 PM (1).jpeg',
       '../images/events/Nodevember2023/WhatsApp Image 2024-09-27 at 00.30.03_76f5de81.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Converges 2023',
@@ -124,7 +126,7 @@ export const eventImages = [
       '../images/events/Converges2023 (Detectives Dilemma)/detect-11_mhy9g6.png',
       '../images/events/Converges2023 (Detectives Dilemma)/detect-10_h9vgdl.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Internal SIH 2023',
@@ -136,7 +138,7 @@ export const eventImages = [
       '../images/events/SIH2023/20230923_32101PMByGPSMapCamera.jpg',
       '../images/events/SIH2023/20230923_115459AMByGPSMapCamera.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Tech Hunt 2022',
@@ -151,7 +153,7 @@ export const eventImages = [
       '../images/events/Tech Hunt 2022/tech-6_v7mmmm.jpg',
       '../images/events/Tech Hunt 2022/tech-8.jpeg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Akatsuki Recruitment 2022',
@@ -161,7 +163,7 @@ export const eventImages = [
       '../images/events/Recruitment2022/3_a4mf5g.jpg',
       '../images/events/Recruitment2022/4_qhcmzm.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Internal SIH 2022',
@@ -176,7 +178,7 @@ export const eventImages = [
       '../images/events/SIH2022/05.jpg',
       '../images/events/SIH2022/09.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   {
     name: 'Freshers Workshop 2021',
@@ -193,7 +195,7 @@ export const eventImages = [
       '../images/events/FresherWorkshop2021/portfolio-10_x3f8eq.jpg',
       '../images/events/FresherWorkshop2021/portfolio-11_rzu74s.jpg',
     ],
-    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
+    text: 'Join the Journey: Uniting Minds, Inspiring Change!',
   },
   // Add more events and photos as needed
 ];

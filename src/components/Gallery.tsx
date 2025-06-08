@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, XCircle, Image as ImageIcon } from 'lucide-react';
-import { eventImages } from '../data/eventsData';
+import { eventImages } from '../_temp/eventsData.ts';
 
 export default function GallerySection() {
   const [activeEvent, setActiveEvent] = useState(eventImages[0].name);

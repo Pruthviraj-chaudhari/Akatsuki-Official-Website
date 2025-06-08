@@ -20,3 +20,9 @@ export interface IMission {
   description: string;
   imageUrl: string;
 }
+
+export interface IEvent {
+  name: string;
+  photos: string[];
+  text: string;
+}

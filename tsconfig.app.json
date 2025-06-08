@@ -25,5 +25,5 @@
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/data/alumniData.ts"]
+  "include": ["src", "src/_temp/alumniData.ts"]
 }

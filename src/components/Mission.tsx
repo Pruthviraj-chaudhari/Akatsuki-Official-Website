@@ -1,5 +1,5 @@
 import React from 'react';
-import missionData from '../data/missionData';
+import missionData from '../_temp/missionData';
 
 // Define the MissionItem type
 interface MissionItem {

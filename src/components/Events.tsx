@@ -1,24 +1,20 @@
-import { eventImages } from '@/data/eventsData';
+import { eventImages } from '@/_temp/eventsData';
 import { Timeline } from '@/components/ui/timeline';
 import { cn } from '@/lib/utils';
+import { IEvent } from '@/types';
 
 export const TimelineDemo = ({ className }: { className?: string }) => {
   return (
     <div className={cn('w-full', className)}>
       <Timeline
-        data={eventImages.map(({ name, photos, text }) => ({
+        data={eventImages.map(({ name, photos, text }: IEvent) => ({
           title: name,
           content: (
             <div key={name}>
               {/* Uncomment this section if you want to display text or listItems */}
               {text && (
                 <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
-                  {text.map((t, index) => (
-                    <span key={index}>
-                      {t}
-                      <br />
-                    </span>
-                  ))}
+                  {text}
                 </p>
               )}
               {/* {listItems && (

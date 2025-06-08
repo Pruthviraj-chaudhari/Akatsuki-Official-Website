@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AlumniCard from './AlumniCard';
-import { alumni2023, alumni2024, alumni2025 } from '../data/alumniData'; // Import other batches when available
+import { alumni2023, alumni2024, alumni2025 } from '../_temp/alumniData'; // Import other batches when available
 import { IAlumni } from '@/types';
 
 const AlumniBatch: React.FC = () => {
