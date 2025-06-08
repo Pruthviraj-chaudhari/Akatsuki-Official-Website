@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import teamMembers from '../Data/teamMembers';
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 // Define the TeamMember interface
 interface TeamMember {
@@ -15,7 +15,7 @@ const TeamSection: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(4); // Initially show 4 members
 
   const handleLoadMore = () => {
-    setVisibleCount((prevCount) => prevCount + 4); // Show 4 more members
+    setVisibleCount(prevCount => prevCount + 4); // Show 4 more members
   };
 
   const handleShowLess = () => {
@@ -29,16 +29,11 @@ const TeamSection: React.FC = () => {
           <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
             Meet our <span className="text-red-500">Team</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4">
-            "The core team behind Akatsuki"
-          </p>
+          <p className="text-lg text-gray-600 mt-4">"The core team behind Akatsuki"</p>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
           {teamMembers.slice(0, visibleCount).map((member: TeamMember, index: number) => (
-            <div
-              key={index}
-              className="p-2  pb-5 rounded-lg  transition duration-300"
-            >
+            <div key={index} className="p-2  pb-5 rounded-lg  transition duration-300">
               <div className="flex flex-col items-center">
                 <div className="w-28 h-28 md:w-36 md:h-36 mb-6 rounded-full  overflow-hidden">
                   <img
@@ -47,7 +42,9 @@ const TeamSection: React.FC = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-md md:text-2xl font-semibold text-gray-800 mb-2">{member.name}</h3>
+                <h3 className="text-md md:text-2xl font-semibold text-gray-800 mb-2">
+                  {member.name}
+                </h3>
                 <h4 className="text-xs md:text-lg text-gray-600 mb-4">{member.role}</h4>
                 <div className="flex space-x-6 mt-4">
                   {member.linkedin && (

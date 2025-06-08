@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import team from '../Data/team'; 
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import team from '../Data/team';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 // Define the TeamMember interface
 interface TeamMember {
@@ -15,7 +15,7 @@ const Team: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(4); // Initially show 4 members
 
   const handleLoadMore = () => {
-    setVisibleCount((prevCount) => prevCount + 4); // Show 4 more members on click
+    setVisibleCount(prevCount => prevCount + 4); // Show 4 more members on click
   };
 
   const handleShowLess = () => {
@@ -36,7 +36,7 @@ const Team: React.FC = () => {
             <div
               key={index}
               className=" p-2 pb-5 rounded-lg  transition duration-300"
-              style={{ width: '100%', height: '100%' }} 
+              style={{ width: '100%', height: '100%' }}
             >
               <div className="flex flex-col items-center">
                 <div className="w-28 h-28 md:w-36 md:h-36 mb-6 rounded-full bg-gray-200 overflow-hidden">
@@ -46,7 +46,9 @@ const Team: React.FC = () => {
                     className="w-full h-full object-cover"
                   />
                 </div>
-                <h3 className="text-md md:text-2xl font-semibold text-gray-800 mb-2">{member.name}</h3>
+                <h3 className="text-md md:text-2xl font-semibold text-gray-800 mb-2">
+                  {member.name}
+                </h3>
                 <h4 className="text-xs md:text-lg text-gray-600 mb-4">{member.role}</h4>
                 <div className="flex space-x-6">
                   {member.linkedin && (
@@ -57,7 +59,7 @@ const Team: React.FC = () => {
                       className="text-gray-500 hover:text-gray-700"
                       aria-label={`${member.name} LinkedIn`}
                     >
-                      <FaLinkedin size={20} className="sm:size-30" /> 
+                      <FaLinkedin size={20} className="sm:size-30" />
                     </a>
                   )}
                   {member.github && (

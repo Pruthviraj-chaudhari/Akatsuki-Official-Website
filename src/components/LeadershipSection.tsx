@@ -16,20 +16,19 @@ const LeadershipSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="max-w-7xl mx-auto text-3xl md:text-5xl font-bold text-black font-sans">
-            Meet the  
-            <span className="text-red-500">{" "}Leads{" "}</span> 
-
+            Meet the
+            <span className="text-red-500"> Leads </span>
           </h2>
           <p className="text-lg text-gray-600 mt-4 italic">Leadership unveiled</p>
         </div>
         <div className="flex flex-wrap justify-center gap-6">
-          {
-          leaders.map((leader: Leader, index: number) => (
+          {leaders.map((leader: Leader, index: number) => (
             <div
               key={index}
               className="w-full max-w-md p-8 rounded-lg shadow-md  transition duration-300 transform flex flex-col items-center text-center border-2 border-gray-200 "
               style={{
-                backgroundImage: 'url("./abstract-red-light-lines-pipe-speed-zoom-black-background-technology_1142-8936_upscaled.png")', // Add your image path here
+                backgroundImage:
+                  'url("./abstract-red-light-lines-pipe-speed-zoom-black-background-technology_1142-8936_upscaled.png")', // Add your image path here
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
               }}

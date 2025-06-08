@@ -1,111 +1,95 @@
 export const eventImages = [
   {
-    name:"React Cohort",
+    name: 'React Cohort',
 
-    photos:[
-      "../images/ReactCohort/image10.jpg",
-      "../images/ReactCohort/image9.jpg",
-      "../images/ReactCohort/image3.jpg",
-      "../images/ReactCohort/image1.jpg",
-      "../images/ReactCohort/image4.jpg",
-      "../images/ReactCohort/image5.jpg",
-      "../images/ReactCohort/image16.jpg",
-      "../images/ReactCohort/image6.jpg",
-      "../images/ReactCohort/image14.jpg",
-      "../images/ReactCohort/image13.jpg",
-      "../images/ReactCohort/image15.jpg",
-      "../images/ReactCohort/image12.jpg",
-      "../images/ReactCohort/image2.jpg",
-      "../images/ReactCohort/image11.jpg",
-      "../images/ReactCohort/image7.jpg",
+    photos: [
+      '../images/ReactCohort/image10.jpg',
+      '../images/ReactCohort/image9.jpg',
+      '../images/ReactCohort/image3.jpg',
+      '../images/ReactCohort/image1.jpg',
+      '../images/ReactCohort/image4.jpg',
+      '../images/ReactCohort/image5.jpg',
+      '../images/ReactCohort/image16.jpg',
+      '../images/ReactCohort/image6.jpg',
+      '../images/ReactCohort/image14.jpg',
+      '../images/ReactCohort/image13.jpg',
+      '../images/ReactCohort/image15.jpg',
+      '../images/ReactCohort/image12.jpg',
+      '../images/ReactCohort/image2.jpg',
+      '../images/ReactCohort/image11.jpg',
+      '../images/ReactCohort/image7.jpg',
     ],
 
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   {
-    name: "The AnimeVerse",
+    name: 'The AnimeVerse',
     photos: [
-      "../images/AnimeVerse/image2.jpg",
-      "../images/AnimeVerse/image3.jpg",
-      "../images/AnimeVerse/image1.jpg",
-      "../images/AnimeVerse/image4.jpg",
-      "../images/AnimeVerse/image5.jpg",
-      "../images/AnimeVerse/image6.jpg",
-      "../images/AnimeVerse/image8.jpg",
-      "../images/AnimeVerse/image9.jpg",
-      "../images/AnimeVerse/image7.jpg",
+      '../images/AnimeVerse/image2.jpg',
+      '../images/AnimeVerse/image3.jpg',
+      '../images/AnimeVerse/image1.jpg',
+      '../images/AnimeVerse/image4.jpg',
+      '../images/AnimeVerse/image5.jpg',
+      '../images/AnimeVerse/image6.jpg',
+      '../images/AnimeVerse/image8.jpg',
+      '../images/AnimeVerse/image9.jpg',
+      '../images/AnimeVerse/image7.jpg',
     ],
   },
   //commit
   {
-    name: "Nodevember 2.0",
+    name: 'Nodevember 2.0',
     photos: [
-      "../images/nodevember2.0/image4.jpg",
-      "../images/nodevember2.0/image2.jpg",
-      "../images/nodevember2.0/image5.jpg",
-      "../images/nodevember2.0/image1.jpg",
-      "../images/nodevember2.0/image3.jpg",
-      "../images/nodevember2.0/image6.jpg",
+      '../images/nodevember2.0/image4.jpg',
+      '../images/nodevember2.0/image2.jpg',
+      '../images/nodevember2.0/image5.jpg',
+      '../images/nodevember2.0/image1.jpg',
+      '../images/nodevember2.0/image3.jpg',
+      '../images/nodevember2.0/image6.jpg',
     ],
 
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   {
-    name: "Fresher Guidance",
+    name: 'Fresher Guidance',
     photos: [
-      "../images/FresherGuidance/image5.jpg",
-      "../images/FresherGuidance/image6.jpg",
-      "../images/FresherGuidance/image1.jpg",
-      "../images/FresherGuidance/image2.jpg",
-      "../images/FresherGuidance/image3.jpg",
-      "../images/FresherGuidance/image4.jpg",
+      '../images/FresherGuidance/image5.jpg',
+      '../images/FresherGuidance/image6.jpg',
+      '../images/FresherGuidance/image1.jpg',
+      '../images/FresherGuidance/image2.jpg',
+      '../images/FresherGuidance/image3.jpg',
+      '../images/FresherGuidance/image4.jpg',
     ],
 
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   {
-    name: "Converges 2024",
+    name: 'Converges 2024',
     photos: [
-      "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.52.31 PM.jpeg",
-      "../images/Converges2024/WhatsApp Image 2024-09-20 at 1.53.34 PM.jpeg",
-      
-      "../images/Converges2024/WhatsApp Image 2024-09-26 at 23.59.52_76b462c0.jpg",
-      "../images/Converges2024/WhatsApp Image 2024-09-27 at 00.00.23_bd003a6f.jpg",
-      "../images/Converges2024/WhatsApp Image 2024-09-27 at 00.03.55_8de28504.jpg",
-      "../images/Converges2024/WhatsApp Image 2024-09-27 at 00.04.56_c98d65bf.jpg",
-     
-      
+      '../images/Converges2024/WhatsApp Image 2024-09-20 at 1.52.31 PM.jpeg',
+      '../images/Converges2024/WhatsApp Image 2024-09-20 at 1.53.34 PM.jpeg',
+
+      '../images/Converges2024/WhatsApp Image 2024-09-26 at 23.59.52_76b462c0.jpg',
+      '../images/Converges2024/WhatsApp Image 2024-09-27 at 00.00.23_bd003a6f.jpg',
+      '../images/Converges2024/WhatsApp Image 2024-09-27 at 00.03.55_8de28504.jpg',
+      '../images/Converges2024/WhatsApp Image 2024-09-27 at 00.04.56_c98d65bf.jpg',
     ],
-    
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    
-    ]
+
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   {
-    name: "Internal SIH 2024",
+    name: 'Internal SIH 2024',
     photos: [
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.05 PM (1).jpeg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.06 PM.jpeg",
-      "images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.07 PM (1).jpeg",
-      
-      "../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.08 PM.jpeg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.21.48_8372e16d.jpg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.23.15_854c34b2.jpg",
-      "../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.24.17_25e1f050.jpg",
+      '../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.05 PM (1).jpeg',
+      '../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.06 PM.jpeg',
+      'images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.07 PM (1).jpeg',
+
+      '../images/SIH_2024/WhatsApp Image 2024-09-20 at 1.47.08 PM.jpeg',
+      '../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.21.48_8372e16d.jpg',
+      '../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.23.15_854c34b2.jpg',
+      '../images/SIH_2024/WhatsApp Image 2024-09-27 at 00.24.17_25e1f050.jpg',
     ],
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   // {
   //   name: "ML Workshop",
@@ -113,77 +97,66 @@ export const eventImages = [
   // },
 
   {
-    name: "HCL founder meet",
+    name: 'HCL founder meet',
     photos: [
-      "./images/hcl_Event/WhatsApp Image 2024-09-20 at 1.20.59 PM.jpeg",
-      "../images/hcl_Event/WhatsApp Image 2024-09-20 at 1.21.03 PM.jpeg",
+      './images/hcl_Event/WhatsApp Image 2024-09-20 at 1.20.59 PM.jpeg',
+      '../images/hcl_Event/WhatsApp Image 2024-09-20 at 1.21.03 PM.jpeg',
     ],
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   {
-    name: "Nodevember S1",
+    name: 'Nodevember S1',
     photos: [
-      "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.53 PM (1).jpeg",
+      '../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.53 PM (1).jpeg',
       // "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.53 PM.jpeg",
-      "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.54 PM (2).jpeg",
-      "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.55 PM (1).jpeg",
-      "../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.57 PM.jpeg",
-      "../images/nodemember/WhatsApp Image 2024-09-20 at 1.21.05 PM (1).jpeg",
-      "../images/nodemember/WhatsApp Image 2024-09-27 at 00.30.03_76f5de81.jpg",
+      '../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.54 PM (2).jpeg',
+      '../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.55 PM (1).jpeg',
+      '../images/nodemember/WhatsApp Image 2024-09-20 at 1.20.57 PM.jpeg',
+      '../images/nodemember/WhatsApp Image 2024-09-20 at 1.21.05 PM (1).jpeg',
+      '../images/nodemember/WhatsApp Image 2024-09-27 at 00.30.03_76f5de81.jpg',
     ],
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   {
-    name: "Converges 2023",
+    name: 'Converges 2023',
     photos: [
-      "../images/ditective/detect-1_scrm36.jpg",
-      "../images/ditective/detect-2_ihbs0f.jpg",
-      "../images/ditective/detect-3_sqlo6p.jpg",
-      "../images/ditective/detect-4_xlkru2.jpg",
-      "../images/ditective/detect-5_ohuf4o.jpg",
-      "../images/ditective/detect-6_ysvmkg.jpg",
-      "../images/ditective/detect-7_py3wsh.jpg",
-      "../images/ditective/detect-8_suisan.jpg",
-      "../images/ditective/detect-9_teiruk.jpg",
-      
+      '../images/ditective/detect-1_scrm36.jpg',
+      '../images/ditective/detect-2_ihbs0f.jpg',
+      '../images/ditective/detect-3_sqlo6p.jpg',
+      '../images/ditective/detect-4_xlkru2.jpg',
+      '../images/ditective/detect-5_ohuf4o.jpg',
+      '../images/ditective/detect-6_ysvmkg.jpg',
+      '../images/ditective/detect-7_py3wsh.jpg',
+      '../images/ditective/detect-8_suisan.jpg',
+      '../images/ditective/detect-9_teiruk.jpg',
     ],
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   {
-    name: "Internal SIH 2023",
+    name: 'Internal SIH 2023',
     photos: [
-    "../images/SIH-2023/20230923_15303PMByGPSMapCamera.jpg",
-    "../images/SIH-2023/20230923_22732PMByGPSMapCamera.jpg",
-    "../images/SIH-2023/20230923_24408PMByGPSMapCamera.jpg",
-    "../images/SIH-2023/20230923_25939PMByGPSMapCamera.jpg",
-    "../images/SIH-2023/20230923_32101PMByGPSMapCamera.jpg",
-    "../images/SIH-2023/20230923_115459AMByGPSMapCamera.jpg",
+      '../images/SIH-2023/20230923_15303PMByGPSMapCamera.jpg',
+      '../images/SIH-2023/20230923_22732PMByGPSMapCamera.jpg',
+      '../images/SIH-2023/20230923_24408PMByGPSMapCamera.jpg',
+      '../images/SIH-2023/20230923_25939PMByGPSMapCamera.jpg',
+      '../images/SIH-2023/20230923_32101PMByGPSMapCamera.jpg',
+      '../images/SIH-2023/20230923_115459AMByGPSMapCamera.jpg',
     ],
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   {
-    name: "Tech hunt 2022",
+    name: 'Tech hunt 2022',
     photos: [
-      "../images/tech-hunt/teamAkatsuki6_cmfaas.jpg",
-      "../images/tech-hunt/tech-1_ve9ht0.jpg",
-      "../images/tech-hunt/tech-2_ignqmd.jpg",
-      "../images/tech-hunt/tech-3_jtl0hw.jpg",
-      "../images/tech-hunt/tech-4_gr5z7u.jpg",
-      "../images/tech-hunt/tech-5_balpn0.jpg",
-      "../images/tech-hunt/tech-6_v7mmmm.jpg",
-      "../images/tech-hunt/tech-7_vkour8.jpg",
+      '../images/tech-hunt/teamAkatsuki6_cmfaas.jpg',
+      '../images/tech-hunt/tech-1_ve9ht0.jpg',
+      '../images/tech-hunt/tech-2_ignqmd.jpg',
+      '../images/tech-hunt/tech-3_jtl0hw.jpg',
+      '../images/tech-hunt/tech-4_gr5z7u.jpg',
+      '../images/tech-hunt/tech-5_balpn0.jpg',
+      '../images/tech-hunt/tech-6_v7mmmm.jpg',
+      '../images/tech-hunt/tech-7_vkour8.jpg',
     ],
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   /* {
     name: "Hacky Holi 2022",
@@ -192,23 +165,21 @@ export const eventImages = [
     ],
   },*/
   {
-    name: "Workshop",
+    name: 'Workshop',
     photos: [
-      "../images/portfolio/portfolio-1_ilepmt.jpg",
-      "../images/portfolio/portfolio-2_kfk0vy.jpg",
-      "../images/portfolio/portfolio-3_xpucdc.jpg",
-      "../images/portfolio/portfolio-4_upeumx.jpg",
-      "../images/portfolio/portfolio-5_cj0lzg.jpg",
-      "../images/portfolio/portfolio-6_gfdczb.jpg",
-      "../images/portfolio/portfolio-7_lsqpif.jpg",
-      "../images/portfolio/portfolio-8_ar1yx1.jpg",
-      "../images/portfolio/portfolio-9_ci3kq6.jpg",
-      "../images/portfolio/portfolio-10_x3f8eq.jpg",
-      "../images/portfolio/portfolio-11_rzu74s.jpg",
+      '../images/portfolio/portfolio-1_ilepmt.jpg',
+      '../images/portfolio/portfolio-2_kfk0vy.jpg',
+      '../images/portfolio/portfolio-3_xpucdc.jpg',
+      '../images/portfolio/portfolio-4_upeumx.jpg',
+      '../images/portfolio/portfolio-5_cj0lzg.jpg',
+      '../images/portfolio/portfolio-6_gfdczb.jpg',
+      '../images/portfolio/portfolio-7_lsqpif.jpg',
+      '../images/portfolio/portfolio-8_ar1yx1.jpg',
+      '../images/portfolio/portfolio-9_ci3kq6.jpg',
+      '../images/portfolio/portfolio-10_x3f8eq.jpg',
+      '../images/portfolio/portfolio-11_rzu74s.jpg',
     ],
-    text:[
-      "Join the Journey: Uniting Minds, Inspiring Change!"
-    ]
+    text: ['Join the Journey: Uniting Minds, Inspiring Change!'],
   },
   // Add more events and photos as needed
 ];

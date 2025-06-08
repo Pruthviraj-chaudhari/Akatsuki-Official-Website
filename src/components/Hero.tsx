@@ -1,20 +1,20 @@
-import { ChevronDownIcon } from "lucide-react";
-import { AnimatePresence, motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import { ChevronDownIcon } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
 // import { cn } from "@/lib/utils";
 
 const images = [
   {
-    src: "./1e05902e-5762-4b46-9acd-b658abdec30f.jpg",
-    alt: "Akatsuki Image 1",
+    src: './1e05902e-5762-4b46-9acd-b658abdec30f.jpg',
+    alt: 'Akatsuki Image 1',
   },
   {
-    src: "./images/tech-hunt/teamAkatsuki6_cmfaas.jpg",
-    alt: "Akatsuki Image 2",
+    src: './images/tech-hunt/teamAkatsuki6_cmfaas.jpg',
+    alt: 'Akatsuki Image 2',
   },
   {
-    src: "./images/tech-hunt/tech-1_ve9ht0.jpg",
-    alt: "Akatsuki Image 3",
+    src: './images/tech-hunt/tech-1_ve9ht0.jpg',
+    alt: 'Akatsuki Image 3',
   },
 ];
 
@@ -46,7 +46,7 @@ const Hero: React.FC = () => {
   }, [nextImageIndex, loadedImages]);
 
   const scrollToContent = () => {
-    contentSectionRef.current?.scrollIntoView({ behavior: "smooth" });
+    contentSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 1, ease: "easeInOut" }}
+                transition={{ duration: 1, ease: 'easeInOut' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-10" />
                 <img
@@ -82,8 +82,7 @@ const Hero: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-center space-y-8"
           >
-            <div className="md:p-3 md:h-11 md:mb-6 ">
-            </div>
+            <div className="md:p-3 md:h-11 md:mb-6 "></div>
 
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -91,7 +90,7 @@ const Hero: React.FC = () => {
               transition={{ duration: 0.8, delay: 0.4 }}
               className="text-4xl md:text-6xl lg:text-7xl font-bold text-white"
             >
-              Welcome to{" "}
+              Welcome to{' '}
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-700">
                 Akatsuki
               </span>
@@ -126,17 +125,13 @@ const Hero: React.FC = () => {
           onClick={scrollToContent}
           className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 text-white"
           animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
         >
           <ChevronDownIcon className="w-10 h-10" />
         </motion.button>
       </section>
 
-      <section
-        ref={contentSectionRef}
-        id="about"
-        className="relative py-20 bg-white"
-      >
+      <section ref={contentSectionRef} id="about" className="relative py-20 bg-white">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -147,20 +142,20 @@ const Hero: React.FC = () => {
           >
             <div className="flex flex-col items-center gap-4 justify-center mb-0 pb-0">
               <div className="flex  items-center gap-4 justify-center">
-              <a href="/">
-                <img
-                  src="../images/rcpitlogo2.jpg"
-                  alt="About Us Logo"
-                  className="max-w-lg max-h-60 h-24 md:h-32"
-                />
-              </a>
-              <a href="/">
-                <img
-                  src="/logo2.jpg"
-                  alt="About Us Logo"
-                  className="max-w-lg max-h-60 h-32 md:h-40"
-                />
-              </a>
+                <a href="/">
+                  <img
+                    src="../images/rcpitlogo2.jpg"
+                    alt="About Us Logo"
+                    className="max-w-lg max-h-60 h-24 md:h-32"
+                  />
+                </a>
+                <a href="/">
+                  <img
+                    src="/logo2.jpg"
+                    alt="About Us Logo"
+                    className="max-w-lg max-h-60 h-32 md:h-40"
+                  />
+                </a>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold">
                 About <span className="text-red-500">Us</span>
@@ -175,19 +170,15 @@ const Hero: React.FC = () => {
               />
               <div className="w-full md:w-1/2 space-y-6">
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  <span className="font-semibold text-gray-900">
-                    Akatsuki Coding Club
-                  </span>{" "}
-                  was founded in 2021 by a group of passionate{" "}
-                  <span className="italic">Computer Engineering</span> students,
-                  driven by the vision to create a vibrant and collaborative
-                  environment for coding enthusiasts.
+                  <span className="font-semibold text-gray-900">Akatsuki Coding Club</span> was
+                  founded in 2021 by a group of passionate{' '}
+                  <span className="italic">Computer Engineering</span> students, driven by the
+                  vision to create a vibrant and collaborative environment for coding enthusiasts.
                 </p>
                 <p className="text-xl text-gray-600 leading-relaxed">
-                  With support from faculty and juniors, the club helps students
-                  enhance their technical skills through workshops, coding
-                  challenges, and mentorship. Akatsuki serves as a hub for
-                  learning, innovation, and connecting with seniors and alumni,
+                  With support from faculty and juniors, the club helps students enhance their
+                  technical skills through workshops, coding challenges, and mentorship. Akatsuki
+                  serves as a hub for learning, innovation, and connecting with seniors and alumni,
                   empowering members to grow and excel in the tech world.
                 </p>
               </div>

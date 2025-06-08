@@ -17,7 +17,9 @@ const Mission: React.FC = () => {
           <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
             Vision & <span className="text-red-500">Mission</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4 italic">"Of the Students For the Student and By the Students"</p>
+          <p className="text-lg text-gray-600 mt-4 italic">
+            "Of the Students For the Student and By the Students"
+          </p>
         </div>
 
         <div className="flex flex-wrap -mx-4">
@@ -38,18 +40,18 @@ const Mission: React.FC = () => {
               >
                 {/* Always visible background overlay */}
                 <div className="absolute inset-0 bg-black opacity-70 z-0"></div>
-                
+
                 {/* Card content */}
                 <div className="relative z-10 flex flex-col items-center justify-center h-full">
                   <div className="text-white text-5xl mb-4">
                     <i className={` ${item.iconClass}`}></i>
                   </div>
                   <h4 className="text-3xl font-bold mb-3 text-center text-white">
-                    <a href="#" className="hover:text-white">{item.title}</a>
+                    <a href="#" className="hover:text-white">
+                      {item.title}
+                    </a>
                   </h4>
-                  <p className="text-white text-lg text-center">
-                    {item.description}
-                  </p>
+                  <p className="text-white text-lg text-center">{item.description}</p>
                 </div>
               </div>
             </div>

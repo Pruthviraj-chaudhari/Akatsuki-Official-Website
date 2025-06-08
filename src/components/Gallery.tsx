@@ -32,10 +32,11 @@ export default function GallerySection() {
   const scrollTabs = (direction: 'left' | 'right') => {
     if (tabsRef.current) {
       const scrollAmount = 200;
-      const newScrollLeft = tabsRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      const newScrollLeft =
+        tabsRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
       tabsRef.current.scrollTo({
         left: newScrollLeft,
-        behavior: 'smooth'
+        behavior: 'smooth',
       });
 
       setTimeout(() => {
@@ -62,7 +63,10 @@ export default function GallerySection() {
   };
 
   const nextImage = () => {
-    if (currentImageIndex !== null && currentImageIndex < eventImages[activeIndex].photos.length - 1) {
+    if (
+      currentImageIndex !== null &&
+      currentImageIndex < eventImages[activeIndex].photos.length - 1
+    ) {
       const nextIndex = currentImageIndex + 1;
       setSelectedImage(eventImages[activeIndex].photos[nextIndex]);
       setCurrentImageIndex(nextIndex);
@@ -96,7 +100,7 @@ export default function GallerySection() {
     const currentPhotos = photos.slice(indexOfFirstPhoto, indexOfLastPhoto);
 
     return (
-      <motion.div 
+      <motion.div
         className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -138,15 +142,15 @@ export default function GallerySection() {
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
-        
+
         <div className="flex gap-2">
           {Array.from({ length: pageCount }, (_, i) => i + 1).map(number => (
             <button
               key={number}
               onClick={() => setCurrentPage(number)}
               className={`w-10 h-10 rounded-lg transition-colors ${
-                currentPage === number 
-                  ? 'bg-red-500 text-white' 
+                currentPage === number
+                  ? 'bg-red-500 text-white'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -178,7 +182,9 @@ export default function GallerySection() {
           <h2 className="text-4xl md:text-5xl font-bold">
             Our <span className="text-red-500">Gallery</span>
           </h2>
-          <p className="text-lg text-gray-600 mt-4">Capturing moments of learning, growth, and achievement</p>
+          <p className="text-lg text-gray-600 mt-4">
+            Capturing moments of learning, growth, and achievement
+          </p>
         </motion.div>
 
         <div className="mb-12">
@@ -234,20 +240,21 @@ export default function GallerySection() {
         </div>
 
         <AnimatePresence mode="wait">
-          {eventImages.map((event) => (
-            event.name === activeEvent && (
-              <motion.div
-                key={event.name}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                transition={{ duration: 0.3 }}
-              >
-                {renderPhotos(event.photos)}
-                {renderPagination(event.photos.length)}
-              </motion.div>
-            )
-          ))}
+          {eventImages.map(
+            event =>
+              event.name === activeEvent && (
+                <motion.div
+                  key={event.name}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {renderPhotos(event.photos)}
+                  {renderPagination(event.photos.length)}
+                </motion.div>
+              )
+          )}
         </AnimatePresence>
 
         <AnimatePresence>
@@ -266,13 +273,13 @@ export default function GallerySection() {
                 className="relative max-w-7xl w-full mx-auto"
                 onClick={e => e.stopPropagation()}
               >
-                <img 
-                  src={selectedImage!} 
-                  alt="Zoomed Image" 
+                <img
+                  src={selectedImage!}
+                  alt="Zoomed Image"
                   className="w-full h-auto max-h-[90vh] object-contain rounded-lg"
                 />
-                
-                <button 
+
+                <button
                   onClick={closeModal}
                   className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
                 >
@@ -288,18 +295,21 @@ export default function GallerySection() {
                   </button>
                 )}
 
-                {currentImageIndex !== null && currentImageIndex < eventImages[activeIndex].photos.length - 1 && (
-                  <button
-                    onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-                )}
+                {currentImageIndex !== null &&
+                  currentImageIndex < eventImages[activeIndex].photos.length - 1 && (
+                    <button
+                      onClick={nextImage}
+                      className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+                    >
+                      <ChevronRight className="w-6 h-6" />
+                    </button>
+                  )}
 
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/80">
                   {currentImageIndex !== null && (
-                    <span>{currentImageIndex + 1} / {eventImages[activeIndex].photos.length}</span>
+                    <span>
+                      {currentImageIndex + 1} / {eventImages[activeIndex].photos.length}
+                    </span>
                   )}
                 </div>
               </motion.div>

@@ -23,24 +23,23 @@ const AlumniBatch: React.FC = () => {
             Alumni <span className="text-red-500">Success</span>
           </h2>
           <div className="flex justify-center space-x-4 mt-7">
-            {[2023, 2024, 2025].map((batch) => (
+            {[2023, 2024, 2025].map(batch => (
               <button
                 key={batch}
                 onClick={() => handleBatchChange(batch)}
                 className={`px-4 py-2 rounded-lg ${selectedBatch === batch ? 'bg-red-500 text-white' : 'bg-gray-200 text-gray-800'}`}
               >
-               <span className='hidden md:inline'>Batch</span>  {batch}
+                <span className="hidden md:inline">Batch</span> {batch}
               </button>
             ))}
           </div>
         </div>
 
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
-          {alumniData[selectedBatch]?.map((alumni) => (
+          {alumniData[selectedBatch]?.map(alumni => (
             <AlumniCard key={alumni.name} alumni={alumni} />
           ))}
         </div>
-
       </div>
     </section>
   );

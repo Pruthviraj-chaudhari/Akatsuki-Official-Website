@@ -1,12 +1,12 @@
-import { eventImages } from "@/Data/eventImages ";
-import { Timeline } from "@/components/ui/timeline";
-import { cn } from "@/lib/utils";
+import { eventImages } from '@/Data/eventImages ';
+import { Timeline } from '@/components/ui/timeline';
+import { cn } from '@/lib/utils';
 
 export const TimelineDemo = ({ className }: { className?: string }) => {
   return (
-    <div className={cn("w-full",className)}>
+    <div className={cn('w-full', className)}>
       <Timeline
-        data={eventImages.map(({ name, photos,text }) => ({
+        data={eventImages.map(({ name, photos, text }) => ({
           title: name,
           content: (
             <div key={name}>
@@ -14,7 +14,10 @@ export const TimelineDemo = ({ className }: { className?: string }) => {
               {text && (
                 <p className="text-neutral-800 dark:text-neutral-200 text-xs md:text-sm font-normal mb-8">
                   {text.map((t, index) => (
-                    <span key={index}>{t}<br /></span>
+                    <span key={index}>
+                      {t}
+                      <br />
+                    </span>
                   ))}
                 </p>
               )}
@@ -45,4 +48,4 @@ export const TimelineDemo = ({ className }: { className?: string }) => {
       />
     </div>
   );
-}
+};

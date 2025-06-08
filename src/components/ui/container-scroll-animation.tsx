@@ -1,6 +1,6 @@
-import React, { useRef } from "react";
-import { useScroll, useTransform, motion, MotionValue } from "framer-motion";
-import { NavLink } from "react-router-dom";
+import React, { useRef } from 'react';
+import { useScroll, useTransform, motion, MotionValue } from 'framer-motion';
+import { NavLink } from 'react-router-dom';
 
 export const ContainerScroll = ({
   titleComponent,
@@ -20,9 +20,9 @@ export const ContainerScroll = ({
       setIsMobile(window.innerWidth <= 768);
     };
     checkMobile();
-    window.addEventListener("resize", checkMobile);
+    window.addEventListener('resize', checkMobile);
     return () => {
-      window.removeEventListener("resize", checkMobile);
+      window.removeEventListener('resize', checkMobile);
     };
   }, []);
 
@@ -43,7 +43,7 @@ export const ContainerScroll = ({
         <div
           className="py-10 md:py-40 w-full relative items-center flex flex-col justify-center"
           style={{
-            perspective: "1000px",
+            perspective: '1000px',
           }}
         >
           <Header translate={translate} titleComponent={titleComponent} />
@@ -51,14 +51,17 @@ export const ContainerScroll = ({
             {children}
           </Card>
           <div className=" w-full flex flex-col items-center justify-center mt-20">
-          <img className=' mx-auto h-40' src="https://akatsuki.vercel.app/_next/image?url=%2Fimg%2Fmembers_sm%2Fitachi_profile.png&w=640&q=100" alt="" />
-            <NavLink to={'https://akatsuki-connect.vercel.app/'} >
+            <img
+              className=" mx-auto h-40"
+              src="https://akatsuki.vercel.app/_next/image?url=%2Fimg%2Fmembers_sm%2Fitachi_profile.png&w=640&q=100"
+              alt=""
+            />
+            <NavLink to={'https://akatsuki-connect.vercel.app/'}>
               <button className="text-white bg-red-500 w-[200px] flex justify-center  font-semibold py-3 px-6 rounded-md text-sm ">
                 Join Now
               </button>
             </NavLink>
           </div>
-
         </div>
       </div>
     </>
@@ -94,7 +97,7 @@ export const Card = ({
         rotateX: rotate,
         scale,
         boxShadow:
-          "0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003",
+          '0 0 #0000004d, 0 9px 20px #0000004a, 0 37px 37px #00000042, 0 84px 50px #00000026, 0 149px 60px #0000000a, 0 233px 65px #00000003',
       }}
       className="max-w-5xl -mt-12 mx-auto h-[30rem] md:h-[40rem] w-full border-4 border-[#6C6C6C] p-2 md:p-6 bg-[#222222] rounded-[30px] shadow-2xl"
     >

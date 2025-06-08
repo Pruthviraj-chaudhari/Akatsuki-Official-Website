@@ -15,7 +15,9 @@ const UnderMaintenance = () => {
 
       {/* Main Message */}
       <div className="text-center">
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">We're currently working on something awesome!</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">
+          We're currently working on something awesome!
+        </h2>
         <p className="text-lg md:text-xl text-gray-300 mb-6">
           Our site is currently under maintenance. We'll be back shortly!
         </p>
@@ -32,9 +34,7 @@ const UnderMaintenance = () => {
 
       {/* Footer */}
       <footer className="mt-12 text-center">
-        <p className="text-sm text-gray-400">
-          © 2024 Akatsuki Coding Club. All rights reserved.
-        </p>
+        <p className="text-sm text-gray-400">© 2024 Akatsuki Coding Club. All rights reserved.</p>
       </footer>
     </div>
   );

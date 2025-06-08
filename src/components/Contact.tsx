@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Instagram } from 'lucide-react';
 
 interface FormData {
   name: string;
@@ -16,16 +16,16 @@ interface FormStatus {
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState<FormData>({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
   });
 
   const [formStatus, setFormStatus] = useState<FormStatus>({
     loading: false,
-    error: "",
-    success: "",
+    error: '',
+    success: '',
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -41,23 +41,23 @@ const Contact: React.FC = () => {
     setFormStatus({ ...formStatus, loading: true });
 
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      await new Promise(resolve => setTimeout(resolve, 2000));
       setFormStatus({
         loading: false,
-        error: "",
-        success: "Your message has been sent. Thank you!",
+        error: '',
+        success: 'Your message has been sent. Thank you!',
       });
       setFormData({
-        name: "",
-        email: "",
-        subject: "",
-        message: "",
+        name: '',
+        email: '',
+        subject: '',
+        message: '',
       });
     } catch (error) {
       setFormStatus({
         loading: false,
-        error: "There was an error sending your message. Please try again.",
-        success: "",
+        error: 'There was an error sending your message. Please try again.',
+        success: '',
       });
     }
   };
@@ -65,27 +65,28 @@ const Contact: React.FC = () => {
   const contactCards = [
     {
       icon: <MapPin className="w-8 h-8" />,
-      title: "Our Address",
-      content: "R. C. Patel Institute of Technology, Near Nimzari Naka, Shahada Road, Shirpur, Maharashtra - 425405",
+      title: 'Our Address',
+      content:
+        'R. C. Patel Institute of Technology, Near Nimzari Naka, Shahada Road, Shirpur, Maharashtra - 425405',
       link: null,
     },
     {
       icon: <Mail className="w-8 h-8" />,
-      title: "Email Us",
-      content: "akatsuki@rcpit.ac.in",
-      link: "mailto:akatsuki@rcpit.ac.in",
+      title: 'Email Us',
+      content: 'akatsuki@rcpit.ac.in',
+      link: 'mailto:akatsuki@rcpit.ac.in',
     },
     {
       icon: <Phone className="w-8 h-8" />,
-      title: "Call Us",
-      content: "+91 8080511069",
-      link: "tel:+918080511069",
+      title: 'Call Us',
+      content: '+91 8080511069',
+      link: 'tel:+918080511069',
     },
     {
       icon: <Instagram className="w-8 h-8" />,
-      title: "Follow Us",
-      content: "@akatsuki_codingclub",
-      link: "https://instagram.com/akatsuki_codingclub",
+      title: 'Follow Us',
+      content: '@akatsuki_codingclub',
+      link: 'https://instagram.com/akatsuki_codingclub',
     },
   ];
 
@@ -97,7 +98,8 @@ const Contact: React.FC = () => {
             Get in touch with <span className="text-red-600">Akatsuki</span>
           </h2>
           <p className="text-lg text-gray-600 mt-4 max-w-2xl mx-auto">
-            Contact us for any queries, help or guidance from experts. We're always ready to assist you!
+            Contact us for any queries, help or guidance from experts. We're always ready to assist
+            you!
           </p>
         </div>
 

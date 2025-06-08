@@ -1,5 +1,5 @@
-import React from "react";
-import { Twitter, Instagram, Linkedin } from "lucide-react";
+import React from 'react';
+import { Twitter, Instagram, Linkedin } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -12,7 +12,8 @@ const Footer: React.FC = () => {
               Akatsuki
             </h3>
             <p className="text-gray-400 text-lg leading-relaxed">
-              Empowering students through coding excellence and innovation at R. C. Patel Institute of Technology, Shirpur.
+              Empowering students through coding excellence and innovation at R. C. Patel Institute
+              of Technology, Shirpur.
             </p>
             <div className="flex space-x-4">
               <a
@@ -52,14 +53,16 @@ const Footer: React.FC = () => {
                 'Services',
                 'Terms of service',
                 'Privacy policy',
-                'Contact us'
-              ].map((item) => (
+                'Contact us',
+              ].map(item => (
                 <li key={item}>
                   <a
                     href="#"
                     className="hover:text-red-500 transition-colors duration-300 flex items-center group"
                   >
-                    <span className="mr-2 text-red-500 transform group-hover:translate-x-1 transition-transform">›</span>
+                    <span className="mr-2 text-red-500 transform group-hover:translate-x-1 transition-transform">
+                      ›
+                    </span>
                     {item}
                   </a>
                 </li>
@@ -74,8 +77,7 @@ const Footer: React.FC = () => {
               © {new Date().getFullYear()} Akatsuki Coding Club. All rights reserved.
             </p>
             <p className="text-gray-500">
-              Developed with{" "}
-              <span className="text-red-500 animate-pulse">❤️</span>{" "}by{" "}
+              Developed with <span className="text-red-500 animate-pulse">❤️</span> by{' '}
               <a
                 href="https://www.instagram.com/akatsuki_codingclub/"
                 className="text-red-500 hover:text-red-400 font-medium transition-colors"

@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 interface RouteProps {
   href: string;
@@ -10,29 +10,28 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "/",
-    label: "Home",
+    href: '/',
+    label: 'Home',
   },
   {
-    href: "/#about",
-    label: "About Us",
+    href: '/#about',
+    label: 'About Us',
   },
   {
-    href: "/#team",
-    label: "Team",
+    href: '/#team',
+    label: 'Team',
   },
   {
-    href: "/events",
-    label: "Events",
+    href: '/events',
+    label: 'Events',
   },
   {
-    href: "/#contact",
-    label: "Contact Us",
+    href: '/#contact',
+    label: 'Contact Us',
   },
 ];
 
 export const Navbar = ({ className }: { className?: string }) => {
-
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
@@ -45,27 +44,25 @@ export const Navbar = ({ className }: { className?: string }) => {
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
   return (
     <header
-    className={cn(`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${scrolled
-          ? "bg-black/70 backdrop-blur-sm"
-          : "bg-transparent"
-        }`, className)}
+      className={cn(
+        `fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${
+          scrolled ? 'bg-black/70 backdrop-blur-sm' : 'bg-transparent'
+        }`,
+        className
+      )}
     >
       <div className="container mx-auto">
         <div className="h-16 px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img
-              src="../images/akatsukilogo.png"
-              alt="Akatsuki Logo"
-              className="mr-4 max-h-8"
-            />
+            <img src="../images/akatsukilogo.png" alt="Akatsuki Logo" className="mr-4 max-h-8" />
             <span className="text-white text-3xl font-bold">Akatsuki</span>
           </Link>
 
@@ -81,12 +78,13 @@ export const Navbar = ({ className }: { className?: string }) => {
 
           {/* Mobile Menu Content */}
           <div
-            className={`lg:hidden fixed inset-y-0 right-0 transform ${isOpen ? "translate-x-0" : "translate-x-full"
-              } w-64 bg-black/95 backdrop-blur-lg transition-transform duration-300 ease-in-out z-50`}
+            className={`lg:hidden fixed inset-y-0 right-0 transform ${
+              isOpen ? 'translate-x-0' : 'translate-x-full'
+            } w-64 bg-black/95 backdrop-blur-lg transition-transform duration-300 ease-in-out z-50`}
           >
             <div className="p-6">
               <nav className="space-y-4">
-                {routeList.map((route) => (
+                {routeList.map(route => (
                   <a
                     key={route.label}
                     href={route.href}
@@ -102,7 +100,7 @@ export const Navbar = ({ className }: { className?: string }) => {
 
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center space-x-1">
-            {routeList.map((route) => (
+            {routeList.map(route => (
               <a
                 key={route.label}
                 href={route.href}

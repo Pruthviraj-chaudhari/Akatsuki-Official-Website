@@ -15,11 +15,11 @@ import AlumniBatch from '@/components/AlumniBatch';
 
 const Home = () => {
   return (
-    <div className=' bg-transparent'>
+    <div className=" bg-transparent">
       <Navbar />
       <Hero />
       {/* <About /> */}
-      <div className='content'>
+      <div className="content">
         <Mission />
         <HeroScrollDemo />
         <AlumniBatch />

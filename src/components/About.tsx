@@ -13,7 +13,7 @@ const About: React.FC = () => {
         <div className=" flex flex-col items-center justify-center">
           <h2 className="max-w-7xl mx-auto text-4xl md:text-5xl font-bold text-black font-sans">
             About <span className="text-red-500">Us</span>
-          </h2> 
+          </h2>
         </div>
         <div className="flex items-center gap-4 justify-center py-10">
           <a href="/">
@@ -24,27 +24,18 @@ const About: React.FC = () => {
             />
           </a>
           <a href="/">
-            <img
-              src="/logo2.jpg"
-              alt="About Us Logo"
-              className="max-w-lg max-h-60 h-32 md:h-40"
-            />
+            <img src="/logo2.jpg" alt="About Us Logo" className="max-w-lg max-h-60 h-32 md:h-40" />
           </a>
         </div>
         <div className="text-center max-w-8xl mx-auto">
           <p className="text-[22px] text-wrap text-gray-600 font-normal px-6">
-            <span className="font-medium">
-              Akatsuki Coding Club
-            </span>{" "}
-            was founded in 2021 by a group of passionate 
-            {" "}<span className="italic">Computer Engineering</span>{" "} students, driven by the vision to create a
-            vibrant and collaborative environment for coding
-            enthusiasts. With support from faculty and juniors, the
-            club helps students enhance their technical skills
-            through workshops, coding challenges, and mentorship.
-            Akatsuki serves as a hub for learning, innovation, and
-            connecting with seniors and alumni, empowering members
-            to grow and excel in the tech world.
+            <span className="font-medium">Akatsuki Coding Club</span> was founded in 2021 by a group
+            of passionate <span className="italic">Computer Engineering</span> students, driven by
+            the vision to create a vibrant and collaborative environment for coding enthusiasts.
+            With support from faculty and juniors, the club helps students enhance their technical
+            skills through workshops, coding challenges, and mentorship. Akatsuki serves as a hub
+            for learning, innovation, and connecting with seniors and alumni, empowering members to
+            grow and excel in the tech world.
           </p>
         </div>
       </div>
