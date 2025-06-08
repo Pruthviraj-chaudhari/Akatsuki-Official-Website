@@ -2,16 +2,16 @@ import { ITeamMember } from "@/types";
 
 const leaders: ITeamMember[] = [
   {
-    name: 'Pruthviraj Chaudhari',
+    name: 'Bhumika Patil',
     role: 'President',
-    image: '../images/alumni/batch2025/Pruthviraj.png',
+    image: '../images/members/president.jpg',
     linkedin: '',
     github: '',
   },
   {
-    name: 'Sanika Joshi',
+    name: 'Bhavesh Desale',
     role: 'Vice President',
-    image: '../images/alumni/batch2025/sanika.jpg',
+    image: '../images/members/vice-president.jpg',
     linkedin: '',
     github: '',
   },
