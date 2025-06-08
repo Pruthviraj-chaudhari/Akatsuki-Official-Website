@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import teamMembers from '../_temp/teamBatch2024';
+import teamMembers from '../data/teamBatch2024';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 
 // Define the TeamMember interface

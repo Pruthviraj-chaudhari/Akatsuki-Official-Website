@@ -1,5 +1,5 @@
 import React from 'react';
-import leaders from '../_temp/leaders';
+import leaders from '../data/leaders';
 
 // Define the Leader type
 interface Leader {
