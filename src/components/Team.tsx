@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import teamMembers from '@/data/teamBatch2026';
-import newTeam from '@/data/teamBatch2027';
 
 // Define the TeamMember interface
 interface TeamMember {
@@ -15,10 +14,8 @@ interface TeamMember {
 const Team: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState(8); // Initially show 8 members
 
-  const combinedTeam = [...teamMembers, ...newTeam];
-
   const handleLoadMore = () => {
-    setVisibleCount(prevCount => prevCount + 8); // updated to Show 8 more members on click
+    setVisibleCount(prevCount => prevCount + 8); // Show 8 more members on click
   };
 
   const handleShowLess = () => {
@@ -36,9 +33,8 @@ const Team: React.FC = () => {
             Innovators. Builders. Leaders. Together, we are Akatsuki.
           </p>
         </div>
-
         <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 text-center">
-          {combinedTeam.slice(0, visibleCount).map((member: TeamMember, index: number) => (
+          {teamMembers.slice(0, visibleCount).map((member: TeamMember, index: number) => (
             <div
               key={index}
               className="p-2 pb-5 rounded-lg transition duration-300"
@@ -84,13 +80,12 @@ const Team: React.FC = () => {
             </div>
           ))}
         </div>
-
         <div className="text-center mt-6">
           <button
-            onClick={visibleCount < combinedTeam.length ? handleLoadMore : handleShowLess}
+            onClick={visibleCount < teamMembers.length ? handleLoadMore : handleShowLess}
             className="bg-red-500 text-white py-2 px-4 rounded hover:bg-red-600 transition duration-300"
           >
-            {visibleCount < combinedTeam.length ? 'Load More' : 'Show Less'}
+            {visibleCount < teamMembers.length ? 'Load More' : 'Show Less'}
           </button>
         </div>
       </div>
