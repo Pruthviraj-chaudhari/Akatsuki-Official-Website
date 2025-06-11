@@ -12,14 +12,14 @@ interface TeamMember {
 }
 
 const Team: React.FC = () => {
-  const [visibleCount, setVisibleCount] = useState(4); // Initially show 4 members
+  const [visibleCount, setVisibleCount] = useState(8); // Initially show 8 members
 
   const handleLoadMore = () => {
-    setVisibleCount(prevCount => prevCount + 4); // Show 4 more members on click
+    setVisibleCount(prevCount => prevCount + 8); // Show 8 more members on click
   };
 
   const handleShowLess = () => {
-    setVisibleCount(4); // Reset to show only the initial 4 members
+    setVisibleCount(8); // Reset to show only the initial 8 members
   };
 
   return (
@@ -37,7 +37,7 @@ const Team: React.FC = () => {
           {teamMembers.slice(0, visibleCount).map((member: TeamMember, index: number) => (
             <div
               key={index}
-              className=" p-2 pb-5 rounded-lg  transition duration-300"
+              className="p-2 pb-5 rounded-lg transition duration-300"
               style={{ width: '100%', height: '100%' }}
             >
               <div className="flex flex-col items-center">
