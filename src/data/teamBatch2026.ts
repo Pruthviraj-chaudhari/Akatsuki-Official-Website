@@ -41,7 +41,7 @@ const teamMembers: ITeamMember[] = [
     },
     {
         name: 'Aniket Patil',
-        role: 'Technical Lead',
+        role: 'Full Stack Developer',
         image: '../images/members/aniket.jpg',
         linkedin: 'https://www.linkedin.com/in/aniket-patil-4a085a257',
         github: 'https://github.com/07082004Aniket',
@@ -200,6 +200,21 @@ const teamMembers: ITeamMember[] = [
       'https://www.linkedin.com/in/gaurav-chaudhari-b20176227?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     github: 'https://github.com/chaudhariGaurav07',
   },
+  {
+    name: 'Harsha Dahivadkar',
+    role: 'Department Representative',
+    image: '../images/members/harsha.jpg',
+    linkedin: 'https://www.linkedin.com/in/harsha-dahivadkar-9519442b4',
+    github: 'https://github.com/harshadahivadkar22',
+  },
+  {
+    name: 'Umakant Patil',
+    role: 'Department Representative',
+    image: '../images/members/umakant.jpg',
+    linkedin: 'https://www.linkedin.com/in/umakant-patil-a41a49289',
+    github: '',
+  },
+  
 ];
 
 export default teamMembers;
