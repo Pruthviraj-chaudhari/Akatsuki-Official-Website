@@ -25,6 +25,11 @@ const routeList: RouteProps[] = [
     href: '/events',
     label: 'Events',
   },
+ {
+    href: '/resources',
+    label: 'Resources',
+  },
+
   {
     href: '/#contact',
     label: 'Contact Us',

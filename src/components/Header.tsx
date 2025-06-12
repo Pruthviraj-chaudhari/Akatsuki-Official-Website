@@ -91,7 +91,7 @@ const Header: React.FC = () => {
               >
                 Gallery
               </a>
-            </li>
+            </li>         
             <li>
               <a
                 className="text-white text-lg font-semibold hover:text-red-500 transition-all duration-300"
