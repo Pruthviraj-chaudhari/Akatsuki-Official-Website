@@ -41,7 +41,7 @@ const teamMembers: ITeamMember[] = [
     },
     {
         name: 'Aniket Patil',
-        role: 'Full Stack Developer',
+        role: 'Technical Lead',
         image: '../images/members/aniket.jpg',
         linkedin: 'https://www.linkedin.com/in/aniket-patil-4a085a257',
         github: 'https://github.com/07082004Aniket',
