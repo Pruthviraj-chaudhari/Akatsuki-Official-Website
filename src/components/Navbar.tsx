@@ -13,6 +13,7 @@ const routeList: RouteProps[] = [
   { href: '/#about', label: 'About Us' },
   { href: '/#team', label: 'Team' },
   { href: '/events', label: 'Events' },
+  { href: '/resources', label: 'Resources' },
   { href: '/#contact', label: 'Contact Us' },
 ];
 
@@ -47,14 +48,14 @@ export const Navbar = ({ className }: { className?: string }) => {
       <div className="container mx-auto">
         <div className="h-16 px-4 flex items-center justify-between">
           <Link to="/" className="flex items-center">
-            <img src="/assets/akatsukilogo.png" alt="Logo" className="mr-4 max-h-8" />
+            <img src="../assets/akatsukilogo.png" alt="Akatsuki Logo" className="mr-4 max-h-8" />
             <span className="text-white text-3xl font-bold">Akatsuki</span>
           </Link>
 
-          {/* Mobile Menu Toggle */}
+          {/* Mobile Menu */}
           <div className="lg:hidden ">
             <button
-              onClick={() => setIsOpen(true)}
+              onClick={() => setIsOpen(!isOpen)}
               className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
             >
               <Menu className="h-6 w-6" />
