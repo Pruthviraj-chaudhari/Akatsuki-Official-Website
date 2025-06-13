@@ -41,26 +41,16 @@ export const Navbar = ({ className }: { className?: string }) => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-sm transition-all duration-300',
+        'fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-sm',
         className
       )}
     >
       <div className="container mx-auto">
-        <div className="h-16 px-4 flex items-center justify-between">
-          <Link to="/" className="flex items-center">
+        <div className="h-16 px-4 flex items-center justify-between relative z-50">
+          <Link to="/" className="flex items-center z-50">
             <img src="../assets/akatsukilogo.png" alt="Akatsuki Logo" className="mr-4 max-h-8" />
             <span className="text-white text-3xl font-bold">Akatsuki</span>
           </Link>
-
-          {/* Mobile Menu */}
-          <div className="lg:hidden ">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
-            >
-              <Menu className="h-6 w-6" />
-            </button>
-          </div>
 
           {/* Desktop Menu */}
           <nav className="hidden lg:flex items-center space-x-1">
@@ -74,42 +64,40 @@ export const Navbar = ({ className }: { className?: string }) => {
               </a>
             ))}
           </nav>
+
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden z-50">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile Sidebar Menu */}
+      {/* Mobile Sidebar Menu - Positioned behind navbar */}
       <div
         className={cn(
-          'fixed top-0 right-0 h-full w-64 transform transition-transform duration-300 z-40 lg:hidden',
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+          'lg:hidden fixed top-0 left-0 right-0 h-max bg-black/90 backdrop-blur-sm transition-all duration-300 z-40 pt-16',
+          isOpen ? 'translate-y-0' : '-translate-y-full'
         )}
         ref={menuRef}
       >
-        {/* Full background for mobile menu */}
-        <div className="h-full w-full bg-black/70 backdrop-blur-sm">
-        <div className="bg-black/70 backdrop-blur-sm">
-
-          <div className="flex justify-between items-center p-6 bg-black/70 backdrop-blur-sm">
-            <span className="text-white text-xl font-semibold">Menu</span>
-            <button onClick={() => setIsOpen(false)} className="text-white">
-              <X className="h-6 w-6" />
-            </button>
-          </div>
-
-          <nav className="px-6 space-y-4 bg-black/70 backdrop-blur-sm">
-            {routeList.map(route => (
-              <a
-                key={route.label}
-                href={route.href}
-                onClick={() => setIsOpen(false)}
-                className="block text-white text-base hover:text-red-500 transition-colors py-2"
-                >
-                {route.label}
-              </a>
-            ))}
-          </nav>
-        </div>
-            </div>
+        <nav className="px-6 py-4 space-y-4 overflow-y-auto h-full">
+          {routeList.map(route => (
+            <a
+              key={route.label}
+              href={route.href}
+              onClick={() => setIsOpen(false)}
+              className="block text-white text-lg hover:text-red-500 transition-colors py-3 "
+            >
+              {route.label}
+            </a>
+          ))}
+        </nav>
       </div>
     </header>
   );

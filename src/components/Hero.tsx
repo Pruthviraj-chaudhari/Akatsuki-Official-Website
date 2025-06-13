@@ -13,6 +13,10 @@ const images = [
     alt: 'Akatsuki Image 2',
   },
   {
+    src: './assets/background4.jpg',
+    alt: 'Akatsuki Image 4',
+  },
+  {
     src: './assets/background3.jpg',
     alt: 'Akatsuki Image 3',
   },
