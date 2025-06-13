@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface RouteProps {
@@ -9,57 +9,39 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
-  {
-    href: '/',
-    label: 'Home',
-  },
-  {
-    href: '/#about',
-    label: 'About Us',
-  },
-  {
-    href: '/#team',
-    label: 'Team',
-  },
-  {
-    href: '/events',
-    label: 'Events',
-  },
- {
-    href: '/resources',
-    label: 'Resources',
-  },
-
-  {
-    href: '/#contact',
-    label: 'Contact Us',
-  },
+  { href: '/', label: 'Home' },
+  { href: '/#about', label: 'About Us' },
+  { href: '/#team', label: 'Team' },
+  { href: '/events', label: 'Events' },
+  { href: '/resources', label: 'Resources' },
+  { href: '/#contact', label: 'Contact Us' },
 ];
 
 export const Navbar = ({ className }: { className?: string }) => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-  const [scrolled, setScrolled] = useState<boolean>(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  const handleScroll = () => {
-    if (window.scrollY > 50) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
-  };
-
+  // Close mobile menu on click outside
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
     };
-  }, []);
+
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isOpen]);
 
   return (
     <header
       className={cn(
-        `fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out ${scrolled ? 'bg-black/70 backdrop-blur-sm' : 'bg-transparent'
-        }`,
+        'fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-sm transition-all duration-300',
         className
       )}
     >
@@ -71,34 +53,13 @@ export const Navbar = ({ className }: { className?: string }) => {
           </Link>
 
           {/* Mobile Menu */}
-          <div className="lg:hidden">
+          <div className="lg:hidden ">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
             >
               <Menu className="h-6 w-6" />
             </button>
-          </div>
-
-          {/* Mobile Menu Content */}
-          <div
-            className={`lg:hidden fixed inset-y-0 right-0 transform ${isOpen ? 'translate-x-0' : 'translate-x-full'
-              } w-64 bg-black/95 backdrop-blur-lg transition-transform duration-300 ease-in-out z-50`}
-          >
-            <div className="p-6">
-              <nav className="space-y-4">
-                {routeList.map(route => (
-                  <a
-                    key={route.label}
-                    href={route.href}
-                    className="block text-white hover:text-red-500 transition-colors py-2"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {route.label}
-                  </a>
-                ))}
-              </nav>
-            </div>
           </div>
 
           {/* Desktop Menu */}
@@ -114,6 +75,41 @@ export const Navbar = ({ className }: { className?: string }) => {
             ))}
           </nav>
         </div>
+      </div>
+
+      {/* Mobile Sidebar Menu */}
+      <div
+        className={cn(
+          'fixed top-0 right-0 h-full w-64 transform transition-transform duration-300 z-40 lg:hidden',
+          isOpen ? 'translate-x-0' : 'translate-x-full'
+        )}
+        ref={menuRef}
+      >
+        {/* Full background for mobile menu */}
+        <div className="h-full w-full bg-black/70 backdrop-blur-sm">
+        <div className="bg-black/70 backdrop-blur-sm">
+
+          <div className="flex justify-between items-center p-6 bg-black/70 backdrop-blur-sm">
+            <span className="text-white text-xl font-semibold">Menu</span>
+            <button onClick={() => setIsOpen(false)} className="text-white">
+              <X className="h-6 w-6" />
+            </button>
+          </div>
+
+          <nav className="px-6 space-y-4 bg-black/70 backdrop-blur-sm">
+            {routeList.map(route => (
+              <a
+                key={route.label}
+                href={route.href}
+                onClick={() => setIsOpen(false)}
+                className="block text-white text-base hover:text-red-500 transition-colors py-2"
+                >
+                {route.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+            </div>
       </div>
     </header>
   );
