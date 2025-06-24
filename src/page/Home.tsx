@@ -9,6 +9,7 @@ import { Navbar } from '@/components/Navbar';
 import { HeroScrollDemo } from '@/components/HeroScrollDemo';
 import AlumniBatch from '@/components/AlumniBatch';
 // import About from '../components/About';
+import ViewCounter from '@/components/ui/views';
 
 const Home = () => {
   return (
