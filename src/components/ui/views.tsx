@@ -20,9 +20,9 @@ const ViewCounter = () => {
 }, []);
 
   return (
-    <div className="flex items-center gap-2 px-3 py-1 rounded-md text-white">
-      <Eye className="w-4 h-4" />
-      <span className="text-sm font-medium">{views}</span>
+    <div className="flex items-center gap-2 px-3 py-1 rounded-md text-white text-sm sm:text-base md:text-m">
+      <Eye className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
+      {views}
     </div>
 
   );

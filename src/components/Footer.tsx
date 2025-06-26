@@ -44,12 +44,8 @@ const Footer: React.FC = () => {
             </div>
           </div>
 
-          {/* Quick Links + View Counter */}
+          {/* Quick Links */}
           <div className="md:pl-12 relative">
-            {/* View Counter pinned to top-right of this section */}
-            <div className="absolute top-0 right-0">
-              <ViewCounter />
-            </div>
             <h4 className="text-xl font-semibold text-white mb-6 relative inline-block">
               Quick Links
               <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-red-500"></span>
@@ -93,6 +89,9 @@ const Footer: React.FC = () => {
                 Akatsuki
               </a>
             </p>
+          </div>
+          <div className="mt-4 flex justify-center items-center space-x-4">
+            <ViewCounter /> 
           </div>
         </div>
       </div>

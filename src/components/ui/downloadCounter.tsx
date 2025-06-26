@@ -19,9 +19,9 @@ const DownloadCounter = ({ title }: { title: string }) => {
 }, [title]);
 
   return (
-    <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 text-danger text-xs 
-                    rounded-md bg-white/50 backdrop-blur-sm ring-1 ring-white/10">
-      <Download className="w-3 h-3" />
+    <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 text-danger  
+                    rounded-md bg-white/50 backdrop-blur-sm ring-1 ring-white/10 text-sm sm:text-base md:text-m">
+      <Download className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5" />
       {count}
     </div>
   );
