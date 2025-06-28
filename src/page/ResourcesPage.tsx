@@ -2,7 +2,6 @@ import React from "react";
 import ResourceCard from "@/components/resourceCard";
 import resources from "../data/Resources";
 import { Navbar } from "@/components/Navbar";
-import ViewCounter from "@/components/ui/views";
 
 // Define the type for a single resource
 type Resource = {
