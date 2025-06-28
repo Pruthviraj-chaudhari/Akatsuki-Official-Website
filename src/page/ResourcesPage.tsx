@@ -3,7 +3,6 @@ import ResourceCard from "@/components/resourceCard";
 import resources from "../data/Resources";
 import { Navbar } from "@/components/Navbar";
 
-
 // Define the type for a single resource
 type Resource = {
   title: string;

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Download, BookOpen } from "lucide-react";
+import DownloadCounter from "./ui/downloadCounter"; // Make sure path is correct
+import axios from "axios";
 
-// Define the type for props
 type ResourceCardProps = {
   title: string;
   description: string;
@@ -15,21 +16,34 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
   fileUrl,
   imageUrl,
 }) => {
+
+   const [trigger, setTrigger] = useState(0);
+
+  const handleDownload = async () => {
+  try {
+    await axios.post(`${import.meta.env.VITE_API_URL}/downloads`, { title });
+
+     setTrigger((prev) => prev + 1);
+  } catch (error) {
+    console.error("Error incrementing download count:", error);
+  }
+};
+
   return (
     <div className="bg-white/90 rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300 overflow-hidden flex flex-col group hover:scale-[1.03] transform">
       <div className="relative">
-  <img
-    src={imageUrl}
-    alt={title}
-    className="h-50 w-full object-cover transition duration-300 group-hover:brightness-105 z-0"
-  />
-  <div className="absolute top-0 left-0 w-full bg-white  sm:py-3 sm:px-5 rounded-t-3xl z-10">
-    <h3 className="text-lg sm:text-xl p-3 md:p-0 font-bold text-gray-900 group-hover:text-red-500 transition-colors duration-300 drop-shadow">
-      {title}
-    </h3>
-  </div>
-</div>
-
+        <img
+          src={imageUrl}
+          alt={title}
+          className="h-50 w-full object-cover transition duration-300 group-hover:brightness-105 z-0"
+        />
+        <div className="absolute top-0 left-0 w-full bg-white sm:py-3 sm:px-5 rounded-t-3xl z-10">
+          <h3 className="text-lg sm:text-xl p-3 md:p-0 font-bold text-gray-900 group-hover:text-red-500 transition-colors duration-300 drop-shadow">
+            {title}
+          </h3>
+          <DownloadCounter title={title} trigger={trigger} />
+        </div>
+      </div>
 
       <div className="p-4 sm:p-5 flex flex-col justify-between flex-1 bg-white rounded-b-3xl">
         <div className="mb-4">
@@ -44,14 +58,12 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
           </p>
         </div>
 
-        <a
-          href={fileUrl}
-          download={title}
-          className="mt-auto inline-flex items-center justify-center bg-red-500 hover:bg-red-400 text-white font-medium py-2 px-4 rounded-xl text-sm transition-all duration-300 shadow-md hover:shadow-lg"
-        >
-          <Download className="w-4 h-4 mr-2" />
-          Download
-        </a>
+          <a href={fileUrl} title={title} className="mt-auto inline-flex items-center justify-center bg-red-500 hover:bg-red-400 text-white font-medium py-2 px-4 rounded-xl text-sm transition-all duration-300 shadow-md hover:shadow-lg">
+            <Download className="w-4 h-4 mr-2" />
+            <button
+          onClick={handleDownload}
+        >Download</button>
+          </a>
       </div>
     </div>
   );
