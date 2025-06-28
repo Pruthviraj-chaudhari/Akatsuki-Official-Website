@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Download, BookOpen } from "lucide-react";
 import DownloadCounter from "./ui/downloadCounter"; // Make sure path is correct
 import axios from "axios";
@@ -16,9 +16,14 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
   fileUrl,
   imageUrl,
 }) => {
+
+   const [trigger, setTrigger] = useState(0);
+
   const handleDownload = async () => {
   try {
-    await axios.post("http://localhost:4000/api/downloads", { title });
+    await axios.post(`${import.meta.env.VITE_API_URL}/downloads`, { title });
+
+     setTrigger((prev) => prev + 1);
   } catch (error) {
     console.error("Error incrementing download count:", error);
   }
@@ -36,7 +41,7 @@ const ResourceCard: React.FC<ResourceCardProps> = ({
           <h3 className="text-lg sm:text-xl p-3 md:p-0 font-bold text-gray-900 group-hover:text-red-500 transition-colors duration-300 drop-shadow">
             {title}
           </h3>
-          <DownloadCounter title={title} />
+          <DownloadCounter title={title} trigger={trigger} />
         </div>
       </div>
 

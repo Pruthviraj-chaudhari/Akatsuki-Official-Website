@@ -46,10 +46,16 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div className="md:pl-12 relative">
+            <div className="grid grid-cols-2 ">
             <h4 className="text-xl font-semibold text-white mb-6 relative inline-block">
               Quick Links
-              <span className="absolute bottom-0 left-0 w-1/2 h-0.5 bg-red-500"></span>
+              <span className="absolute bottom-0 left-0 w-1/5 h-0.5 bg-red-500"></span>
             </h4>
+            <div>
+               <ViewCounter /> 
+            </div>
+           
+            </div>
             <ul className="grid grid-cols-2 gap-4">
               {[
                 'Home',
@@ -90,9 +96,9 @@ const Footer: React.FC = () => {
               </a>
             </p>
           </div>
-          <div className="mt-4 flex justify-center items-center space-x-4">
+          {/* <div className="mt-4 flex justify-center items-center space-x-4">
             <ViewCounter /> 
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

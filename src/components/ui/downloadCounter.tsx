@@ -2,13 +2,13 @@ import { useEffect, useState } from "react";
 import { Download } from "lucide-react";
 import axios from "axios";
 
-const DownloadCounter = ({ title }: { title: string }) => {
+const DownloadCounter = ({ title,trigger }: { title: string; trigger: number; }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
   const fetchDownloads = async () => {
     try {
-      const res = await axios.get(`http://localhost:4000/api/downloads/${encodeURIComponent(title)}`);
+      const res = await axios.get(`${import.meta.env.VITE_API_URL}/downloads/${encodeURIComponent(title)}`);
       setCount(res.data.downloads || 0);
     } catch (error) {
       console.error("Error fetching download count:", error);
@@ -16,7 +16,7 @@ const DownloadCounter = ({ title }: { title: string }) => {
   };
 
   fetchDownloads();
-}, [title]);
+}, [title,trigger]);
 
   return (
     <div className="absolute top-3 right-3 flex items-center gap-1 px-2 py-1 text-danger  
