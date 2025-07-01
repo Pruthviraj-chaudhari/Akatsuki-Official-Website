@@ -19,9 +19,20 @@ const routeList: RouteProps[] = [
 
 export const Navbar = ({ className }: { className?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isScrolled, setIsScrolled] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
-  // Close mobile menu on click outside
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -41,9 +52,11 @@ export const Navbar = ({ className }: { className?: string }) => {
   return (
     <header
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 bg-black/70 backdrop-blur-sm',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
+        isScrolled ? 'bg-black/70 backdrop-blur-sm' : 'bg-transparent',
         className
       )}
+
     >
       <div className="container mx-auto">
         <div className="h-16 px-4 flex items-center justify-between relative z-50">
