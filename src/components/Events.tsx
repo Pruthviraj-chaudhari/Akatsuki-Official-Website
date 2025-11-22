@@ -7,7 +7,8 @@ export const TimelineDemo = ({ className }: { className?: string }) => {
   return (
     <div className={cn('w-full', className)}>
       <Timeline
-        data={eventImages.map(({ name, photos, text }: IEvent) => ({
+        data={eventImages.map(({ id, name, photos, text }: IEvent) => ({
+          id, // Pass the id for navigation
           title: name,
           content: (
             <div key={name}>

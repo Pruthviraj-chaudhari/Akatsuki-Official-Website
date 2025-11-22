@@ -9,13 +9,13 @@ import ResourcesPage from './page/ResourcesPage';
 
 const App: React.FC = () => {
   return (
-    <div>  
+    <div className='overflow-x-hidden'>  
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/events" element={<Events />} />
         <Route path="/resources" element={<ResourcesPage />} />
-        <Route path="/details" element={<EventDetails />} />
+        <Route path="/events/:id" element={<EventDetails />} />
       </Routes>
     </div>
   );

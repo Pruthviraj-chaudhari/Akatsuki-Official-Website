@@ -94,20 +94,6 @@ const teamMembers: ITeamMember[] = [
             'https://www.linkedin.com/in/dipti-bhavsar-0a3ab4295',
         github: 'https://github.com/Dipti112/',
     },
-    {
-    name: 'Vedshree Dhaybar',
-    role: 'Frontend Developer',
-    image: '../images/members/vedshree.jpg',
-    linkedin: 'https://www.linkedin.com/in/vedshree-dhaybar-995403322',
-    github: 'https://github.com/Vedshree-Dhaybar',
-  },
-  {
-    name: 'Mahesh Patil',
-    role: 'frontend Developer',
-    image: '../images/members/mahesh.jpg',
-    linkedin: 'https://www.linkedin.com/in/aniket-patil-4a085a257',
-    github: 'https://github.com/07082004Aniket',
-  },
   {
     name: 'Pushkar Deore',
     role: 'Full Stack Developer',
@@ -119,7 +105,7 @@ const teamMembers: ITeamMember[] = [
   {
     name: 'Janhavi Patil',
     role: 'Frontend Developer',
-    image: '../images/members/janvi.jpg',
+    image: '../images/members/janhavi.jpg',
     linkedin: 'https://www.linkedin.com/in/janhavi-patil-1348a22bb',
     github: 'https://github.com/patilj735',
   },
