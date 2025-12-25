@@ -311,3 +311,63 @@ export const alumni2025: IAlumni[] = [
     batch: 2025,
   },
 ];
+
+//2026 batch
+export const alumni2026: IAlumni[] = [
+  {
+    name: 'Bhumika Patil',
+    role: 'President, SDE',
+    image: '../images/alumni/batch2026/bhumika.jpg',
+    company: ['Coditas - 4 LPA', 'WeblineIndia - 4 LPA '],
+    batch: 2026,
+  },
+  {
+    name: 'Bhavesh Desale',
+    role: 'Vice President, SDE',
+    image: '../images/alumni/batch2026/bhavesh_desale.jpg',
+    company: ['Coditas - 4 LPA'],
+    batch: 2026,
+  },
+  {
+    name: 'Dipti Bhavsar',
+    role: 'Software Developer',
+    image: '../images/alumni/batch2026/dipti.jpg',
+    company: ['Coditas - 4 LPA'],
+    batch: 2026,
+  },
+  {
+    name: 'Darshan Varade',
+    role: 'Software Developer',
+    image: '../images/alumni/batch2026/darshan.jpg',
+    company: ['Rheal Software - 3 LPA'],
+    batch: 2025,
+  },
+  {
+    name: 'Ketankumar Borse',
+    role: 'Software Developer',
+    image: '../images/alumni/batch2026/ketankumar.jpg',
+    company: ['Netwin - 4 LPA'],
+    batch: 2026,
+  },
+  {
+    name: 'Chandrakant Patil',
+    role: 'Software Developer',
+    image: '../images/alumni/batch2026/chandrakant.jpg',
+    company: ['MSBSVET Govt - 3 LPA'],
+    batch: 2026,
+  },
+  {
+    name: 'Bhavesh Rajput',
+    role: 'Software Developer',
+    image: '../images/alumni/batch2026/bhavesh_rajput.jpg',
+    company: ['MSBSVET Govt - 3 LPA'],
+    batch: 2026,
+  },
+  {
+    name: 'Chaitali Patil',
+    role: 'Software Developer',
+    image: '../images/alumni/batch2026/chaitali.jpg',
+    company: ['R3SYS India Pvt. Lmt.'],
+    batch: 2026,
+  },
+];
