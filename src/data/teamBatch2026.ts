@@ -221,7 +221,7 @@ const teamMembers: ITeamMember[] = [
   {
     name: 'Om Borle',
     role: 'Full Stack Developer',
-    image: '../images/members/om.jpg',
+    image: '../images/members/om.png',
     linkedin: 'https://www.linkedin.com/in/om-borle',
     github: 'https://github.com/OmB-tech',
   },
@@ -248,21 +248,21 @@ const teamMembers: ITeamMember[] = [
   },
   {
     name: 'Giriraj Bawa',
-    role: 'Frontend Developer',
+    role: 'Department Representative',
     image: '../images/members/giriraj.jpg',
     linkedin: 'https://www.linkedin.com/in/giriraj-bawa-51929032a',
     github: 'https://github.com/GirirajBawa',
   },
   {
     name: 'Nihar Patil',
-    role: 'Frontend Developer',
+    role: 'Department Representative',
     image: '../images/members/nihar.jpg',
     linkedin: 'https://www.linkedin.com/in/nihar-patil-658267370/',
     github: 'https://github.com/nihar-ux18',
   },
   {
     name: 'Mayur Patil',
-    role: 'Frontend Developer',
+    role: 'Department Representative',
     image: '../images/members/mayur.jpg',
     linkedin: 'https://www.linkedin.com/in/om-borle/',
     github: 'https://github.com/OmB-tech',
@@ -276,7 +276,7 @@ const teamMembers: ITeamMember[] = [
   },
   {
     name: 'Nitin Beldar',
-    role: 'Frontend Developer',
+    role: 'Department Representative',
     image: '../images/members/nitin_beldar.jpg',
     linkedin: 'https://www.linkedin.com/in/nitin-beldar-022240333?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     github: 'https://github.com/pikachu590',
@@ -311,9 +311,9 @@ const teamMembers: ITeamMember[] = [
   },
   {
     name: 'Shailesh Khairanar',
-    role: 'Frontend Developer',
+    role: 'Department Representative',
     image: '../images/members/shailesh.jpg',
-    linkedin: 'www.linkedin.com/in/ shailesh-khairnar Vanity URL name',
+    linkedin: 'https://www.linkedin.com/in/shailesh-khairnar?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
     github: 'https://github.com/Shailesh2610',
   },
   {
