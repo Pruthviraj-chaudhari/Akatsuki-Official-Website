@@ -95,7 +95,7 @@ const teamMembers: ITeamMember[] = [
         github: 'https://github.com/Dipti112/',
     },
 
-    //--- Romove Vedashree , Mahesh----
+    //--- Romove Vedashree , Mahesh-----
   //   {
   //   name: 'Vedshree Dhaybar',
   //   role: 'Frontend Developer',
