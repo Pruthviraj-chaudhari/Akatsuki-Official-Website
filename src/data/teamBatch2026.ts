@@ -217,7 +217,7 @@ const teamMembers: ITeamMember[] = [
     github: '',
   },
 
-  // ------2026 new member added-------
+  // ------2026 new member added--------
   {
     name: 'Om Borle',
     role: 'Full Stack Developer',
