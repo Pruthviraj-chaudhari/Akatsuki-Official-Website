@@ -9,7 +9,8 @@ import ScheduleDemo from './ScheduleDemo';
 import EventReels from './EventReels';
 import WinnersSection from './winnerSection';
 import { ChevronLeft, ChevronRight, XCircle, Image as ImageIcon } from 'lucide-react';
-import { CalendarIcon, ClockIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { Calendar, MapPin,Clock } from "lucide-react";
+
 import Footer from '../components/Footer';
 import ScrollReveal from './ui/scrollReveal';
 
@@ -73,6 +74,7 @@ const EventDetails: React.FC = () => {
       <button
         onClick={() => navigate('/events')}
         className="fixed top-2 left-2 flex sm:ml-1 md:ml-5 items-center gap-2 bg-white dark:bg-zinc-900 text-red-600 hover:bg-red-50 dark:hover:bg-zinc-800 hover:text-red-700 border border-red-200 dark:border-zinc-700 shadow-md rounded-full px-3 py-3 sm:px-2 sm:py-2 text-base sm:text-lg font-semibold transition-all duration-200 z-30"
+        title="Back to Events"
       >
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5 sm:m-2">
           <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -119,15 +121,15 @@ const EventDetails: React.FC = () => {
             className="flex flex-col sm:flex-row justify-center items-center gap-2 md:gap-4 lg:gap-4 text-white sm:text-[22px] sm:text-base"
           >
             <div className="flex items-center gap-2">
-              <CalendarIcon className="h-5 w-5 text-white" />
+              <Calendar className="h-5 w-5 text-white" />
               <span>{main.date}</span>
             </div>
             <div className="flex items-center gap-2">
-              <ClockIcon className="h-5 w-5 text-white" />
+              <Clock className="h-5 w-5 text-white" />
               <span>{main.time}</span>
             </div>
             <div className="flex items-center gap-2">
-              <MapPinIcon className="h-5 w-5 text-white" />
+              <MapPin className="h-5 w-5 text-white" />
               <span>{main.location}</span>
             </div>
           </motion.div>
@@ -227,12 +229,14 @@ const EventDetails: React.FC = () => {
             <button
               onClick={closeLightbox}
               className="absolute top-4 right-4 text-white/80 hover:text-white transition-colors"
+              title="Close Lightbox"
             >
               <XCircle className="w-8 h-8" />
             </button>
             <button
               onClick={prevImage}
               className="absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+              title="Previous Image"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -244,6 +248,7 @@ const EventDetails: React.FC = () => {
             <button
               onClick={nextImage}
               className="absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/10 text-white hover:bg-white/20 transition-colors"
+              title="Next Image"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
