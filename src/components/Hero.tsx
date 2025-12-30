@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
 
   return (
     <>
-      <section className="relative h-screen flex items-center justify-center overflow-hidden -mt-16">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black">
           <AnimatePresence mode="wait">
             {loadedImages.has(currentImageIndex) && (
@@ -68,6 +68,7 @@ const Hero: React.FC = () => {
                 transition={{ duration: 1, ease: 'easeInOut' }}
               >
                 <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-10" />
+                
                 <img
                   src={images[currentImageIndex].src}
                   alt={images[currentImageIndex].alt}

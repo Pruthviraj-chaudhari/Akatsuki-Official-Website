@@ -121,7 +121,7 @@ const teamMembers: ITeamMember[] = [
   {
     name: 'Janhavi Patil',
     role: 'Frontend Developer',
-    image: '../images/members/janvi.jpg',
+    image: '../images/members/janhavi.jpg',
     linkedin: 'https://www.linkedin.com/in/janhavi-patil-1348a22bb',
     github: 'https://github.com/patilj735',
   },

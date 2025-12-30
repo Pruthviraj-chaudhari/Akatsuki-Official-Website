@@ -22,6 +22,7 @@ export interface IMission {
 }
 
 export interface IEvent {
+  id: string;
   name: string;
   photos: string[];
   text: string;

@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
               ].map((item) => (
                 <li key={item}>
                   <a
-                    href="#"
+                    href="/"
                     className="hover:text-red-500 transition-colors duration-300 flex items-center group"
                   >
                     <span className="mr-2 text-red-500 transform group-hover:translate-x-1 transition-transform">

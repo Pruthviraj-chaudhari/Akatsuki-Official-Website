@@ -102,7 +102,7 @@ const Header: React.FC = () => {
             </li>
           </ul>
         </nav>
-        <button className="text-white text-lg font-semibold md:hidden mobile-nav-toggle">
+        <button className="text-white text-lg font-semibold md:hidden mobile-nav-toggle" title='i'>
           <i className="bi bi-list"></i>
         </button>
       </div>
