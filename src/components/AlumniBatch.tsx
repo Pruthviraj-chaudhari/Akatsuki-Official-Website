@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import AlumniCard from './AlumniCard';
-import { alumni2023, alumni2024, alumni2025 } from '../data/alumniData'; // Import other batches when available
+import { alumni2023, alumni2024, alumni2025, alumni2026 } from '../data/alumniData'; // Import other batches when available
 import { IAlumni } from '@/types';
 
 const AlumniBatch: React.FC = () => {
 
-  const [selectedBatch, setSelectedBatch] = useState(2025);
+  const [selectedBatch, setSelectedBatch] = useState(2026);
 
   const alumniData: { [key: number]: IAlumni[] } = {
+    2026: alumni2026,
     2025: alumni2025,
     2024: alumni2024,
     2023: alumni2023,
