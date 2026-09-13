@@ -9,7 +9,7 @@ interface EventReelsProps {
 const EventReels: React.FC<EventReelsProps> = ({ event }) => {
   const reels = event.reels || [];
   const scrollRef = useRef<HTMLDivElement>(null);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [, setCurrentPage] = useState(0);
   const [totalPages, setTotalPages] = useState(1);
 
   useEffect(() => {
